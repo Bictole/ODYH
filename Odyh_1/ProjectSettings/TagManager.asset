@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PLayer
+    uniqueID: 1707941493
+    locked: 0
+  - name: Ground
+    uniqueID: 2665068567
+    locked: 0
+  - name: Objetdevant
+    uniqueID: 3414578329
+    locked: 0
