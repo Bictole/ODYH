@@ -17,10 +17,24 @@ public abstract class Character : MonoBehaviour
 
     private Animator animator;
 
+    private static bool playerExists;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
+        
+        // Permet de ne pas détruire le perso quand on charge une scene -> sans duplication
+        if (!playerExists)
+        {
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     // Update is called once per frame
