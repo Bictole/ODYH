@@ -57,8 +57,18 @@ public abstract class Character : MonoBehaviour
 
     public void HandleLayers()
     {
+        if (IsAttacking)
+        {
+            if (IsMoving)
+            {
+                direction.x = 0;
+                direction.y = 0;
+            }
+
+            ActivateLayer("Attack Layer");
+        }
         //Checks if we are moving or standing still, if we are moving then we need to play the movement
-        if (IsMoving)
+        else if (IsMoving)
         {
             ActivateLayer("Walk Layer");
             
@@ -67,10 +77,6 @@ public abstract class Character : MonoBehaviour
             myAnimator.SetFloat("y", direction.y);
             
             StopAttack();
-        }
-        else if (IsAttacking)
-        {
-            ActivateLayer("Attack Layer");
         }
         else
         {

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -16,8 +17,6 @@ public class Player : Character
     protected override void Update()
     {
         Getinput();
-
-
         base.Update();
     }
 
@@ -43,7 +42,7 @@ public class Player : Character
             direction += Vector2.right;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             StartCoroutine(Attack());
         }
@@ -56,7 +55,7 @@ public class Player : Character
             IsAttacking = true;
             myAnimator.SetBool("attack",IsAttacking);
         
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.4f);
 
             StopAttack();
         }
