@@ -9,9 +9,13 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Character.cs" t="Include" />
+          <e p="HurtPlayer.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="PlayerHealth.cs" t="Include" />
           <e p="PlayerStartPoint.cs" t="Include" />
+          <e p="PlayerStats.cs" t="Include" />
           <e p="SceneCh.cs" t="Include" />
+          <e p="UI.cs" t="Include" />
         </e>
         <e p="SuperTiled2Unity" t="Include">
           <e p="Examples" t="Include">
