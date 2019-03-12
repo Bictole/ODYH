@@ -19,9 +19,11 @@ public abstract class Character : MonoBehaviour
 
     protected Animator myAnimator;
 
-    protected bool IsAttacking = false;
+    public bool IsAttacking = false;
 
     private static bool playerExists;
+
+    public bool stopmove;
 
     public bool IsMoving
     {
@@ -34,6 +36,8 @@ public abstract class Character : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+
+        stopmove = false;
         
         // Permet de ne pas détruire le perso quand on charge une scene -> sans duplication
         if (!playerExists)
@@ -70,6 +74,11 @@ public abstract class Character : MonoBehaviour
 
     public void HandleLayers()
     {
+        if (stopmove)
+        {
+            myRigidbody.velocity = Vector2.zero;
+            return;
+        }
         if (IsAttacking)
         {
             if (IsMoving)
