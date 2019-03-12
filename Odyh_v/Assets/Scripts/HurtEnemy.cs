@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class HurtEnemy : MonoBehaviour
 {
+        
+    //set des dégats que l'on doit infliger au joueur
+    public int damage;
+    
     // Start is called before the first frame update
     void Start()
     {

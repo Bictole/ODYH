@@ -13,6 +13,11 @@ public class UI : MonoBehaviour
     public PlayerHealth playerH;
 
     private static bool UIexists;
+
+    //recuperation du playerstats
+    private PlayerStats _playerStats;
+
+    public Text Textlevel;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +32,9 @@ public class UI : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        //init du playerstats
+        _playerStats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -35,5 +43,6 @@ public class UI : MonoBehaviour
         healthbar.maxValue = playerH.playerMaxHealth;
         healthbar.value = playerH.playerHealth;
         hp.text = "HP : " + playerH.playerHealth + "/" + playerH.playerMaxHealth;
+        Textlevel.text = "Lvl : " + _playerStats.playerLevel;
     }
 }

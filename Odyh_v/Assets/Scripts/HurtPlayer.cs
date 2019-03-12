@@ -7,7 +7,7 @@ public class HurtPlayer : MonoBehaviour
     //A attacher a des ennemis !
     
     
-    //set des dégats que l'on doit infliger au joueur
+    //set des dégats que l'on doit infliger au monstres
     public int ennemy_damage;
     
     // Start is called before the first frame update

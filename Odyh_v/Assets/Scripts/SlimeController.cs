@@ -88,7 +88,7 @@ public class SlimeController : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    /*private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.name == "Player")
         {
@@ -97,5 +97,5 @@ public class SlimeController : MonoBehaviour
             thePlayer = other.gameObject;
     
         }
-    }
+    }*/
 }

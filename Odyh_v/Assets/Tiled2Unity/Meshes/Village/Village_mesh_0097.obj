@@ -2,16 +2,16 @@
 # Wavefront file for 'Village_mesh_0097.obj'
 
 # Vertices (Count = 4)
-v -240 -16 0
+v -240 -32 0
+v -256 -32 0
 v -256 -16 0
-v -256 0 0
-v -240 0 0
+v -240 -16 0
 
 # Texture cooridinates (Count = 4)
-vt 0.0625 0.4444444
-vt 0.078125 0.4444444
-vt 0.078125 0.452381
-vt 0.0625 0.452381
+vt 0.175 0.8333333
+vt 0.2 0.8333333
+vt 0.2 0.8611111
+vt 0.175 0.8611111
 
 # Normal
 vn 0 0 -1

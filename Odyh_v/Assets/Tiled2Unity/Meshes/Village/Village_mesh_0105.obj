@@ -1,0 +1,24 @@
+﻿# Tiled2Unity generated file. Do not modify by hand.
+# Wavefront file for 'Village_mesh_0105.obj'
+
+# Vertices (Count = 4)
+v -112 -64 0
+v -128 -64 0
+v -128 -48 0
+v -112 -48 0
+
+# Texture cooridinates (Count = 4)
+vt 0.175 0.8333333
+vt 0.2 0.8333333
+vt 0.2 0.8611111
+vt 0.175 0.8611111
+
+# Normal
+vn 0 0 -1
+
+# Mesh description
+g Village_mesh_0105
+
+# Faces
+f 1/1/1 2/2/1 3/3/1 4/4/1
+
