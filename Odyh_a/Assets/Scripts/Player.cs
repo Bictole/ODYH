@@ -16,8 +16,11 @@ public class Player : Character
     // Update is called once per frame
     protected override void Update()
     {
-        Getinput();
-        base.Update();
+         if (stopmove)
+             return;
+         Getinput();
+         base.Update();
+        
     }
 
     

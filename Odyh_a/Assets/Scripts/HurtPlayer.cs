@@ -9,7 +9,13 @@ public class HurtPlayer : MonoBehaviour
     
     //set des dégats que l'on doit infliger au joueur
     public int ennemy_damage;
-    
+    public GameObject damageBurst;
+
+
+    public Transform Hitpoint;
+
+    public GameObject damageNumber;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +33,9 @@ public class HurtPlayer : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             other.gameObject.GetComponent<PlayerHealth>().HurtPlayer(ennemy_damage);
+            Instantiate(damageBurst, other.transform.position, other.transform.rotation);
+            var clone = Instantiate(damageNumber, other.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<FloatingNumbers>().damageNumber = ennemy_damage;
         }
     }
 }

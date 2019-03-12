@@ -10,14 +10,22 @@
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
           <e p="Character.cs" t="Include" />
+          <e p="DestroyOvertime.cs" t="Include" />
+          <e p="dialogueHolder.cs" t="Include" />
+          <e p="DialogueManager.cs" t="Include" />
+          <e p="EnemyHealth.cs" t="Include" />
+          <e p="EnemyRespawn.cs" t="Include" />
+          <e p="FloatingNumbers.cs" t="Include" />
           <e p="HurtEnemy.cs" t="Include" />
           <e p="HurtPlayer.cs" t="Include" />
+          <e p="MonsterController.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerHealth.cs" t="Include" />
+          <e p="PlayerRespawn.cs" t="Include" />
           <e p="PlayerStartPoint.cs" t="Include" />
           <e p="PlayerStats.cs" t="Include" />
+          <e p="Pnjmovement.cs" t="Include" />
           <e p="SceneCh.cs" t="Include" />
-          <e p="SlimeController.cs" t="Include" />
           <e p="UI.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
