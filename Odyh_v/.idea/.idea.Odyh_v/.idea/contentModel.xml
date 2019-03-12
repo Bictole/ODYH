@@ -95,7 +95,6 @@
             <e p="intérieur_maison1.tiled2unity.xml" t="Include" />
             <e p="Intérieur_maison_type.tiled2unity.xml" t="Include" />
             <e p="Maison1.tiled2unity.xml" t="Include" />
-            <e p="Plage32.tiled2unity.xml" t="Include" />
             <e p="TerrainTest.tiled2unity.xml" t="Include" />
             <e p="Village.tiled2unity.xml" t="Include" />
           </e>
