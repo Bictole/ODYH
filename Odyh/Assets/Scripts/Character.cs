@@ -15,14 +15,17 @@ public abstract class Character : MonoBehaviour
     /// </summary>
     protected Vector2 direction;
 
+    // Attribute of a character, Rigidbody2D and Animator
     private Rigidbody2D myRigidbody;
-
     protected Animator myAnimator;
 
-    public bool IsAttacking = false;
+    // To know if the character is attacking
+    public bool IsAttacking;
 
+    // To know if the player exists
     private static bool playerExists;
 
+    // To stop the player when he is talking to a PNJ for example
     public bool stopmove;
 
     public bool IsMoving
@@ -72,6 +75,7 @@ public abstract class Character : MonoBehaviour
         myRigidbody.velocity = direction.normalized * speed;
     }
 
+    // Allow to switch between the different layers, to play the good animation for the correct action.
     public void HandleLayers()
     {
         if (stopmove)
@@ -107,6 +111,7 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    // Method which switch the weight of a layer to 1 
     public void ActivateLayer(string layerName)
     {
         for (int i = 0; i < myAnimator.layerCount; i++)

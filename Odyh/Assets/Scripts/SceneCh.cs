@@ -7,6 +7,11 @@ public class SceneCh : MonoBehaviour
 {
     // Variable -> la scene ou on envoie le personnage
     public string scene_a_charger;
+
+
+    public float posX;
+    public float posY;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -20,12 +25,13 @@ public class SceneCh : MonoBehaviour
         
     }
 
-    //On utilise le OnTrigger pour activer cette fonction des que le perso déclenche ce trigger
+    //On utilise le OnTrigger pour activer cette fonction dès que le perso déclenche ce trigger
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")
         {
             SceneManager.LoadScene(scene_a_charger);
+            other.gameObject.transform.position = new Vector3(posX,posY,transform.position.z);
         }
     }
 }

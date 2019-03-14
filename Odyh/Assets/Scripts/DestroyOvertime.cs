@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DestroyOvertime : MonoBehaviour
 {
+    
+    // Time to destroy an object
     public float timeToDestroy;
     
     

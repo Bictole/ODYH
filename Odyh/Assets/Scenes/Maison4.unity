@@ -253,6 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_a_charger: village
+  posX: 65.5
+  posY: -35
 --- !u!4 &1606503184
 Transform:
   m_ObjectHideFlags: 0

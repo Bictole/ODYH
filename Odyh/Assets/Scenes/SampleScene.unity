@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  IsAttacking: 0
+  stopmove: 0
 --- !u!212 &340250911
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
+    // Slider pour la barre de vie
     public Slider healthbar;
 
     public Text hp;
@@ -34,10 +35,10 @@ public class UI : MonoBehaviour
         }
 
         //init du playerstats
-        _playerStats = GetComponent<PlayerStats>();
+        _playerStats = playerH.GetComponent<PlayerStats>();
     }
 
-    // Update is called once per frame
+    // A chaque update, on met à jour la valeur de la barre de vie ainsi que l'affichage du nombre de point de vie et du niveau du joueur.
     void Update()
     {
         healthbar.maxValue = playerH.playerMaxHealth;

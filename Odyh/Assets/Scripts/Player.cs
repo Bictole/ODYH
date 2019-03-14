@@ -18,6 +18,7 @@ public class Player : Character
     {
          if (stopmove)
              return;
+         
          Getinput();
          base.Update();
         
@@ -47,10 +48,12 @@ public class Player : Character
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            // Allow to put a delay in the method
             StartCoroutine(Attack());
         }
     }
 
+    
     private IEnumerator Attack()
     {
         if (!IsAttacking)
@@ -58,6 +61,7 @@ public class Player : Character
             IsAttacking = true;
             myAnimator.SetBool("attack",IsAttacking);
         
+            // delay between each attack
             yield return new WaitForSeconds(0.4f);
 
             StopAttack();

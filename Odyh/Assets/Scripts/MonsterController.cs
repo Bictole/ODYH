@@ -12,20 +12,28 @@ using Vector3 = UnityEngine.Vector3;
 
 public class MonsterController : MonoBehaviour
 {
+    // Animator of the enemy
     protected Animator myAnimator;
 
+    // Speed of the enemy
     public float moveSpeed;
 
+    // Rigidbody of the enemy
     private Rigidbody2D myRigidbody2D;
 
+    // To know if the enemy is moving or not
     private bool moving;
 
+    // timeBetweenMove est une valeur fixe modifiable et timeBetweenMoveCounter est un compteur variant entre +/- 25% de timeBetweenMove et correspond à la durée entre chaque déplacement
     public float timeBetweenMove;
     private float timeBetweenMoveCounter;
 
+    // timeToMove est une valeur fixe modifiable et timeToMoveCounter est un compteur variant entre +/- 25% de timeToMove et correspond à la durée du déplacement
+    
     public float timeToMove;
     private float timeToMoveCounter;
 
+    // Vector of the direction where the enemy will move
     private Vector3 moveDirection;
    
     // Start is called before the first frame update

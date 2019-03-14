@@ -5,15 +5,20 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    // To attach to a UI dialogue box
+    
+    // UI of the dialogue box and its text
     public GameObject dialogueBox;
     public Text dialogueText;
 
+    // To know if the dialogue box is active
     public bool dialogueActive;
 
-    public string[] dialogLines;
+    // // List of the different text which will appears into the dialogue box
+    public string[] dialogueLines;
     public int currentLine;
 
-
+    
     private Character thePlayer;
     // Start is called before the first frame update
     void Start()
@@ -24,11 +29,12 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
             currentLine += 1;
 
-            if (currentLine >= dialogLines.Length)
+            if (currentLine >= dialogueLines.Length)
             {
                 dialogueBox.SetActive(false);
                 dialogueActive = false;
@@ -37,21 +43,21 @@ public class DialogueManager : MonoBehaviour
                 thePlayer.stopmove = false;
             }
 
-            dialogueText.text = dialogLines[currentLine];
+            dialogueText.text = dialogueLines[currentLine];
 
         }
     }
 
 
+    // Open the dialogue Box and make the player stop moving
     public void ShowBox(string dialogue)
     {
-        dialogueActive = true;
-        dialogueBox.SetActive(true);
+        ShowDialogue();
         dialogueText.text = dialogue;
-        thePlayer.stopmove = true;
 
     }
 
+    
     public void ShowDialogue()
     {
         dialogueActive = true;

@@ -9,11 +9,11 @@ public class HurtPlayer : MonoBehaviour
     
     //set des dégats que l'on doit infliger au joueur
     public int ennemy_damage;
+    
+    // Effet de dégats
     public GameObject damageBurst;
 
-
-    public Transform Hitpoint;
-
+    // Nombre de dégats
     public GameObject damageNumber;
    
     // Start is called before the first frame update
@@ -28,6 +28,8 @@ public class HurtPlayer : MonoBehaviour
         
     }
 
+    // Détecte si le joueur entre en collision avec un ennemi et affiche l'effet de dégat, le nombre de dégat et enlève de la vie au joueur selon les dégats de l'ennemi
+    
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.name == "Player")

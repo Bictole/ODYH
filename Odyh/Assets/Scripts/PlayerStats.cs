@@ -23,12 +23,14 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Si l'expérience est supérieure à l'expérience nécéssaire pour lvl up, augmente le niveau du joueur
         if (playerexp >= expforLevelUp[playerLevel])
         {
             playerLevel += 1;
         }
     }
 
+    // Ajoute de l'expérience au personnage
     public void GainExp(int gain_exp)
     {
         playerexp += gain_exp;

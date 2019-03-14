@@ -253,6 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_a_charger: village
+  posX: 57.5
+  posY: -23.5
 --- !u!4 &1673825770
 Transform:
   m_ObjectHideFlags: 0
@@ -261,7 +263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673825767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.87, y: -25.04, z: 1.018526}
+  m_LocalPosition: {x: 56.75, y: -24.84, z: 1.018526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

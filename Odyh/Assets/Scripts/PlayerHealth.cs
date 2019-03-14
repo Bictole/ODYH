@@ -7,8 +7,11 @@ public class PlayerHealth : MonoBehaviour
 {
     //Vie max du joueur 
     public int playerMaxHealth;
+    
     //vie actuelle du joueur
     public int playerHealth;
+    
+    // Permet de savoir si le personnage est mort ou pas (afin de lancer la séquence de réapparition)
     public bool reloading;
 
    
@@ -17,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         //set de la vie au max
-        playerHealth = playerMaxHealth;
+        SetMaxHealth();
         reloading = false;
 
     }
@@ -25,12 +28,12 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // si la vie est <0 alors lancement de la séquence de réapparition et désactivation de l'objet
         if (playerHealth <= 0)
         {
             reloading = true;
             gameObject.SetActive(false);
-            playerHealth = playerMaxHealth;
+            SetMaxHealth();
         }
         
     }

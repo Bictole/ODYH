@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class Pnjmovement : MonoBehaviour
 {
+    // Speed of the PNJ
     public float movespeed;
 
+    // Attribute of the PNJ, Rigibody2D and Animator
     private Rigidbody2D myRigidbody2D;
     private Animator myAnimator;
 
+    // To know if the PNJ is walking or not
     public bool isWalking;
 
+    // Time where the PNJ is walking
     public float walkTime;
     private float walkCounter;
 
+    // Time where the PNJ is waiting
     public float waitTime;
     private float waitCounter;
 
+    // To know if the PNJ will go up, down, left or right (number between 0 and 3)
     private int Walkdirection;
 
+    // Determine if the PNJ has a walkArea and what is the max and min value of it
     public Collider2D walkArea;
     private bool hasWalkZone;
     private Vector2 minWalkPoint;
     private Vector2 maxWalkPoint;
     
+    // Direction where the PNJ will move
     private Vector3 moveDirection;
 
+    // To stop the PNJ when the player is talking to him
     public bool stopmove;
     private DialogueManager dlgmanager;
     
@@ -116,7 +125,7 @@ public class Pnjmovement : MonoBehaviour
                 case 3:
                 {
                     myRigidbody2D.velocity = new Vector2(-movespeed,0);
-                    if (hasWalkZone && transform.position.x < maxWalkPoint.x)
+                    if (hasWalkZone && transform.position.x < minWalkPoint.x)
                     {
                         isWalking = false;
                         waitCounter = waitTime;
@@ -129,7 +138,7 @@ public class Pnjmovement : MonoBehaviour
         else
         {
             waitCounter -= Time.deltaTime;
-            ActivateLayer("IdleLayer");
+            ActivateLayer("Idle Layer");
             myRigidbody2D.velocity = Vector2.zero;
 
             if (waitCounter < 0)
@@ -139,6 +148,7 @@ public class Pnjmovement : MonoBehaviour
         }
     }
 
+    // Choose randomly a direction
     public void ChooseDirection()
     {
         Walkdirection = Random.Range(0, 4);
@@ -146,6 +156,7 @@ public class Pnjmovement : MonoBehaviour
         walkCounter = walkTime;
     }
     
+    // Allow to switch between the animation of walk and idle
     public void ActivateLayer(string layerName)
     {
         for (int i = 0; i < myAnimator.layerCount; i++)

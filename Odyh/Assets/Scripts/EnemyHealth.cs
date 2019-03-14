@@ -10,10 +10,11 @@ public class EnemyHealth : MonoBehaviour
     //vie actuelle du monstre
     public int monsterHealth;
 
-    
+    // Script avec l'xp du personnage
     private PlayerStats _playerStats;
     public int experience;
     
+    // Permet de savoir si l'ennemi est mort ou non pour lancer la séquence de réapparition
     public bool reloading;
     
 
@@ -21,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         //set de la vie au max
-        monsterHealth = monsterMaxHealth;
+        SetMaxHealth();
         _playerStats = FindObjectOfType<PlayerStats>();
         
         reloading = false;
@@ -34,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
         {
             reloading = true;
             gameObject.SetActive(false);
-            monsterHealth = monsterMaxHealth;
+            SetMaxHealth();         
             _playerStats.GainExp(experience);
         }
     }
