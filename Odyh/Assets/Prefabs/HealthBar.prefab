@@ -108,7 +108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.7, y: -38.5}
+  m_AnchoredPosition: {x: -22.01, y: -29.87}
   m_SizeDelta: {x: 101.09, y: 16.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &126632039
@@ -279,11 +279,91 @@ MonoBehaviour:
   dialogueBox: {fileID: 1021084596}
   dialogueText: {fileID: 1059269755}
   dialogueActive: 0
-  dialogLines:
-  - Can you help me ?
-  - My friend has been attacked by a bat.
-  - Go and find him please.
+  dialogueLines:
+  - 
+  - 
+  - 
+  - 
   currentLine: 0
+--- !u!1 &744868578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744868581}
+  - component: {fileID: 744868580}
+  - component: {fileID: 744868579}
+  m_Layer: 5
+  m_Name: Money
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &744868581
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744868578}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1933165251}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -22.1, y: -46.5}
+  m_SizeDelta: {x: 101.09, y: 16.99}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &744868580
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744868578}
+  m_CullTransparentMesh: 0
+--- !u!114 &744868579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744868578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
 --- !u!1 &1021084596
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +532,7 @@ GameObject:
   - component: {fileID: 1191345389}
   - component: {fileID: 1191345388}
   - component: {fileID: 1191345387}
+  - component: {fileID: 2001563693}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -556,6 +637,20 @@ MonoBehaviour:
   hp: {fileID: 1581779226}
   playerH: {fileID: 0}
   Textlevel: {fileID: 126632038}
+--- !u!114 &2001563693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191345386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69be5b1ea4ba8e24a81c58fb0a75ac1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textmoney: {fileID: 744868579}
+  money: 0
 --- !u!1 &1551699620
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +877,7 @@ RectTransform:
   - {fileID: 1773300816}
   - {fileID: 1581779228}
   - {fileID: 126632040}
+  - {fileID: 744868581}
   m_Father: {fileID: 2107833932}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
