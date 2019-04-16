@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     // Permet de savoir si le personnage est mort ou pas (afin de lancer la séquence de réapparition)
     public bool reloading;
 
-   
+    private SFXManager sfx;  //reference au manager d'effets sonores
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
         //set de la vie au max
         SetMaxHealth();
         reloading = false;
+
+        sfx = FindObjectOfType<SFXManager>();
 
     }
 
@@ -31,6 +33,8 @@ public class PlayerHealth : MonoBehaviour
         // si la vie est <0 alors lancement de la séquence de réapparition et désactivation de l'objet
         if (playerHealth <= 0)
         {
+            sfx.player_is_dead.Play();
+            
             reloading = true;
             gameObject.SetActive(false);
             SetMaxHealth();
@@ -41,6 +45,8 @@ public class PlayerHealth : MonoBehaviour
     public void HurtPlayer(int damage)
     {
         playerHealth -= damage;
+        
+        sfx.hurt_the_player.Play();
     }
 
     public void SetMaxHealth()

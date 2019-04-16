@@ -6,11 +6,15 @@ using UnityEngine;
 
 public class Player : Character
 {
+
+    private SFXManager sfx;
     
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+
+        sfx = FindObjectOfType<SFXManager>();
     }
 
     // Update is called once per frame
@@ -60,11 +64,13 @@ public class Player : Character
         {
             IsAttacking = true;
             myAnimator.SetBool("attack",IsAttacking);
-        
+            
             // delay between each attack
             yield return new WaitForSeconds(0.4f);
 
             StopAttack();
+            
+            sfx.player_is_attacking.Play();
         }
         
     }

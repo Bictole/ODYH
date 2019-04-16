@@ -7,6 +7,8 @@ public class UI : MonoBehaviour
 {
     // Slider pour la barre de vie
     public Slider healthbar;
+    
+    public Slider xpbar;
 
     public Text hp;
     
@@ -43,6 +45,8 @@ public class UI : MonoBehaviour
     {
         healthbar.maxValue = playerH.playerMaxHealth;
         healthbar.value = playerH.playerHealth;
+        xpbar.maxValue = _playerStats.expforLevelUp[_playerStats.playerLevel];
+        xpbar.value = _playerStats.playerexp;
         hp.text = "HP : " + playerH.playerHealth + "/" + playerH.playerMaxHealth;
         Textlevel.text = "Lvl : " + _playerStats.playerLevel;
     }

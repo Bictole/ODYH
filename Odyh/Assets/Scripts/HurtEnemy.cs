@@ -7,9 +7,11 @@ public class HurtEnemy : MonoBehaviour
     //A attacher au joueur!
     
     
-    //set des dégats que l'on doit infliger aux monstres
+    //set des dégats du joueur 
     public int player_damage;
 
+    //dégats avec bonus de niveau ajouté
+    private int damage;
 
     // Effet de dégats    
     public GameObject damageBurst;
@@ -19,10 +21,13 @@ public class HurtEnemy : MonoBehaviour
 
     // Nombre de dégats du joueur
     public GameObject damageNumber;
+    
+    private PlayerStats thestats;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        thestats = FindObjectOfType<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -38,13 +43,14 @@ public class HurtEnemy : MonoBehaviour
         {
             if(other.gameObject.CompareTag("Enemy"))
             {
+                damage = player_damage + thestats.playerattack;
+                
                 // On inflige des dégats à l'ennemi, et on affiche l'effet de dégats et le nombre de dégats au niveau du point d'impact.
-                other.gameObject.GetComponent<EnemyHealth>().HurtEnemy(player_damage);
+                other.gameObject.GetComponent<EnemyHealth>().HurtEnemy(damage);
                 Instantiate(damageBurst, Hitpoint.position, Hitpoint.rotation);
                 var clone = Instantiate(damageNumber, Hitpoint.position, Quaternion.Euler(Vector3.zero));
-                clone.GetComponent<FloatingNumbers>().damageNumber = player_damage;
+                clone.GetComponent<FloatingNumbers>().damageNumber = damage;
             }
         }
-        
     }
 }
