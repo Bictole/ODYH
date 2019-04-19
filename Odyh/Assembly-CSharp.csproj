@@ -68,7 +68,6 @@
     <Compile Include="Assets\Scripts\Interface\UI.cs" />
     <Compile Include="Assets\Scripts\MoneyManager.cs" />
     <Compile Include="Assets\Scripts\Monstre\EnemyHealth.cs" />
-    <Compile Include="Assets\Scripts\Monstre\EnemyRespawn.cs" />
     <Compile Include="Assets\Scripts\Monstre\HurtPlayer.cs" />
     <Compile Include="Assets\Scripts\Monstre\MonsterController.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
@@ -84,6 +83,7 @@
     <Compile Include="Assets\Scripts\Pnj\DialogueHolder.cs" />
     <Compile Include="Assets\Scripts\Pnj\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Pnj\Pnjmovement.cs" />
+    <Compile Include="Assets\Scripts\RandomSpawn.cs" />
     <Compile Include="Assets\Scripts\SceneCh.cs" />
     <Compile Include="Assets\Scripts\SFXManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

@@ -50,11 +50,11 @@ public class HurtPlayer : MonoBehaviour
             }
 
 
-            other.gameObject.GetComponent<PlayerHealth>().HurtPlayer(ennemy_damage);
+            other.gameObject.GetComponent<PlayerHealth>().HurtPlayer(damage);
             Push(other);
             Instantiate(damageBurst, other.transform.position, other.transform.rotation);
             var clone = Instantiate(damageNumber, other.transform.position, Quaternion.Euler(Vector3.zero));
-            clone.GetComponent<FloatingNumbers>().damageNumber = ennemy_damage;
+            clone.GetComponent<FloatingNumbers>().damageNumber = damage;
         }
         
     }

@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b553818b2100a43b8b3d9b57460d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemy_damage: 5
+  ennemy_damage: 25
   damageBurst: {fileID: 5136331486231036524, guid: 204819cb9500eaf419f5679aed0df0a1,
     type: 3}
   damageNumber: {fileID: 5621475544441397732, guid: 6ea3887a4c5b80f4bbca40a1797a5b33,
@@ -555,6 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1028db59fe84ea448a7f4ddaca7defa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitToRespawn: 5
   monsterMaxHealth: 50
   monsterHealth: 50
   experience: 50

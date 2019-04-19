@@ -45,13 +45,14 @@ public class HurtEnemy : MonoBehaviour
             {
 
                 damage = player_damage + thestats.playerattack;
+                
 
                 // On inflige des dégats à l'ennemi, et on affiche l'effet de dégats et le nombre de dégats au niveau du point d'impact.
-                other.gameObject.GetComponent<EnemyHealth>().HurtEnemy(player_damage);
+                other.gameObject.GetComponent<EnemyHealth>().HurtEnemy(damage);
                 Push(other.gameObject);
                 Instantiate(damageBurst, Hitpoint.position, Hitpoint.rotation);
                 var clone = Instantiate(damageNumber, Hitpoint.position, Quaternion.Euler(Vector3.zero));
-                clone.GetComponent<FloatingNumbers>().damageNumber = player_damage;
+                clone.GetComponent<FloatingNumbers>().damageNumber = damage;
             }
         }
         

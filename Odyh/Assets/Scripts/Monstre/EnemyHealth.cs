@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     
+    
+    
+    
     //Vie max du monstre 
     public int monsterMaxHealth;
     //vie actuelle du monstre
@@ -15,10 +18,7 @@ public class EnemyHealth : MonoBehaviour
     private PlayerStats _playerStats;
     public int experience;
     
-    // Permet de savoir si l'ennemi est mort ou non pour lancer la séquence de réapparition
-    public bool reloading;
     
-
     public Slider healthbar;
     
     // Start is called before the first frame update
@@ -27,9 +27,9 @@ public class EnemyHealth : MonoBehaviour
         //set de la vie au max
         SetMaxHealth();
         _playerStats = FindObjectOfType<PlayerStats>();
-        
-        reloading = false;
         healthbar.maxValue = monsterMaxHealth;
+        
+        
     }
 
     // Update is called once per frame
@@ -38,10 +38,11 @@ public class EnemyHealth : MonoBehaviour
         healthbar.value = monsterHealth;
         if (monsterHealth <= 0)
         {
-            reloading = true;
-            gameObject.SetActive(false);
-            SetMaxHealth();         
             _playerStats.GainExp(experience);
+            
+            RandomSpawn.nb_enemy -= 1;
+            RandomSpawn.reloading = true;
+            Destroy(gameObject);
         }
     }
 

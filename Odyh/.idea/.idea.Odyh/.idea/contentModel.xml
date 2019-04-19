@@ -24,7 +24,6 @@
           <e p="MoneyManager.cs" t="Include" />
           <e p="Monstre" t="Include">
             <e p="EnemyHealth.cs" t="Include" />
-            <e p="EnemyRespawn.cs" t="Include" />
             <e p="HurtPlayer.cs" t="Include" />
             <e p="MonsterController.cs" t="Include" />
           </e>
@@ -45,6 +44,7 @@
             <e p="DialogueManager.cs" t="Include" />
             <e p="Pnjmovement.cs" t="Include" />
           </e>
+          <e p="RandomSpawn.cs" t="Include" />
           <e p="SceneCh.cs" t="Include" />
           <e p="SFXManager.cs" t="Include" />
         </e>

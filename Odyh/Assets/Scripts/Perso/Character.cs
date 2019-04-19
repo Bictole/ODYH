@@ -98,11 +98,11 @@ public abstract class Character : MonoBehaviour
         }
         if (IsAttacking)
         {
-            if (IsMoving)
-            {
-                direction.x = 0;
-                direction.y = 0;
-            }
+//            if (IsMoving)
+//            {
+//                direction.x = 0;
+//                direction.y = 0;
+//            }
 
             ActivateLayer("Attack Layer");
         }
