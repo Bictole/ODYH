@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1730218912}
   - component: {fileID: 1730218913}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,9 +244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c2cf6319c60dd46a56217aae37df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 5.5
   IsAttacking: 0
   stopmove: 0
+  IsPush: 0
 --- !u!95 &1730218906
 Animator:
   serializedVersion: 3
@@ -343,12 +344,6 @@ MonoBehaviour:
   playerLevel: 1
   playerexp: 0
   expforLevelUp: 6400000096000000c8000000fa0000002c010000f4010000ee020000e8030000dc050000d0070000
-  lvlhp: 64000000640000006e00000078000000820000008c00000096000000a0000000aa000000b4000000
-  lvlattack: 00000000000000000a0000000d0000000f0000001100000014000000170000001b0000001e000000
-  lvldefence: 00000000000000000300000005000000070000000a0000000d0000000f0000001100000014000000
-  playerhp: 0
-  playerattack: 0
-  playerdefence: 0
 --- !u!1 &1985164952
 GameObject:
   m_ObjectHideFlags: 0
