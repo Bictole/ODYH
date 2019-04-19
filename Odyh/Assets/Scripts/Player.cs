@@ -62,15 +62,15 @@ public class Player : Character
     {
         if (!IsAttacking)
         {
+            sfx.player_is_attacking.Play();
+            
             IsAttacking = true;
             myAnimator.SetBool("attack",IsAttacking);
             
             // delay between each attack
             yield return new WaitForSeconds(0.4f);
-
-            StopAttack();
-            
-            sfx.player_is_attacking.Play();
+          
+            StopAttack();  
         }
         
     }

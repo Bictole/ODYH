@@ -22,6 +22,8 @@
           <e p="MainMenu.cs" t="Include" />
           <e p="MoneyManager.cs" t="Include" />
           <e p="MonsterController.cs" t="Include" />
+          <e p="MusicManager.cs" t="Include" />
+          <e p="MusicSwitcher.cs" t="Include" />
           <e p="PickaGold.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerHealth.cs" t="Include" />

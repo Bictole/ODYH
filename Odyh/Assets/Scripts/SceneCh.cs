@@ -11,12 +11,15 @@ public class SceneCh : MonoBehaviour
 
     public float posX;
     public float posY;
-    
+
+    private MusicManager _musicmanager;
+
+    public int nextmusic;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        _musicmanager = FindObjectOfType<MusicManager>();
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class SceneCh : MonoBehaviour
         {
             SceneManager.LoadScene(scene_a_charger);
             other.gameObject.transform.position = new Vector3(posX,posY,transform.position.z);
+            _musicmanager.ChangeMusic(nextmusic);
         }
     }
 }
