@@ -6,6 +6,7 @@ using Tiled2Unity;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -44,10 +45,13 @@ public class MonsterController : MonoBehaviour
     [SerializeField]
     private Block[] blocks;
 
-
+    //To know if the enemy is push or not and how many time
     public bool Ispush;
-
     private float timepush;
+
+    
+    public CanvasGroup healthGroup;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -56,8 +60,11 @@ public class MonsterController : MonoBehaviour
 
         timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
-        
+
         player = GameObject.FindWithTag("Player");
+        healthGroup = gameObject.GetComponentInChildren<Canvas>().GetComponent<CanvasGroup>();
+        
+        
     }
 
     // Update is called once per frame
@@ -74,7 +81,9 @@ public class MonsterController : MonoBehaviour
         if (timepush <= 0 && !Ispush)
         {
             if (InlineofSight() && Vector2.Distance(transform.position,player.transform.position) < 5)
-            { 
+            {
+                healthGroup.alpha = 1;
+                
            
                 Vector3 playerdirection = (player.transform.position - transform.position).normalized;
             
@@ -85,10 +94,13 @@ public class MonsterController : MonoBehaviour
             
                 myRigidbody2D.velocity = moveDirection;
                 Block();
+                
             }
+            
 
             else
             {
+                healthGroup.alpha = 0;
                 if (moving)
                 {
                     //Sets the animation parameter so that he faces the correct direction
@@ -120,7 +132,9 @@ public class MonsterController : MonoBehaviour
                         Block();
                     }
                 }
+                
             }
+            
         }
     }
 

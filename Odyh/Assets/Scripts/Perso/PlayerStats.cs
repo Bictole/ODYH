@@ -22,6 +22,8 @@ public class PlayerStats : MonoBehaviour
     public int playerdefence;
 
     private PlayerHealth manager;
+    
+    public GameObject Xpburst;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,7 @@ public class PlayerStats : MonoBehaviour
 
     public void levelup()            //fontion de changement de niveau
     {
+        Instantiate(Xpburst, transform.position, transform.rotation);
         playerLevel += 1;
         playerexp = 0;
 

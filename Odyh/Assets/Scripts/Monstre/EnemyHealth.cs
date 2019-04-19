@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class EnemyHealth : MonoBehaviour
     public bool reloading;
     
 
+    public Slider healthbar;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +29,13 @@ public class EnemyHealth : MonoBehaviour
         _playerStats = FindObjectOfType<PlayerStats>();
         
         reloading = false;
+        healthbar.maxValue = monsterMaxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthbar.value = monsterHealth;
         if (monsterHealth <= 0)
         {
             reloading = true;

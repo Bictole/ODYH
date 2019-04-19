@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1730218912}
   - component: {fileID: 1730218913}
   m_Layer: 0
-  m_Name: Player_1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,6 +344,13 @@ MonoBehaviour:
   playerLevel: 1
   playerexp: 0
   expforLevelUp: 6400000096000000c8000000fa0000002c010000f4010000ee020000e8030000dc050000d0070000
+  lvlhp: 
+  lvlattack: 
+  lvldefence: 
+  playerhp: 0
+  playerattack: 0
+  playerdefence: 0
+  Xpburst: {fileID: 5136331486231036524, guid: 56be9cb7cfad8c740b31d737b09787ae, type: 3}
 --- !u!1 &1985164952
 GameObject:
   m_ObjectHideFlags: 0
