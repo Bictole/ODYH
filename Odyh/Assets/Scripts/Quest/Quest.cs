@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 [System.Serializable]
 public class Quest 
@@ -35,10 +37,27 @@ public class Quest
     {
         get { return collectarray; }
     }
-    
+
+
+    public bool QuestIsFinished
+    {
+        get
+        {
+            foreach (var obj in collectarray)
+            {
+                if (!obj.Finished)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
     
     
     public QuestScr Qscript { get; set; }
+    
     
     
     
@@ -61,6 +80,8 @@ public class Quest
 [System.Serializable]
 public abstract class Objective
 {
+    
+    
     //Nombre d'objets possédés
     private int objnumber;
 
@@ -69,6 +90,8 @@ public abstract class Objective
         get { return objnumber; }
         set { objnumber = value; }
     }
+    
+    
     
     //Nombre d'objets requis pour la quete
     [SerializeField]
@@ -80,6 +103,7 @@ public abstract class Objective
     }
     
     
+    
     //type de l'objet requis 
     [SerializeField]    
     private string objet;
@@ -88,10 +112,27 @@ public abstract class Objective
     {
         get { return objet; }
     }
+
+
+    public bool Finished
+    {
+        get
+        {
+            return Objnumber >= Totalnumber;
+        }
+    }
 }
 
 [System.Serializable]
 public class Collect : Objective
 {
-    
+    /*public void ItemCount(Item item)
+    {
+        if (Objet.ToLower() == item.title.ToLower())
+        {
+            Objnumber = InventoryScr.Myinstance.GetItemCount
+            Questlog.Log.UpdateProgress();
+            Questlog.Log.Check_Finished()
+        }
+    }*/
 }

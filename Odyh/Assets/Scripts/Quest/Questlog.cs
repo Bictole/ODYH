@@ -65,22 +65,39 @@ public class Questlog : MonoBehaviour
 
     public void Description(Quest quest)
     {
-        if (in_progress != null)        //on deselectionne la quete s'il y en a une autre en cours
+        if (quest != null)
         {
-            in_progress.Qscript.Deselect();
+            if (in_progress != null && in_progress != quest)        //on deselectionne la quete s'il y en a une autre en cours mais pas si la quete est celle en cours
+            {
+                in_progress.Qscript.Deselect();
+            }
+
+            string goal = "\nProgress\n";
+
+            foreach (var obj in quest.Collectarray)    //on affiche correctement les objectifs
+            {
+                goal += obj.Objet + " : " + obj.Objnumber + " / " + obj.Totalnumber + "\n";
+            }
+
+            in_progress = quest;
+
+            string title = quest.Title;
+
+            description.text = string.Format("{0} : \n{1} \n{2}", title, quest.Description, goal);    //on set le format final
         }
+    }
 
-        string goal = "\nProgress\n";
+    public void UpdateProgress()
+    {
+        Description(in_progress);
+    }
 
-        foreach (var obj in quest.Collectarray)    //on affiche correctement les objectifs
+
+    public void Check_Finished()
+    {
+        foreach (QuestScr scripts in qarea)
         {
-            goal += obj.Objet + " : " + obj.Objnumber + " / " + obj.Totalnumber + "\n";
+            scripts.Finished();
         }
-
-        in_progress = quest;
-
-        string title = quest.Title;
-
-        description.text = string.Format("{0} : \n{1} \n{2}", title, quest.Description, goal);    //on set le format final
     }
 }

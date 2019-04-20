@@ -7,6 +7,8 @@ public class QuestScr : MonoBehaviour
 {
     
     public Quest _quest { get; set;  }
+
+    private bool Text_Finished = false;
     
     
     // Start is called before the first frame update
@@ -31,5 +33,23 @@ public class QuestScr : MonoBehaviour
     {
         GetComponent<Text>().color = Color.white;
     }
-        
+
+
+    public void Finished()
+    {
+        if (_quest.QuestIsFinished && !Text_Finished)
+        {
+            Text_Finished = true;
+            GetComponent<Text>().text += "(Done)";
+        }
+        else if (!_quest.QuestIsFinished)
+        {
+            Text_Finished = false;
+            GetComponent<Text>().text = _quest.Title;
+        }
+    }
+    
+    
+    
+    
 }
