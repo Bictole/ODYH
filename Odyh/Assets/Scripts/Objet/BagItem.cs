@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Bag", menuName = "Items/Bag", order = 1)]
-public class BagItem : Item, Clickable
+public class BagItem : Item, Utilisable
 {
-    //nb de slots de notr bag
+    //nb de slots de notre bag
     private int slotnumber;
 
     //getter
@@ -14,7 +14,6 @@ public class BagItem : Item, Clickable
         get { return slotnumber; }
     }
 
-    
     [SerializeField] 
     private GameObject bagprefab;
     
@@ -27,10 +26,12 @@ public class BagItem : Item, Clickable
         this.slotnumber = nbslots;
     }
 
+    //fonction d'utilisation
     public void Use()
     {
         if (Inventory.InventoryScr.AddBag)
         {
+            Delete_the_Item();
             BagScr = Instantiate(bagprefab, Inventory.InventoryScr.transform).GetComponent<Bag>();
             BagScr.Initslots(slotnumber);
         

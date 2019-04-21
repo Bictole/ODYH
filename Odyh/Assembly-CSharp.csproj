@@ -80,8 +80,9 @@
     <Compile Include="Assets\Scripts\Monstre\HurtPlayer.cs" />
     <Compile Include="Assets\Scripts\Monstre\MonsterController.cs" />
     <Compile Include="Assets\Scripts\Objet\BagItem.cs" />
-    <Compile Include="Assets\Scripts\Objet\Clickable.cs" />
+    <Compile Include="Assets\Scripts\Objet\HealthPotionItem.cs" />
     <Compile Include="Assets\Scripts\Objet\Item.cs" />
+    <Compile Include="Assets\Scripts\Objet\Utilisable.cs" />
     <Compile Include="Assets\Scripts\Perso\Character.cs" />
     <Compile Include="Assets\Scripts\Perso\HurtEnemy.cs" />
     <Compile Include="Assets\Scripts\Perso\Player.cs" />

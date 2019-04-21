@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13512835c8b9a442857c81f4d21633f, type: 3}
   m_Name: Bag
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300202, guid: a2fb9c3bd854dc143bf5029987375d88, type: 3}
+  sprite: {fileID: 21300192, guid: 92cb3dbe683019c47ba2e146cdaf27fd, type: 3}
   stacksize: 0
   bagprefab: {fileID: 9102638306588210210, guid: becdd6281e739204e96a902549db5519,
     type: 3}

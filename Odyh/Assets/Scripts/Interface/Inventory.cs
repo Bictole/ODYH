@@ -40,7 +40,7 @@ public class Inventory : MonoBehaviour
         get { return bags.Count < 5; }
     }
 
-    private void Awake()
+   /* private void Awake()
     {
         BagItem bag = (BagItem)Instantiate(items[0]);
         bag.Init(20);
@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
         BagItem b = (BagItem)Instantiate(items[0]);
         bag.Init(20);
         bag.Use();    
-    }
+    }*/
 
 
     //init le premier bag null dans la liste
@@ -64,19 +64,9 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-
-
-    public void Updat()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            BagItem bag = (BagItem)Instantiate(items[0]);
-            bag.Init(20);
-            bag.Use();
-        }
-    }
-
-    //fonction d'ouverture/fermeture des sacs
+    
+    
+    //fonction d'ouverture/fermeture des sacs en groupe
     public void OpenOrClose()
     {
         bool bag_is_close = bags.Find(x => !x.BagScr.Open); //on check si un ou plusieurs sac(s) est/sont fermé(s)
@@ -89,6 +79,18 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    //on check le premier sac avec un emplacement pour mettre l'item
+    public void AddInventoryItem(Item item)
+    {
+        foreach (var sac in bags)
+        {
+            if (sac.BagScr.AddBagItem(item))
+            {
+                return;
+            }
+        }
+    }
     
     
     // Start is called before the first frame update
@@ -97,9 +99,30 @@ public class Inventory : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // POur les test
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            BagItem bag = (BagItem)Instantiate(items[0]);
+            bag.Init(20);
+            bag.Use();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            BagItem bag = (BagItem)Instantiate(items[0]);
+            bag.Init(20);
+            AddInventoryItem(bag);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            HealthPotionItem pot = (HealthPotionItem)Instantiate(items[1]);
+            
+            AddInventoryItem(pot);
+        }
+        
         if (Input.GetKeyDown(KeyCode.C))
         {
             Inventory.InventoryScr.OpenOrClose();

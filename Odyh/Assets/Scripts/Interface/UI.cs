@@ -21,6 +21,20 @@ public class UI : MonoBehaviour
     private PlayerStats _playerStats;
 
     public Text Textlevel;
+
+    //UI script et son gettter 
+    private static UI ui;
+    public static UI UserInterface
+    {
+        get
+        {
+            if (ui == null)
+            {
+                ui = FindObjectOfType<UI>();
+            }
+            return ui;    
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -49,5 +63,28 @@ public class UI : MonoBehaviour
         xpbar.value = _playerStats.playerexp;
         hp.text = "HP : " + playerH.playerHealth + "/" + playerH.playerMaxHealth;
         Textlevel.text = "Lvl : " + _playerStats.playerLevel;
+    }
+
+    //fonction updatant l'interface des slots (ici implémenté avec l'interface cliquable)
+    public void StackSlotManage(Cliquable cliquable)
+    {
+        //si on a plus d'un item empilé on instancie le texte associé au nombre d'item sinon on enleve le texte (en mettant sa couleur a 0)
+        if (cliquable.Itemscount > 1)
+        {
+            cliquable.StackText.text = cliquable.Itemscount.ToString();
+            cliquable.StackText.color = Color.white;
+            cliquable.Image.color = Color.white;
+        }
+        else
+        {
+            cliquable.StackText.color = new Color(0, 0, 0, 0);
+        }
+        
+        
+        if (cliquable.Itemscount == 0)    //enleve l'icone si il n'y a plus d'objet
+        {
+            cliquable.Image.color = new Color(0, 0, 0, 0);
+            cliquable.StackText.color = new Color(0, 0, 0, 0);
+        }
     }
 }

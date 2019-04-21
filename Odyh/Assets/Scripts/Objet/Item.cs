@@ -31,9 +31,19 @@ public class Item : ScriptableObject  // = scripter un objet sans lui attacher d
     //ref au script du slot
     private Slot slot;
 
-    protected Slot Slot
+    public Slot Slot
     {
         get => slot;
         set => slot = value;
     }
+
+    //fontion de supreesion d'un item
+    public void Delete_the_Item()
+    {
+        if (Slot != null)
+        {
+            Slot.Delete_Item(this);
+        }
+    }
+    
 }

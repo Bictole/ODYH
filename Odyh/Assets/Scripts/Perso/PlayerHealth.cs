@@ -16,6 +16,21 @@ public class PlayerHealth : MonoBehaviour
 
     private SFXManager sfx;  //reference au manager d'effets sonores
 
+    
+    private static PlayerHealth ph;
+
+    public static PlayerHealth TheHealth
+    {
+        get
+        {
+            if (ph == null)
+            {
+                ph = FindObjectOfType<PlayerHealth>();
+            }
+            return ph; 
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // si la vie est <0 alors lancement de la séquence de réapparition et désactivation de l'objet
+        // si la vie est <0 alors lancement de la séquence de réapparition et désactivation de l'objet + effets sonores
         if (playerHealth <= 0)
         {
             sfx.player_is_dead.Play();
@@ -38,7 +53,11 @@ public class PlayerHealth : MonoBehaviour
             gameObject.SetActive(false);
             SetMaxHealth();
         }
-        
+
+        if (playerHealth > playerMaxHealth)
+        {
+            playerHealth = playerMaxHealth;
+        }
     }
 
     public void HurtPlayer(int damage)

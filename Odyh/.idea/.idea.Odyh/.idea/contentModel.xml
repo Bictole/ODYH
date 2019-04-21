@@ -40,8 +40,9 @@
           </e>
           <e p="Objet" t="Include">
             <e p="BagItem.cs" t="Include" />
-            <e p="Clickable.cs" t="Include" />
+            <e p="HealthPotionItem.cs" t="Include" />
             <e p="Item.cs" t="Include" />
+            <e p="Utilisable.cs" t="Include" />
           </e>
           <e p="Perso" t="Include">
             <e p="Character.cs" t="Include" />
