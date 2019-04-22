@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : Character
 {
     private SFXManager sfx;
-
 
     // Start is called before the first frame update
     protected override void Start()
@@ -69,6 +69,5 @@ public class Player : Character
         
         StopAttack();
     }
-
-
+    
 }

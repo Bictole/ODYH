@@ -57,12 +57,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Audio\Audio.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicSwitcher.cs" />
     <Compile Include="Assets\Scripts\Audio\SFXManager.cs" />
     <Compile Include="Assets\Scripts\Audio\VolumeController.cs" />
     <Compile Include="Assets\Scripts\Audio\VolumeManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Chest.cs" />
     <Compile Include="Assets\Scripts\DestroyOvertime.cs" />
     <Compile Include="Assets\Scripts\En cours\Block.cs" />
     <Compile Include="Assets\Scripts\En cours\Range.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="Assets\Scripts\Objet\BagItem.cs" />
     <Compile Include="Assets\Scripts\Objet\HealthPotionItem.cs" />
     <Compile Include="Assets\Scripts\Objet\Item.cs" />
+    <Compile Include="Assets\Scripts\Objet\MoveManager.cs" />
     <Compile Include="Assets\Scripts\Objet\Utilisable.cs" />
     <Compile Include="Assets\Scripts\Perso\Character.cs" />
     <Compile Include="Assets\Scripts\Perso\HurtEnemy.cs" />

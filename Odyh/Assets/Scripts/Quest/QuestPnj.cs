@@ -12,8 +12,8 @@ public class QuestPnj : MonoBehaviour
 
     private void Awake()
     {
-        log.Take_a_quest(quest[0]);
-        log.Take_a_quest(quest[1]);
+       // log.Take_a_quest(quest[0]);
+       // log.Take_a_quest(quest[1]);
     }
     
     // Start is called before the first frame update

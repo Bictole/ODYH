@@ -65,26 +65,5 @@ public class UI : MonoBehaviour
         Textlevel.text = "Lvl : " + _playerStats.playerLevel;
     }
 
-    //fonction updatant l'interface des slots (ici implémenté avec l'interface cliquable)
-    public void StackSlotManage(Cliquable cliquable)
-    {
-        //si on a plus d'un item empilé on instancie le texte associé au nombre d'item sinon on enleve le texte (en mettant sa couleur a 0)
-        if (cliquable.Itemscount > 1)
-        {
-            cliquable.StackText.text = cliquable.Itemscount.ToString();
-            cliquable.StackText.color = Color.white;
-            cliquable.Image.color = Color.white;
-        }
-        else
-        {
-            cliquable.StackText.color = new Color(0, 0, 0, 0);
-        }
-        
-        
-        if (cliquable.Itemscount == 0)    //enleve l'icone si il n'y a plus d'objet
-        {
-            cliquable.Image.color = new Color(0, 0, 0, 0);
-            cliquable.StackText.color = new Color(0, 0, 0, 0);
-        }
-    }
+    
 }

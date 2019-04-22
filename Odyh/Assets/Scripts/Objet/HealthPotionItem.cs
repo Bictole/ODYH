@@ -9,6 +9,9 @@ public class HealthPotionItem : Item, Utilisable
     [SerializeField] 
     private int healthgain;
     
+    
+    public Sprite Sprite { get; }
+
     //fontion d'utilisation
     public void Use()
     {

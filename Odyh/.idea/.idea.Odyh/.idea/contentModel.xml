@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Audio" t="Include">
+            <e p="Audio.cs" t="Include" />
             <e p="MusicManager.cs" t="Include" />
             <e p="MusicSwitcher.cs" t="Include" />
             <e p="SFXManager.cs" t="Include" />
@@ -16,6 +17,7 @@
             <e p="VolumeManager.cs" t="Include" />
           </e>
           <e p="CameraController.cs" t="Include" />
+          <e p="Chest.cs" t="Include" />
           <e p="DestroyOvertime.cs" t="Include" />
           <e p="En cours" t="Include">
             <e p="Block.cs" t="Include" />
@@ -42,6 +44,7 @@
             <e p="BagItem.cs" t="Include" />
             <e p="HealthPotionItem.cs" t="Include" />
             <e p="Item.cs" t="Include" />
+            <e p="MoveManager.cs" t="Include" />
             <e p="Utilisable.cs" t="Include" />
           </e>
           <e p="Perso" t="Include">
