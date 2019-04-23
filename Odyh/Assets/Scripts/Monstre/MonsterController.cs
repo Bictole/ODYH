@@ -47,8 +47,18 @@ public class MonsterController : MonoBehaviour
 
     //To know if the enemy is push or not and how many time
     public bool Ispush;
-    private float timepush;
+    [SerializeField]
+    private float timepush = 0.2f;
 
+    [SerializeField]
+    private float aggrodistance;
+
+    public bool Isaggro;
+    [SerializeField]
+    private float timewithouttakingdmg;
+    public float timewithouttakingdmgCounter;
+    
+    
     
     public CanvasGroup healthGroup;
     
@@ -72,15 +82,39 @@ public class MonsterController : MonoBehaviour
     {
         if (Ispush)
         {
-            Ispush = false;
-            timepush = 0.2f;
+            if (timepush > 0)
+                timepush -= Time.deltaTime;
+            else
+                Ispush = false;
         }
 
-        if (timepush > 0)
-            timepush -= Time.deltaTime;
-        if (timepush <= 0 && !Ispush)
+        else if (Isaggro)
         {
-            if (InlineofSight() && Vector2.Distance(transform.position,player.transform.position) < 5)
+            healthGroup.alpha = 1;
+            
+            Vector3 playerdirection = (player.transform.position - transform.position).normalized;
+            
+            moveDirection = new Vector3(playerdirection.x * moveSpeed, playerdirection.y * moveSpeed, 0f);
+            
+            myAnimator.SetFloat("x",  moveDirection.x);
+            myAnimator.SetFloat("y",  moveDirection.y);
+            
+            myRigidbody2D.velocity = moveDirection;
+            
+            Block();
+
+            timewithouttakingdmgCounter -= Time.deltaTime;
+            if (timewithouttakingdmgCounter < 0)
+            {
+                Isaggro = false;
+            }
+        }
+
+        
+        
+        else if (timepush <= 0 && !Ispush)
+        {
+            if (InlineofSight() && Vector2.Distance(transform.position,player.transform.position) < aggrodistance)
             {
                 healthGroup.alpha = 1;
                 
@@ -136,6 +170,11 @@ public class MonsterController : MonoBehaviour
             }
             
         }
+    }
+
+    public void Settimer()
+    {
+        timewithouttakingdmgCounter = timewithouttakingdmg;
     }
 
     private bool InlineofSight()

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\simon\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\simon\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Odyh.1016218935.00" t="ExcludeRecursive" />
-    <e p="C:\Users\simon\Desktop\Odyh\Odyh" t="IncludeRecursive">
+    <e p="C:\Users\fye-1\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\fye-1\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Odyh.1496296513.00" t="ExcludeRecursive" />
+    <e p="C:\Users\fye-1\Projet\Odyh_1\Odyh" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Audio" t="Include">
-            <e p="Audio.cs" t="Include" />
             <e p="MusicManager.cs" t="Include" />
             <e p="MusicSwitcher.cs" t="Include" />
             <e p="SFXManager.cs" t="Include" />
@@ -17,10 +16,8 @@
             <e p="VolumeManager.cs" t="Include" />
           </e>
           <e p="CameraController.cs" t="Include" />
-          <e p="Chest.cs" t="Include" />
           <e p="DestroyOvertime.cs" t="Include" />
           <e p="En cours" t="Include">
-            <e p="Block.cs" t="Include" />
             <e p="Range.cs" t="Include" />
             <e p="Spell.cs" t="Include" />
           </e>
@@ -36,6 +33,7 @@
           </e>
           <e p="MoneyManager.cs" t="Include" />
           <e p="Monstre" t="Include">
+            <e p="Block.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
             <e p="HurtPlayer.cs" t="Include" />
             <e p="MonsterController.cs" t="Include" />
@@ -44,7 +42,6 @@
             <e p="BagItem.cs" t="Include" />
             <e p="HealthPotionItem.cs" t="Include" />
             <e p="Item.cs" t="Include" />
-            <e p="MoveManager.cs" t="Include" />
             <e p="Utilisable.cs" t="Include" />
           </e>
           <e p="Perso" t="Include">

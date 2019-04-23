@@ -2,30 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Range : MonoBehaviour
 {
 
-    public float offset;
+    public float speed;
 
-    public GameObject projectile;
+    public Rigidbody2D MyRigidbody2D;
 
-    public Transform shotpoint;
+    public bool Isattacking;
+
+    [SerializeField]
+    private float lifetime;
+
+    private bool canmove = true;
+
+    [SerializeField]
+    protected GameObject startposition;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f,0f,rotZ + offset);
-
-        if (Input.GetMouseButtonDown(0))
+        lifetime -= Time.deltaTime;
+        if (lifetime <= 0)
         {
-            Instantiate(projectile, shotpoint.position, transform.rotation);
+            Destroy(gameObject);
+        }
+    }
+
+    public void Setup(Vector2 velocity)
+    {
+        if (canmove)
+        {
+            MyRigidbody2D.velocity = velocity.normalized * speed;
+        
+            float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+        
+            transform.rotation = Quaternion.AngleAxis(angle,Vector3.forward);
+        }
+        
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Environnement"))
+        {
+            gameObject.GetComponent<Collider2D>().isTrigger = false;
+            MyRigidbody2D.velocity = Vector2.zero;
+            canmove = false;
         }
     }
 }

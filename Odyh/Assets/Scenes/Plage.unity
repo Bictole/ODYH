@@ -342,6 +342,25 @@ PrefabInstance:
       propertyPath: player_damage
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1730218907, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
+      propertyPath: startpoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769933560159843009, guid: acbbfd1582686834a9c86772b939baa0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769933560159843009, guid: acbbfd1582686834a9c86772b939baa0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769933560159843009, guid: acbbfd1582686834a9c86772b939baa0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.253
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1985164954, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
@@ -1319,6 +1338,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plage32
       objectReference: {fileID: 0}
+    - target: {fileID: 446218769854680747, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
     - target: {fileID: 2882027757969375580, guid: e113d3b228333414288842f802c68a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1508,6 +1532,506 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 861488738203342599, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848862048953590084, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 987738099422652194, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1801946608300792866, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584894437937399784, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298113695258088428, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145907110697432820, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3647111705667853742, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 620906149225242438, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760437841858240668, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 106747221221908889, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081675838243164500, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463454070187687165, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 310084913247038577, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382417798971787073, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972027079913407236, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675920386173395540, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 493426754753445388, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 783333216444019326, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 470899518591499575, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821775985016653996, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407985641978597809, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104417483398198892, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718286835268778395, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 206070451492436489, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438896337515789610, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 461790559252762129, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966242880555788912, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 609827700659676546, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194366820803075279, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217624390858716678, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014839870893504248, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659952671794120439, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158452623221301513, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868302205851836052, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8561896848795128700, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759750297191109269, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520055702425630699, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545004146779358133, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3665520209135157845, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769279879044872822, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306468854435335809, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014496489774206978, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458198359043597531, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 655825713272156030, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280278219154895871, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668224581739295266, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293914452405536953, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471899471034949300, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030630235793394462, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456102959057420095, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965434506733314634, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095343111583254930, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264412984890255681, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3452195934522573427, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316081514658494996, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7282216651851120569, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 52604188588878934, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065425935252888917, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042260448588404569, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588180015787300929, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016907410892127600, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677940183815087900, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3452838104713447769, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604616891387426730, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585138101721932540, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391092920250524, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909680530254623911, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8274282434724028705, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490171743661174472, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019371313261506677, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266828385539198078, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855058164903749495, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702296958255131864, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601335602435488315, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111770996822540471, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463743781548079466, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300941130398107704, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438308643592243080, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337113026303234318, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650316981162509341, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735977827717759477, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982747416341931127, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296212796346657084, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159090914983628951, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891991020417507568, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600030104539953688, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084749419905630452, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278250153043275255, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541080045000476956, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007417974530714067, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211279885236150118, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709887756016607761, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980853083042639354, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 879090662969939648, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236842786530649540, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535508321244967659, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030650024862132238, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278232293505474435, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127931130061283881, guid: e113d3b228333414288842f802c68a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environnement
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e113d3b228333414288842f802c68a23, type: 3}
@@ -1960,17 +2484,17 @@ PrefabInstance:
     - target: {fileID: 2275258177004062164, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4025041828622205316, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4025041828622205316, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4025041828622205316, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
@@ -1980,17 +2504,17 @@ PrefabInstance:
     - target: {fileID: 6931527080552675210, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6636822524572383873, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6636822524572383873, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6636822524572383873, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
@@ -2000,17 +2524,17 @@ PrefabInstance:
     - target: {fileID: 4806584727557497716, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6886555908259983705, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6886555908259983705, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7414326400543429017, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
@@ -2160,6 +2684,21 @@ PrefabInstance:
     - target: {fileID: 1726898217890306248, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039844132393383584, guid: 46608f683ed18ca49adbf545fbca7deb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773534486664634596, guid: 46608f683ed18ca49adbf545fbca7deb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126018984094348378, guid: 46608f683ed18ca49adbf545fbca7deb,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

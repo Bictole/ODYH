@@ -61,7 +61,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 342463301420794582}
-  - component: {fileID: 7361290260800023273}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -86,19 +85,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7361290260800023273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342463301420794583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4201188afb1e6984db552315a7df5de9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 342463301420794583}
 --- !u!1 &1118815368281079813
 GameObject:
   m_ObjectHideFlags: 0

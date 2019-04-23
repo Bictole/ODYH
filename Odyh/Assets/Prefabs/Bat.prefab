@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1793028914}
   - component: {fileID: 1793028913}
   - component: {fileID: 1793028912}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -172,11 +172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1028db59fe84ea448a7f4ddaca7defa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitToRespawn: 5
   monsterMaxHealth: 50
   monsterHealth: 50
   experience: 50
-  reloading: 0
   healthbar: {fileID: 1711939726736049956}
 --- !u!114 &1793028912
 MonoBehaviour:
@@ -204,6 +202,9 @@ MonoBehaviour:
   - first: {fileID: 9053305381123333783}
     second: {fileID: 2607730949956375085}
   Ispush: 0
+  aggrodistance: 5
+  Isaggro: 0
+  timewithouttakingdmg: 3
   healthGroup: {fileID: 0}
 --- !u!1 &1575020898859244035
 GameObject:

@@ -8,10 +8,10 @@ public class HealthPotionItem : Item, Utilisable
     //nbre d'hp rendu par la potion
     [SerializeField] 
     private int healthgain;
-    
-    
-    public Sprite Sprite { get; }
 
+    [SerializeField] 
+    private GameObject healnb;
+    
     //fontion d'utilisation
     public void Use()
     {

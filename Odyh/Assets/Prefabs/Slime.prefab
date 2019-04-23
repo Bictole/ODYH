@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 1018952752678602367}
   - component: {fileID: 1018952752678602365}
   - component: {fileID: 1018952752678602366}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -555,11 +555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1028db59fe84ea448a7f4ddaca7defa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitToRespawn: 5
   monsterMaxHealth: 50
   monsterHealth: 50
   experience: 50
-  reloading: 0
   healthbar: {fileID: 119078661}
 --- !u!114 &1018952752678602366
 MonoBehaviour:
@@ -587,6 +585,9 @@ MonoBehaviour:
   - first: {fileID: 8755269667713519026}
     second: {fileID: 2311401437807837448}
   Ispush: 0
+  aggrodistance: 5
+  Isaggro: 0
+  timewithouttakingdmg: 3
   healthGroup: {fileID: 1423639376}
 --- !u!1001 &246444401
 PrefabInstance:

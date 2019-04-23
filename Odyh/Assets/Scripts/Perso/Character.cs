@@ -20,7 +20,9 @@ public abstract class Character : MonoBehaviour
 
     // To know if the character is attacking
     public bool IsAttacking;
+    public bool IsAttackingrange;
 
+    
     // To know if the player exists
     private static bool playerExists;
 
@@ -106,6 +108,17 @@ public abstract class Character : MonoBehaviour
 
             ActivateLayer("Attack Layer");
         }
+
+        else if (IsAttackingrange)
+        {
+           if (IsMoving)
+            {
+                direction.x = 0;
+                direction.y = 0;
+           }
+
+              ActivateLayer("Bow Layer");
+        }
         //Checks if we are moving or standing still, if we are moving then we need to play the movement
         else if (IsMoving)
         {
@@ -139,5 +152,11 @@ public abstract class Character : MonoBehaviour
     {
         IsAttacking = false;
         myAnimator.SetBool("attack",IsAttacking);
+    }
+    
+    public void StopAttackrange()
+    {
+        IsAttackingrange = false;
+        myAnimator.SetBool("attackrange",IsAttackingrange);
     }
 }

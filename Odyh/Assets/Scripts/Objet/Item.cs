@@ -4,17 +4,16 @@ using UnityEngine;
 
 
 //class Mère item
-public class Item : ScriptableObject, Bougeable  // = scripter un objet sans lui attacher de script dans unity
+public class Item : ScriptableObject  // = scripter un objet sans lui attacher de script dans unity
 {
     //sprite attaché
     [SerializeField]
     private Sprite sprite;
 
     //getter
-    public Sprite TheSprite
+    public Sprite Sprite
     {
         get { return sprite; }
-        set { sprite = value; }
     }
     
     
@@ -46,6 +45,5 @@ public class Item : ScriptableObject, Bougeable  // = scripter un objet sans lui
             Slot.Delete_Item(this);
         }
     }
-
-   
+    
 }

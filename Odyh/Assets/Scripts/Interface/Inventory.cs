@@ -25,25 +25,8 @@ public class Inventory : MonoBehaviour
     //liste des boutons d'emplacement des sacs
     [SerializeField]
     private BagButton[] bagbuttons;
-
-
-    //ref et getter du script du slot
-    private Slot slotscr;
-
-    public Slot TheSlot
-    {
-        get { return slotscr; }
-        set
-        {
-            slotscr = value;
-            if (value != null)
-            {
-                slotscr.Image.color = Color.grey;
-            }
-        }
-    }
     
-    
+
     //liste d'item
     [SerializeField]
     private Item[] items;
@@ -116,7 +99,7 @@ public class Inventory : MonoBehaviour
         
     }
 
-    // Ceci est uniquement réservé au test
+    // POur les test
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))

@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Dialogue Box
-  - Interactionnable
+  - Player Projectile
+  - Environnement
+  - Arc
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Block
+  - Player Projectile
+  - Enemy
   - 
   - 
   - 

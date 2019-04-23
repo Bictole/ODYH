@@ -3,18 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using TMPro;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.Experimental.UIElements;
 
 public class Player : Character
 {
     private SFXManager sfx;
+
+    public GameObject projectile;
+
+    [SerializeField]
+    private GameObject startpoint;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
 
+        startpoint = GameObject.Find("Startpoint");
         sfx = FindObjectOfType<SFXManager>();
     }
 
@@ -53,6 +61,29 @@ public class Player : Character
             // Allow to put a delay in the method
             StartCoroutine(Attack());
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (!IsAttackingrange)
+            {
+                Vector3 way = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                
+                GameObject Arc = GameObject.FindGameObjectWithTag("Arc");
+
+                
+                Range projectile = Instantiate(this.projectile, transform.position, transform.rotation)
+                    .GetComponent<Range>();
+            
+                myAnimator.SetFloat("x", way.x);
+                myAnimator.SetFloat("y", way.y);
+                
+                projectile.Setup(way);
+            
+                projectile.Isattacking = true;
+
+                StartCoroutine(Attackrange());
+            }
+        }
     }
 
     
@@ -70,4 +101,19 @@ public class Player : Character
         StopAttack();
     }
     
+    private IEnumerator Attackrange()
+    {
+        sfx.player_is_attacking.Play();
+        IsAttackingrange= true;
+        myAnimator.SetBool("attackrange", IsAttackingrange);
+
+        // delay between each attack
+        yield return new WaitForSeconds(0.3f);
+
+        
+        
+        StopAttackrange();
+    }
+
+
 }
