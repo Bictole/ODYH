@@ -28,9 +28,6 @@ public interface Bougeable
     Sprite TheSprite { get; set; }
 }
 
-
-
-
 public interface Interactionnable
 {
     void Interagir();

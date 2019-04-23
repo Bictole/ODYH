@@ -14,7 +14,7 @@ public class Bag : MonoBehaviour
 
     
     //list de script Slot qui aide a ajouter un item
-    private List<Slot> slotscrList  = new List<Slot>();
+    public List<Slot> slotscrList  = new List<Slot>();
     
     
     //bool pour savoir si notre sac est ouvert ou non
@@ -57,6 +57,16 @@ public class Bag : MonoBehaviour
     {
         foreach (var scr in slotscrList)
         {
+            if (scr.TheItem != null)
+            {
+                
+                if (scr.TheItem.TheSprite == item.TheSprite && !scr.Full)
+                {
+                    scr.AddItem(item);
+                    return true;
+                }
+            }
+            
             if (scr.Empty)
             {
                 scr.AddItem(item);

@@ -14,7 +14,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
     private Image itemsprite;
 
     //stack servant a empiler/dépiler plusieurs objets identiques 
-    private Stack<Item> itemStack = new Stack<Item>();
+    public Stack<Item> itemStack = new Stack<Item>();
 
     //text fils de slot du nombre d'objets empilés
     [SerializeField]

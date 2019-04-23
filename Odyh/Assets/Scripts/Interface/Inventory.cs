@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
     private Item[] items;
     
     //liste de sacs pour vérifier ensuite qu'on ne dépasse pas le nombre max
-    private List<BagItem> bags = new List<BagItem>();
+    public List<BagItem> bags = new List<BagItem>();
     
     //bool pour savoir si l'on peux ajouter un sac selon le nombre max, ici 5
     public bool AddBag
@@ -138,6 +138,13 @@ public class Inventory : MonoBehaviour
             HealthPotionItem pot = (HealthPotionItem)Instantiate(items[1]);
             
             AddInventoryItem(pot);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Flèche flèche = (Flèche) Instantiate(items[2]);
+            
+            AddInventoryItem(flèche);
         }
         
         if (Input.GetKeyDown(KeyCode.C))

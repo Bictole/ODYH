@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    
-    
-    
+
+
+    [SerializeField]
+    private GameObject[] itemsdrop;
     
     //Vie max du monstre 
     public int monsterMaxHealth;
@@ -39,7 +40,12 @@ public class EnemyHealth : MonoBehaviour
         if (monsterHealth <= 0)
         {
             _playerStats.GainExp(experience);
-            
+
+            int rnd = Random.Range(0, itemsdrop.Length + 1);
+            if (rnd < itemsdrop.Length)
+            {
+                Instantiate(itemsdrop[rnd], transform.position, transform.rotation);
+            }
             RandomSpawn.nb_enemy -= 1;
             RandomSpawn.reloading = true;
             Destroy(gameObject);
@@ -55,4 +61,7 @@ public class EnemyHealth : MonoBehaviour
     {
         monsterHealth = monsterMaxHealth;
     }
+    
+    
+    
 }

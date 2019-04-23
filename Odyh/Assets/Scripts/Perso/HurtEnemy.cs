@@ -78,6 +78,9 @@ public class HurtEnemy : MonoBehaviour
                     Instantiate(damageBurst, Hitpoint.position, Hitpoint.rotation);
                     var clone = Instantiate(damageNumber, Hitpoint.position, Quaternion.Euler(Vector3.zero));
                     clone.GetComponent<FloatingNumbers>().damageNumber = damage;
+                    
+                    other.GetComponent<MonsterController>().Isaggro = true;
+                    other.GetComponent<MonsterController>().Settimewithouttakingdmg();
                 }
             }
         }

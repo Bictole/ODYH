@@ -251,19 +251,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1730218907, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
+      propertyPath: startpoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730218907, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1617216349349791725, guid: 759e1dc122021874b930450f4b5348e6,
+        type: 3}
     - target: {fileID: 1730218913, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
       propertyPath: Xpburst
       value: 
       objectReference: {fileID: 5136331486231036524, guid: 56be9cb7cfad8c740b31d737b09787ae,
         type: 3}
-    - target: {fileID: 788227002, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
-      propertyPath: player_damage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1730218907, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
-      propertyPath: startpoint
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3769933560159843009, guid: acbbfd1582686834a9c86772b939baa0,
         type: 3}
       propertyPath: m_RootOrder
@@ -278,6 +279,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.253
+      objectReference: {fileID: 0}
+    - target: {fileID: 788227002, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
+      propertyPath: player_damage
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1985164954, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
@@ -1728,6 +1733,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807315352172623113, guid: 46608f683ed18ca49adbf545fbca7deb,
+        type: 3}
+      propertyPath: items.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807315352172623113, guid: 46608f683ed18ca49adbf545fbca7deb,
+        type: 3}
+      propertyPath: bags.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807315352172623113, guid: 46608f683ed18ca49adbf545fbca7deb,
+        type: 3}
+      propertyPath: items.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: c504750295237994494d3155f17fc7b7,
+        type: 2}
+    - target: {fileID: 7807315352172623113, guid: 46608f683ed18ca49adbf545fbca7deb,
+        type: 3}
+      propertyPath: bags.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5039844132393383584, guid: 46608f683ed18ca49adbf545fbca7deb,
         type: 3}

@@ -555,6 +555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1028db59fe84ea448a7f4ddaca7defa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemsdrop:
+  - {fileID: 8765383638510538655, guid: cb748c4b7ddf5df4d9e733b2172d1ffb, type: 3}
+  - {fileID: 8019035297955409251, guid: 042b28da1dd6a7d4ea28ad723adcc3c7, type: 3}
   monsterMaxHealth: 50
   monsterHealth: 50
   experience: 50
@@ -588,6 +591,7 @@ MonoBehaviour:
   aggrodistance: 5
   Isaggro: 0
   timewithouttakingdmg: 3
+  timewithouttakingdmgCounter: 0
   healthGroup: {fileID: 1423639376}
 --- !u!1001 &246444401
 PrefabInstance:

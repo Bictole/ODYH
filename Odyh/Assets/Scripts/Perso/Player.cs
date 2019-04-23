@@ -17,6 +17,9 @@ public class Player : Character
     [SerializeField]
     private GameObject startpoint;
 
+    [SerializeField]
+    private Inventory inventory;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -24,6 +27,8 @@ public class Player : Character
 
         startpoint = GameObject.Find("Startpoint");
         sfx = FindObjectOfType<SFXManager>();
+
+        inventory = FindObjectOfType<Inventory>();
     }
 
     // Update is called once per frame
@@ -66,19 +71,25 @@ public class Player : Character
         {
             if (!IsAttackingrange)
             {
-                Vector3 way = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
                 
-                Range projectile = Instantiate(this.projectile, transform.position, transform.rotation)
-                    .GetComponent<Range>();
-            
-                myAnimator.SetFloat("x", way.x);
-                myAnimator.SetFloat("y", way.y);
-                
-                projectile.Setup(way);
-            
-                projectile.Isattacking = true;
 
-                StartCoroutine(Attackrange());
+                if (Arrowavailable())
+                {
+                    Vector3 way = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                
+                    Range projectile = Instantiate(this.projectile, transform.position, transform.rotation)
+                        .GetComponent<Range>();
+            
+                    myAnimator.SetFloat("x", way.x);
+                    myAnimator.SetFloat("y", way.y);
+                
+                    projectile.Setup(way);
+            
+                    projectile.Isattacking = true;
+
+                    StartCoroutine(Attackrange());
+                }
+                
             }
         }
     }
@@ -106,6 +117,24 @@ public class Player : Character
         yield return new WaitForSeconds(0.6f);
         
         StopAttackrange();
+    }
+
+    private bool Arrowavailable()
+    {
+        foreach (var bag in inventory.bags)
+        {
+            foreach (var slot in bag.BagScr.slotscrList)
+            {
+                if (slot.TheItem is Flèche)
+                {
+                    slot.Delete_Item(slot.TheItem);
+                    return true;
+                }
+                    
+            }
+        }
+
+        return false;
     }
 
 
