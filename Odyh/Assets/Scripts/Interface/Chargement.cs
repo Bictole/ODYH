@@ -20,7 +20,8 @@ public class Chargement : MonoBehaviour
         if (timeToLoad <= 0)
         {
             // Load the next Scene in the build order
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Time.timeScale = 1f;
         }
         
     }

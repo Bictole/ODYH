@@ -9,9 +9,10 @@ public class HealthPotionItem : Item, Utilisable
     [SerializeField] 
     private int healthgain;
 
-    [SerializeField] 
-    private GameObject healnb;
+    public GameObject healnb;
     
+    public Sprite Sprite { get; }
+
     //fontion d'utilisation
     public void Use()
     {
@@ -20,6 +21,9 @@ public class HealthPotionItem : Item, Utilisable
             Delete_the_Item();
 
             PlayerHealth.TheHealth.playerHealth += healthgain;
+            
+            var clone = Instantiate(healnb, PlayerHealth.TheHealth.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<FloatingNumbers>().damageNumber = healthgain;
             
         } 
     }

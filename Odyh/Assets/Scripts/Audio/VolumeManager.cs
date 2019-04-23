@@ -21,8 +21,11 @@ public class VolumeManager : MonoBehaviour
 
         foreach (var sound in controller)
         {
-            sound.LevelSet(volume);
-        }
+            if (sound != null)
+            {
+                sound.LevelSet(volume);
+            }    
+        }   
     }
 
     // Update is called once per frame

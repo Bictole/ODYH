@@ -20,3 +20,33 @@ public interface Cliquable
 
     Text StackText { get; }
 }
+
+
+//objet qui peuvent être déplacé
+public interface Bougeable
+{
+    Sprite TheSprite { get; set; }
+}
+
+
+
+
+public interface Interactionnable
+{
+    void Interagir();
+
+    void StopInteraction();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

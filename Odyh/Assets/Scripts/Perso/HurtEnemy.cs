@@ -53,7 +53,7 @@ public class HurtEnemy : MonoBehaviour
                     clone.GetComponent<FloatingNumbers>().damageNumber = damage;
 
                     other.GetComponent<MonsterController>().Isaggro = true;
-                    other.GetComponent<MonsterController>().Settimer();
+                    other.GetComponent<MonsterController>().Settimewithouttakingdmg();
                     
                 
                     Destroy(gameObject);
@@ -89,7 +89,7 @@ public class HurtEnemy : MonoBehaviour
         Vector3 otherposition = new Vector3();
 
         other.GetComponent<MonsterController>().Ispush = true;
-        
+        other.GetComponent<MonsterController>().Settimepush();
         
         if (gameObject.transform.position.x > other.gameObject.transform.position.x)
         {

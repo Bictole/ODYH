@@ -57,13 +57,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Audio\Audio.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicSwitcher.cs" />
     <Compile Include="Assets\Scripts\Audio\SFXManager.cs" />
     <Compile Include="Assets\Scripts\Audio\VolumeController.cs" />
     <Compile Include="Assets\Scripts\Audio\VolumeManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Chest.cs" />
     <Compile Include="Assets\Scripts\DestroyOvertime.cs" />
+    <Compile Include="Assets\Scripts\Dontdestroyonload.cs" />
+    <Compile Include="Assets\Scripts\Echapmenu.cs" />
     <Compile Include="Assets\Scripts\En cours\Range.cs" />
     <Compile Include="Assets\Scripts\En cours\Spell.cs" />
     <Compile Include="Assets\Scripts\FloatingNumbers.cs" />
@@ -82,13 +86,13 @@
     <Compile Include="Assets\Scripts\Objet\BagItem.cs" />
     <Compile Include="Assets\Scripts\Objet\HealthPotionItem.cs" />
     <Compile Include="Assets\Scripts\Objet\Item.cs" />
+    <Compile Include="Assets\Scripts\Objet\MoveManager.cs" />
     <Compile Include="Assets\Scripts\Objet\Utilisable.cs" />
     <Compile Include="Assets\Scripts\Perso\Character.cs" />
     <Compile Include="Assets\Scripts\Perso\HurtEnemy.cs" />
     <Compile Include="Assets\Scripts\Perso\Player.cs" />
     <Compile Include="Assets\Scripts\Perso\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Perso\PlayerRespawn.cs" />
-    <Compile Include="Assets\Scripts\Perso\PlayerStartPoint.cs" />
     <Compile Include="Assets\Scripts\Perso\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\PickaGold.cs" />
     <Compile Include="Assets\Scripts\Pnj\DialogueHolder.cs" />
@@ -197,19 +201,19 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_1/Odyh/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/fye-1/Projet/Odyh_2/Odyh/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_1/Odyh/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/fye-1/Projet/Odyh_2/Odyh/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_1/Odyh/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/fye-1/Projet/Odyh_2/Odyh/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_1/Odyh/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/fye-1/Projet/Odyh_2/Odyh/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_1/Odyh/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/fye-1/Projet/Odyh_2/Odyh/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -413,13 +417,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_1/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/fye-1/Projet/Odyh_2/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_1/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/fye-1/Projet/Odyh_2/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_1/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/fye-1/Projet/Odyh_2/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

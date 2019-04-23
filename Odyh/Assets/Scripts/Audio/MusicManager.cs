@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    //Bool pour éviter la duplication lors des changements de scène
-    public static bool musicexists;
 
     //tableau contenant toute les musiques
     public AudioSource[] music;
@@ -19,15 +17,7 @@ public class MusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!musicexists)                    //test habituel du bool pour détruire ou non l'objet
-        {
-            musicexists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     // Update is called once per frame

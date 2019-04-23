@@ -6,9 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Dialogue Box
+  - Interactionnable
   - Player Projectile
-  - Environnement
   - Arc
+  - Environnement
   layers:
   - Default
   - TransparentFX

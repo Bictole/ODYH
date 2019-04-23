@@ -68,9 +68,6 @@ public class Player : Character
             {
                 Vector3 way = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
                 
-                GameObject Arc = GameObject.FindGameObjectWithTag("Arc");
-
-                
                 Range projectile = Instantiate(this.projectile, transform.position, transform.rotation)
                     .GetComponent<Range>();
             
@@ -95,8 +92,6 @@ public class Player : Character
 
         // delay between each attack
         yield return new WaitForSeconds(0.4f);
-
-        
         
         StopAttack();
     }
@@ -108,9 +103,7 @@ public class Player : Character
         myAnimator.SetBool("attackrange", IsAttackingrange);
 
         // delay between each attack
-        yield return new WaitForSeconds(0.3f);
-
-        
+        yield return new WaitForSeconds(0.6f);
         
         StopAttackrange();
     }

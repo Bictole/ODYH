@@ -47,8 +47,9 @@ public class MonsterController : MonoBehaviour
 
     //To know if the enemy is push or not and how many time
     public bool Ispush;
-    [SerializeField]
+
     private float timepush = 0.2f;
+    private float timepushCounter;
 
     [SerializeField]
     private float aggrodistance;
@@ -82,8 +83,8 @@ public class MonsterController : MonoBehaviour
     {
         if (Ispush)
         {
-            if (timepush > 0)
-                timepush -= Time.deltaTime;
+            if (timepushCounter > 0)
+                timepushCounter -= Time.deltaTime;
             else
                 Ispush = false;
         }
@@ -112,9 +113,7 @@ public class MonsterController : MonoBehaviour
 
         
         
-        else if (timepush <= 0 && !Ispush)
-        {
-            if (InlineofSight() && Vector2.Distance(transform.position,player.transform.position) < aggrodistance)
+        else if (InlineofSight() && Vector2.Distance(transform.position,player.transform.position) < aggrodistance)
             {
                 healthGroup.alpha = 1;
                 
@@ -170,9 +169,9 @@ public class MonsterController : MonoBehaviour
             }
             
         }
-    }
+    
 
-    public void Settimer()
+    public void Settimewithouttakingdmg()
     {
         timewithouttakingdmgCounter = timewithouttakingdmg;
     }
@@ -216,7 +215,11 @@ public class MonsterController : MonoBehaviour
             blocks[2].Activate();
         else if(moveDirection.x > 0 && moveDirection.y < 0)
             blocks[2].Activate();
-        
     }
-    
+
+    public void Settimepush()
+    {
+        timepushCounter = timepush;
+    }
+
 }

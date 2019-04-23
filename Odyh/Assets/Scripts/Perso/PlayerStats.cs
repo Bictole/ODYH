@@ -23,8 +23,7 @@ public class PlayerStats : MonoBehaviour
 
     private PlayerHealth manager;
     
-    [SerializeField]
-    private GameObject Xpburst;
+    public GameObject Xpburst;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +33,6 @@ public class PlayerStats : MonoBehaviour
         playerdefence = lvldefence[1];
 
         manager = FindObjectOfType<PlayerHealth>();
-        
     }
 
     // Update is called once per frame

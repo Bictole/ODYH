@@ -14,6 +14,7 @@ public class BagItem : Item, Utilisable
         get { return slotnumber; }
     }
 
+   
     [SerializeField] 
     private GameObject bagprefab;
     
@@ -25,6 +26,9 @@ public class BagItem : Item, Utilisable
     {
         this.slotnumber = nbslots;
     }
+
+    
+    public Sprite Sprite { get; }
 
     //fonction d'utilisation
     public void Use()

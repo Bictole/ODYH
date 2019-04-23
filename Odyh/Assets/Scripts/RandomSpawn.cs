@@ -22,7 +22,7 @@ public class RandomSpawn : MonoBehaviour
 
     private float maxbounds_y;
 
-    [SerializeField] private float nb_enemy_max;
+    [SerializeField] private float nb_enemy_max = 0;
 
     public static float nb_enemy;
 
