@@ -36,6 +36,7 @@ public class HurtEnemy : MonoBehaviour
         
     }
 
+    // Permet de différencier l'attaque à distance de l'attaque au corps 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (gameObject.CompareTag("Player Projectile"))
@@ -87,6 +88,7 @@ public class HurtEnemy : MonoBehaviour
     }
 
 
+    // Fonction pour faire reculer les ennemis après avoir subit des dégâts
     void Push(GameObject other)
     {
         Vector3 otherposition = new Vector3();

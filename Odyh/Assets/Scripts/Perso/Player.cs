@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 
@@ -14,9 +13,9 @@ public class Player : Character
 
     public GameObject projectile;
 
-    [SerializeField]
-    private GameObject startpoint;
+    
 
+    // l'inventaire du perso
     [SerializeField]
     private Inventory inventory;
 
@@ -25,7 +24,6 @@ public class Player : Character
     {
         base.Start();
 
-        startpoint = GameObject.Find("Startpoint");
         sfx = FindObjectOfType<SFXManager>();
 
         inventory = FindObjectOfType<Inventory>();
@@ -67,6 +65,7 @@ public class Player : Character
             StartCoroutine(Attack());
         }
 
+        // Attaque à distance
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             if (!IsAttackingrange)
@@ -119,6 +118,7 @@ public class Player : Character
         StopAttackrange();
     }
 
+    // Vérifie si une flèche est disponible dans l'inventaire
     private bool Arrowavailable()
     {
         foreach (var bag in inventory.bags)

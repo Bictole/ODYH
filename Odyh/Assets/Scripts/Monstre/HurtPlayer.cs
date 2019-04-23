@@ -19,6 +19,7 @@ public class HurtPlayer : MonoBehaviour
     // Nombre de dégats
     public GameObject damageNumber;
 
+    // Stats du joueur
     private PlayerStats thestats;
 
     private Player player;
@@ -42,6 +43,7 @@ public class HurtPlayer : MonoBehaviour
         
         if (other.gameObject.name == "Player" && gameObject.GetComponent<CircleCollider2D>().IsTouching(other.collider))
         {
+            // Réduit les dégats subits en fonctions des stats du joueur
             damage = ennemy_damage - thestats.playerdefence;
 
             if (damage <= 0)
@@ -59,12 +61,13 @@ public class HurtPlayer : MonoBehaviour
         
     }
 
+    
+    /// <summary>
+    /// Fonction qui permet le recul du joueur lorsqu'il subit des dégâts
+    /// </summary>
+    /// <param name="other"></param>
     void Push(Collision2D other)
     {
-        //Vector3 playerdirection = (other.transform.position - transform.position).normalized;
-            
-        //Vector3 moveDirection = new Vector3(playerdirection.x, playerdirection.y, 0f);
-
         player.IsPush = true;
         Vector3 otherposition = new Vector3();
         

@@ -53,7 +53,7 @@ public class PlayerStats : MonoBehaviour
 
     public void levelup()            //fontion de changement de niveau
     {
-        Instantiate(Xpburst, transform.position, transform.rotation);
+        Instantiate(Xpburst, transform.position, Xpburst.transform.rotation);
         playerLevel += 1;
         playerexp = 0;
 

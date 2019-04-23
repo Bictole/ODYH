@@ -68,14 +68,12 @@
     <Compile Include="Assets\Scripts\DestroyOvertime.cs" />
     <Compile Include="Assets\Scripts\Dontdestroyonload.cs" />
     <Compile Include="Assets\Scripts\Echapmenu.cs" />
-    <Compile Include="Assets\Scripts\En cours\Range.cs" />
     <Compile Include="Assets\Scripts\En cours\Spell.cs" />
     <Compile Include="Assets\Scripts\FloatingNumbers.cs" />
     <Compile Include="Assets\Scripts\Interface\Bag.cs" />
     <Compile Include="Assets\Scripts\Interface\BagButton.cs" />
     <Compile Include="Assets\Scripts\Interface\Chargement.cs" />
     <Compile Include="Assets\Scripts\Interface\Inventory.cs" />
-    <Compile Include="Assets\Scripts\Interface\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Interface\Slot.cs" />
     <Compile Include="Assets\Scripts\Interface\UI.cs" />
     <Compile Include="Assets\Scripts\MoneyManager.cs" />
@@ -95,6 +93,7 @@
     <Compile Include="Assets\Scripts\Perso\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Perso\PlayerRespawn.cs" />
     <Compile Include="Assets\Scripts\Perso\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Perso\Range.cs" />
     <Compile Include="Assets\Scripts\PickaGold.cs" />
     <Compile Include="Assets\Scripts\Pickitems.cs" />
     <Compile Include="Assets\Scripts\Pnj\DialogueHolder.cs" />
@@ -105,6 +104,8 @@
     <Compile Include="Assets\Scripts\Quest\QuestPnj.cs" />
     <Compile Include="Assets\Scripts\Quest\QuestScr.cs" />
     <Compile Include="Assets\Scripts\RandomSpawn.cs" />
+    <Compile Include="Assets\Scripts\Scene\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Scene\Next.cs" />
     <Compile Include="Assets\Scripts\SceneCh.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

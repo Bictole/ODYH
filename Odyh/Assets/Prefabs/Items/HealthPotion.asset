@@ -16,3 +16,5 @@ MonoBehaviour:
   stacksize: 5
   healthgain: 25
   healnb: {fileID: 4619710425485635294, guid: f0e8e50cbb2381641ae211c0963391e9, type: 3}
+  healburst: {fileID: 3609613917310648900, guid: 987c56c8600463a4d93a3cb040c32f1e,
+    type: 3}

@@ -605,6 +605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block
       objectReference: {fileID: 0}
+    - target: {fileID: 8755269667672652995, guid: 308adbc33c2e65b4b9a7379ad0d1346a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7542558301627231236, guid: 308adbc33c2e65b4b9a7379ad0d1346a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -658,6 +663,21 @@ PrefabInstance:
     - target: {fileID: 7542558301627231236, guid: 308adbc33c2e65b4b9a7379ad0d1346a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828502592142976523, guid: 308adbc33c2e65b4b9a7379ad0d1346a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236876124068227406, guid: 308adbc33c2e65b4b9a7379ad0d1346a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2311401438035406969, guid: 308adbc33c2e65b4b9a7379ad0d1346a,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

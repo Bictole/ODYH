@@ -34,6 +34,7 @@ public abstract class Character : MonoBehaviour
         get { return direction.x != 0 || direction.y != 0; }
     }
 
+    //To know if the player is push and the duration
     public bool IsPush;
     private float timepush;
 
@@ -64,6 +65,8 @@ public abstract class Character : MonoBehaviour
         HandleLayers();
     }
 
+    
+    
     private void FixedUpdate()
     {
         if (IsPush)
@@ -100,12 +103,6 @@ public abstract class Character : MonoBehaviour
         }
         if (IsAttacking)
         {
-//            if (IsMoving)
-//            {
-//                direction.x = 0;
-//                direction.y = 0;
-//            }
-
             ActivateLayer("Attack Layer");
         }
 
@@ -148,6 +145,7 @@ public abstract class Character : MonoBehaviour
         myAnimator.SetLayerWeight(myAnimator.GetLayerIndex(layerName),1);
     }
 
+    
     public void StopAttack()
     {
         IsAttacking = false;

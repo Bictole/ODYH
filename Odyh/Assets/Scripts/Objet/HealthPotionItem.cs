@@ -9,7 +9,12 @@ public class HealthPotionItem : Item, Utilisable
     [SerializeField] 
     private int healthgain;
 
+    //Permet l'affichage du nombre de point de vie soigné
     public GameObject healnb;
+
+    //Objet d'effet
+    [SerializeField]
+    private GameObject healburst;
     
     public Sprite Sprite { get; }
 
@@ -18,11 +23,14 @@ public class HealthPotionItem : Item, Utilisable
     {
         if (PlayerHealth.TheHealth.playerHealth < PlayerHealth.TheHealth.playerMaxHealth)
         {
+            Instantiate(healburst, FindObjectOfType<Player>().transform.position,
+                FindObjectOfType<Player>().transform.rotation);
             Delete_the_Item();
 
             PlayerHealth.TheHealth.playerHealth += healthgain;
             
             var clone = Instantiate(healnb, PlayerHealth.TheHealth.transform.position, Quaternion.Euler(Vector3.zero));
+            
             clone.GetComponent<FloatingNumbers>().damageNumber = healthgain;
             
         } 

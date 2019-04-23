@@ -22,7 +22,6 @@
           <e p="Dontdestroyonload.cs" t="Include" />
           <e p="Echapmenu.cs" t="Include" />
           <e p="En cours" t="Include">
-            <e p="Range.cs" t="Include" />
             <e p="Spell.cs" t="Include" />
           </e>
           <e p="FloatingNumbers.cs" t="Include" />
@@ -31,7 +30,6 @@
             <e p="BagButton.cs" t="Include" />
             <e p="Chargement.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
-            <e p="MainMenu.cs" t="Include" />
             <e p="Slot.cs" t="Include" />
             <e p="UI.cs" t="Include" />
           </e>
@@ -57,6 +55,7 @@
             <e p="PlayerHealth.cs" t="Include" />
             <e p="PlayerRespawn.cs" t="Include" />
             <e p="PlayerStats.cs" t="Include" />
+            <e p="Range.cs" t="Include" />
           </e>
           <e p="PickaGold.cs" t="Include" />
           <e p="Pickitems.cs" t="Include" />
@@ -72,6 +71,10 @@
             <e p="QuestScr.cs" t="Include" />
           </e>
           <e p="RandomSpawn.cs" t="Include" />
+          <e p="Scene" t="Include">
+            <e p="MainMenu.cs" t="Include" />
+            <e p="Next.cs" t="Include" />
+          </e>
           <e p="SceneCh.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">

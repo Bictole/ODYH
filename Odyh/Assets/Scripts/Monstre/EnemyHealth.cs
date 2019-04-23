@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
 
 
+    // Liste des items que le monstre peut drop
     [SerializeField]
     private GameObject[] itemsdrop;
     
@@ -19,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
     private PlayerStats _playerStats;
     public int experience;
     
-    
+    // Slider correspond à la barre de vie du monstre
     public Slider healthbar;
     
     // Start is called before the first frame update
@@ -41,17 +42,21 @@ public class EnemyHealth : MonoBehaviour
         {
             _playerStats.GainExp(experience);
 
+            // Aléatoire qui choisi quel objet drop ou si ne rien drop
             int rnd = Random.Range(0, itemsdrop.Length + 1);
             if (rnd < itemsdrop.Length)
             {
                 Instantiate(itemsdrop[rnd], transform.position, transform.rotation);
             }
+            
+            // Lance la procédure de réapparition et décrémente le nb d'ennemis vivant sur la carte
             RandomSpawn.nb_enemy -= 1;
             RandomSpawn.reloading = true;
             Destroy(gameObject);
         }
     }
 
+    
     public void HurtEnemy(int damage)
     {
         monsterHealth -= damage;

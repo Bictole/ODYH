@@ -42,6 +42,7 @@ public class MonsterController : MonoBehaviour
     
     public GameObject player;
 
+    //Tableau correspondant aux différentes orientations du monstre et les blocks a activer en conséquence
     [SerializeField]
     private Block[] blocks;
 
@@ -51,10 +52,14 @@ public class MonsterController : MonoBehaviour
     private float timepush = 0.2f;
     private float timepushCounter;
 
+    //La distance d'aggression
     [SerializeField]
     private float aggrodistance;
 
+    //Permet de savoir si le monstre a aggresser le joueur
     public bool Isaggro;
+    
+    //Temps pendant lequel le monstre ne subit pas de dégâts
     [SerializeField]
     private float timewithouttakingdmg;
     public float timewithouttakingdmgCounter;
@@ -89,7 +94,8 @@ public class MonsterController : MonoBehaviour
                 Ispush = false;
         }
 
-        else if (Isaggro)
+        
+        else if (Isaggro)        //Si le monstre aggresse le joueur, alors il se déplace dans sa direction tant que le temps sans prendre de dégâts n'est pas inférieur à 0
         {
             healthGroup.alpha = 1;
             
@@ -111,7 +117,7 @@ public class MonsterController : MonoBehaviour
             }
         }
 
-        
+        //Si le monstre est à la bonne distance et à le joueur en ligne de vue, il se met à le suivre
         
         else if (InlineofSight() && Vector2.Distance(transform.position,player.transform.position) < aggrodistance)
             {
@@ -131,7 +137,7 @@ public class MonsterController : MonoBehaviour
             }
             
 
-            else
+            else //Sinon il se déplace aléatoirement sur la carte
             {
                 healthGroup.alpha = 0;
                 if (moving)
@@ -176,6 +182,7 @@ public class MonsterController : MonoBehaviour
         timewithouttakingdmgCounter = timewithouttakingdmg;
     }
 
+    //Vérifie si le joueur est dans la ligne de vue du monstre
     private bool InlineofSight()
     {
 
@@ -193,6 +200,7 @@ public class MonsterController : MonoBehaviour
         
     }
 
+    //Active les différents blocks selon la direction du monstre
     private void Block()
     {
         foreach (Block block in blocks)
