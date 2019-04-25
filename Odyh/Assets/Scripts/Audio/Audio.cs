@@ -11,15 +11,15 @@ public class Audio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!audioexists)
-        {
-            audioexists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+//        if (!audioexists)
+//        {
+//            audioexists = true;
+//            DontDestroyOnLoad(transform.gameObject);
+//        }
+//        else
+//        {
+//            Destroy(gameObject);
+//        }
     }
 
     // Update is called once per frame

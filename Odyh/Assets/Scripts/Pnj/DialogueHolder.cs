@@ -24,7 +24,7 @@ public class DialogueHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     // If the collider of the Player and the PNJ are in contact and stay like this, then if we push the Space bar then a dialogue box will appear and the PNJ will stop move
@@ -42,6 +42,7 @@ public class DialogueHolder : MonoBehaviour
 
             if (transform.parent.GetComponent<Pnjmovement>() != null)
             {
+                Debug.Log("test");
                 transform.parent.GetComponent<Pnjmovement>().stopmove = true;
             }
         }

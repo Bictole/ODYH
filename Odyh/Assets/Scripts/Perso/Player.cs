@@ -32,6 +32,8 @@ public class Player : Character
     // Update is called once per frame
     protected override void Update()
     {
+        sfx = FindObjectOfType<SFXManager>();
+
          if (stopmove)
              return;
          
@@ -58,7 +60,7 @@ public class Player : Character
             direction += Vector2.right;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !InInventory)
         {
             if (!IsAttacking)
             // Allow to put a delay in the method
@@ -66,7 +68,7 @@ public class Player : Character
         }
 
         // Attaque à distance
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !InInventory)
         {
             if (!IsAttackingrange)
             {

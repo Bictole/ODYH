@@ -91,13 +91,19 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
         
        if (eventData.button == PointerEventData.InputButton.Left)
         {
+            
             if (Inventory.InventoryScr.TheSlot == null && !Empty)    //on instancie le slot s'il est null
             {
+                
                 MoveManager.TheMoveManager.PickBougeable(TheItem );
                 Inventory.InventoryScr.TheSlot = this;
+                
+
             }
             else if (Inventory.InventoryScr.TheSlot != null) //si le slot n'est pas null, on check les fonctions qui replace, switch ou bouge les items dans le sac
             {
+                
+
                 if (PutBack())
                 {
                     MoveManager.TheMoveManager.Drop();
@@ -114,7 +120,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
                     Inventory.InventoryScr.TheSlot.Image.color = new Color(0,0,0,0);
                     Inventory.InventoryScr.TheSlot = null;
                 }
-            }          
+                
+            }
+            
         }  
     }
 
@@ -183,6 +191,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
         if (TheItem is Utilisable)
         {
             (TheItem as Utilisable).Use();
+            
         }
     }
     

@@ -8,6 +8,10 @@ public class Inventory : MonoBehaviour
     //ref au script attaché a l'inventaire
     private static Inventory inventory;
 
+    private Player player;
+
+    private bool all_bag_close = true;
+    
     //getter
     public static Inventory InventoryScr
     {
@@ -95,6 +99,8 @@ public class Inventory : MonoBehaviour
                 sac.BagScr.OpenOrClose();
             }
         }
+
+        
     }
 
     //on check le premier sac avec un emplacement pour mettre l'item
@@ -113,12 +119,13 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<Player>();
     }
 
     // Ceci est uniquement réservé au test
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             BagItem bag = (BagItem)Instantiate(items[0]);
@@ -149,7 +156,23 @@ public class Inventory : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.C))
         {
+            
             Inventory.InventoryScr.OpenOrClose();
         }
+
+        // Test si l'inventaire est ouvert ou non
+        if (bags.Count != 0)
+        {
+            if (!bags[0].BagScr.Open)
+            {
+                player.InInventory = false;
+            }
+            else
+            {
+                player.InInventory = true;
+            }
+        }
+        
+        
     }
 }

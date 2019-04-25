@@ -33,8 +33,11 @@ public class MusicSwitcher : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            musicmanager.ChangeMusic(nextmusic);
-            gameObject.SetActive(false);
+            if (musicmanager.current_music != nextmusic)
+            {
+                musicmanager.ChangeMusic(nextmusic);
+            }
+            //gameObject.SetActive(false);
         }
     }
 }

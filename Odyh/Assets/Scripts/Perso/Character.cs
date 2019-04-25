@@ -34,6 +34,9 @@ public abstract class Character : MonoBehaviour
         get { return direction.x != 0 || direction.y != 0; }
     }
 
+    // To know if the inventory is open or not
+    public bool InInventory;
+
     //To know if the player is push and the duration
     public bool IsPush;
     private float timepush;
@@ -101,12 +104,12 @@ public abstract class Character : MonoBehaviour
             myRigidbody.velocity = Vector2.zero;
             return;
         }
-        if (IsAttacking)
+        if (IsAttacking && !InInventory)
         {
             ActivateLayer("Attack Layer");
         }
 
-        else if (IsAttackingrange)
+        else if (IsAttackingrange && !InInventory)
         {
            if (IsMoving)
             {

@@ -75,8 +75,6 @@ public class Pnjmovement : MonoBehaviour
             return;
         }
         
-        
-        
         if (isWalking)
         {
             walkCounter -= Time.deltaTime;
