@@ -29,6 +29,8 @@ public class BagItem : Item, Utilisable
 
     
     public Sprite Sprite { get; }
+    
+    public BagButton BagButton { get; set; }
 
     //fonction d'utilisation
     public void Use()

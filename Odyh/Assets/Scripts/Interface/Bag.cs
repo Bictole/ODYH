@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class Bag : MonoBehaviour
@@ -15,6 +16,26 @@ public class Bag : MonoBehaviour
     
     //list de script Slot qui aide a ajouter un item
     public List<Slot> slotscrList  = new List<Slot>();
+
+
+    //retourne le nombre de slot vide dans le sac
+    public int EmptySlotNb
+    {
+        get
+        {
+            int count = 0;
+
+            foreach (Slot slot in slotscrList)
+            {
+                if (slot.Empty)
+                {
+                    count += 1;
+                }
+            }
+
+            return count;
+        }
+    }
     
     
     //bool pour savoir si notre sac est ouvert ou non
@@ -33,6 +54,7 @@ public class Bag : MonoBehaviour
         for (int i = 0; i < nbslots; i++)
         {
             Slot slotscr = Instantiate(slotprefab, transform).GetComponent<Slot>();
+            slotscr.SlotBagScr = this;
             slotscrList.Add(slotscr);
         }
     }
@@ -75,6 +97,25 @@ public class Bag : MonoBehaviour
         }
 
         return false;
+    }
+
+
+    //construit une liste contenant tous les items du bag
+    public List<Item> GetItems()
+    {
+        List<Item> items_list = new List<Item>();
+        foreach (var slot in slotscrList)
+        {
+            if (!slot.Empty)
+            {
+                foreach (var item in slot.itemStack)
+                {
+                    items_list.Add(item);
+                }
+            }
+        }
+
+        return items_list;
     }
     
     

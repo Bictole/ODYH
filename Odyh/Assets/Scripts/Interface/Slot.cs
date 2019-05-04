@@ -25,7 +25,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
     {
         get { return itemStack.Count == 0; }
     }
-
+       
+    //reference au script du sac dans lequel est le slot
+    public Bag SlotBagScr { get; set; }
+    
     //bool pour savoir si le stack est plein
     public bool Full
     {
@@ -77,6 +80,14 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
         }
     }
 
+    //Clear le slot (par exemple lorsque on jette un objet)
+    public void Clear_slot()
+    {
+        if (Itemscount > 0)
+        {
+            itemStack.Clear();
+        }
+    }
     
 
 
@@ -93,17 +104,23 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
         {
             
             if (Inventory.InventoryScr.TheSlot == null && !Empty)    //on instancie le slot s'il est null
-            {
-                
+            {                
                 MoveManager.TheMoveManager.PickBougeable(TheItem );
                 Inventory.InventoryScr.TheSlot = this;
+            }
+            else if (Inventory.InventoryScr.TheSlot == null && Empty && (MoveManager.TheMoveManager.Itembougeable is BagItem)) //si on a un sac dans la main et qu'on le place dans notre inventaire
+            {
+                BagItem bag = (BagItem) MoveManager.TheMoveManager.Itembougeable;
                 
-
+                if (bag.BagScr != SlotBagScr && Inventory.InventoryScr.EmptySlotNb - bag.Slotnumber > 0) //on check si on ne met pas le bag dans lui-même et qu'il y a assez de slots libre pour les items
+                {
+                    AddItem(bag);
+                    bag.BagButton.Delete_bag();
+                    MoveManager.TheMoveManager.Drop();
+                }
             }
             else if (Inventory.InventoryScr.TheSlot != null) //si le slot n'est pas null, on check les fonctions qui replace, switch ou bouge les items dans le sac
             {
-                
-
                 if (PutBack())
                 {
                     MoveManager.TheMoveManager.Drop();

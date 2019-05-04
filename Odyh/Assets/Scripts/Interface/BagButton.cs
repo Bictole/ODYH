@@ -37,13 +37,34 @@ public class BagButton : MonoBehaviour, IPointerClickHandler
     //implémentation de l'interface IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (bagitem != null)
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
-            bagitem.BagScr.OpenOrClose();
+            //si on clique en appuyant sur caps lock, on prend le sac
+            if (Input.GetKey(KeyCode.CapsLock))
+            {
+                MoveManager.TheMoveManager.PickBougeable(Bag);
+            }          
+            //sinon ou l'ouvre/ferme
+            else if (bagitem != null)
+            {
+                bagitem.BagScr.OpenOrClose();
+            }
         }
+        
     }
-    
-    
+
+    //va delete le bag et son bouton
+    public void Delete_bag()
+    {
+        Inventory.InventoryScr.Delete_bag_inventory(Bag);
+        Bag.BagButton = null;
+
+        foreach (Item item in Bag.BagScr.GetItems())
+        {
+            Inventory.InventoryScr.AddInventoryItem(item);
+        }
+        Bag = null;
+    }
     
     
     

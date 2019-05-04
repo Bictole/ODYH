@@ -46,7 +46,22 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    
+
+    //nombre de slot vide dans l'inventaire
+    public int EmptySlotNb
+    {
+        get
+        {
+            int count = 0;
+
+            foreach (var bag in bags)
+            {
+                count += bag.BagScr.EmptySlotNb;
+            }
+
+            return count;
+        }
+    }
     
     //liste d'item
     [SerializeField]
@@ -61,15 +76,12 @@ public class Inventory : MonoBehaviour
         get { return bags.Count < 5; }
     }
 
-   /* private void Awake()
+    private void Awake()
     {
         BagItem bag = (BagItem)Instantiate(items[0]);
-        bag.Init(20);
+        bag.Init(10);
         bag.Use();
-        BagItem b = (BagItem)Instantiate(items[0]);
-        bag.Init(20);
-        bag.Use();    
-    }*/
+    }
 
 
     //init le premier bag null dans la liste
@@ -81,9 +93,17 @@ public class Inventory : MonoBehaviour
             {
                 buttons.Bag = bag;
                 bags.Add(bag);
+                bag.BagButton = buttons;
                 break;
             }
         }
+    }
+
+    //fonction qui va delete un sac (appelé dans Bagbutton)
+    public void Delete_bag_inventory(BagItem bag)
+    {
+        bags.Remove(bag);
+        Destroy(bag.BagScr.gameObject);
     }
     
     

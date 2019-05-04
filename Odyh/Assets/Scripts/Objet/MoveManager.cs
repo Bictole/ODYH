@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MoveManager : MonoBehaviour
 {
     //getter du Bougeable
-    public Bougeable Itembougeable { get; set; }
+    public Bougeable Itembougeable{get; set; }
 
     private Image sprite;
 
@@ -49,8 +50,22 @@ public class MoveManager : MonoBehaviour
         Itembougeable = null;
         sprite.color = new Color(0, 0, 0, 0);
     }
-    
-    
+
+    //fontion de suppression d'un objet en le jetant hors de l'inventaire
+    private void Delete()
+    {
+        //on check si on clique avec un item dans la main hors de l'inventaire
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject() && Itembougeable != null)
+        {
+            if (Itembougeable is Item && Inventory.InventoryScr.TheSlot != null)
+            {
+                (Itembougeable as Item).Slot.Clear_slot();
+            }
+            
+            Drop();
+            Inventory.InventoryScr.TheSlot = null;
+        }
+    }
     
     
     
@@ -66,5 +81,7 @@ public class MoveManager : MonoBehaviour
     {
         //on suit la position de la souris
         sprite.transform.position = Input.mousePosition;
+        
+        Delete();
     }
 }
