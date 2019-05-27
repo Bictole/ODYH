@@ -28,6 +28,7 @@ public class HurtEnemy : MonoBehaviour
     void Start()
     {
         thestats = FindObjectOfType<PlayerStats>();
+        
     }
 
     // Update is called once per frame
@@ -41,10 +42,14 @@ public class HurtEnemy : MonoBehaviour
     {
         if (gameObject.CompareTag("Player Projectile"))
         {
-            if (gameObject.GetComponent<Range>().Isattacking)
+            if (gameObject.name is "Boum" || gameObject.GetComponent<Range>().Isattacking)
             {
                 if (other.gameObject.CompareTag("Enemy"))
                 {
+                    if (Hitpoint == null)
+                    {
+                        Hitpoint = other.transform;
+                    }
                     damage = player_damage;
                     // On inflige des dégats à l'ennemi, et on affiche l'effet de dégats et le nombre de dégats au niveau du point d'impact.
                     other.gameObject.GetComponent<EnemyHealth>().HurtEnemy(damage);
@@ -72,6 +77,10 @@ public class HurtEnemy : MonoBehaviour
 
                     damage = player_damage + thestats.playerattack;
                 
+                    if (Hitpoint == null)
+                    {
+                        Hitpoint = other.transform;
+                    }
 
                     // On inflige des dégats à l'ennemi, et on affiche l'effet de dégats et le nombre de dégats au niveau du point d'impact.
                     other.gameObject.GetComponent<EnemyHealth>().HurtEnemy(damage);

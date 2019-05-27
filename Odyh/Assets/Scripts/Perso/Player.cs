@@ -11,13 +11,22 @@ public class Player : Character
 {
     private SFXManager sfx;
 
-    public GameObject projectile;
+    public GameObject flèche;
 
-    
+    public GameObject fireball;
+
+    public GameObject bomb;
 
     // l'inventaire du perso
     [SerializeField]
     private Inventory inventory;
+    
+    [SerializeField]
+    private GameObject spellstartpoint;
+    [SerializeField]
+    private GameObject spelleffect;
+    [SerializeField]
+    private GameObject explosioneffect;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -45,20 +54,22 @@ public class Player : Character
         direction = Vector2.zero;
         if (Input.GetKey(KeyCode.Z))
         {
-            direction += Vector2.up;
+            direction += Vector3.up;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            direction += Vector2.down;
+            direction += Vector3.down;
         }
         if (Input.GetKey(KeyCode.Q))
         {
-            direction += Vector2.left;
+            direction += Vector3.left;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            direction += Vector2.right;
+            direction += Vector3.right;
         }
+        
+        nextdirection = direction;
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !InInventory)
         {
@@ -67,18 +78,16 @@ public class Player : Character
             StartCoroutine(Attack());
         }
 
-        // Attaque à distance
+        // Attaque à distance à l'arc
         if (Input.GetKeyDown(KeyCode.Mouse1) && !InInventory)
         {
-            if (!IsAttackingrange)
+            if (!IsAttackingrangewithbow && !IsAttackingrangewithstaff)
             {
-                
-
                 if (Arrowavailable())
                 {
                     Vector3 way = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
                 
-                    Range projectile = Instantiate(this.projectile, transform.position, transform.rotation)
+                    Range projectile = Instantiate(flèche, transform.position, transform.rotation)
                         .GetComponent<Range>();
             
                     myAnimator.SetFloat("x", way.x);
@@ -88,9 +97,36 @@ public class Player : Character
             
                     projectile.Isattacking = true;
 
-                    StartCoroutine(Attackrange());
+                    StartCoroutine(Bowattack());
+
+                    
                 }
                 
+            }
+        }
+        // Attaqie à distance avec Magic staff
+        if (Input.GetKeyDown(KeyCode.A) && !InInventory)
+        {
+            if (!IsAttackingrangewithbow && !IsAttackingrangewithstaff)
+            {
+                GetComponent<PlayerMana>().Usespell(25);
+                if (Manaavailable())
+                {
+                    Vector3 way = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                    
+                    myAnimator.SetFloat("x", way.x);
+                    myAnimator.SetFloat("y", way.y);
+
+                    StartCoroutine(Spellattack());
+                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.B) && !InInventory)
+        {
+            if (Bombavailable())
+            {
+                StartCoroutine(Explosebomb());
             }
         }
     }
@@ -108,16 +144,39 @@ public class Player : Character
         StopAttack();
     }
     
-    private IEnumerator Attackrange()
+    private IEnumerator Bowattack()
     {
         sfx.player_is_attacking.Play();
-        IsAttackingrange= true;
-        myAnimator.SetBool("attackrange", IsAttackingrange);
+        IsAttackingrangewithbow= true;
+        myAnimator.SetBool("attackrangebow", IsAttackingrangewithbow);
 
         // delay between each attack
         yield return new WaitForSeconds(0.6f);
         
-        StopAttackrange();
+        StopAttackrangewithbow();
+    }
+    
+    
+    
+    private IEnumerator Spellattack()
+    {
+        IsAttackingrangewithstaff= true;
+        myAnimator.SetBool("attackrangestaff", IsAttackingrangewithstaff);
+
+        // delay between each attack
+        yield return new WaitForSeconds(1f);
+        
+        Vector3 way = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Instantiate(spelleffect, spellstartpoint.transform.position,spellstartpoint.transform.rotation);
+                    
+        Range projectile = Instantiate(fireball, spellstartpoint.transform.position, transform.rotation)
+            .GetComponent<Range>();
+        
+        projectile.Setup(way);
+            
+        projectile.Isattacking = true;
+        
+        StopAttackrangewithstaff();
     }
 
     // Vérifie si une flèche est disponible dans l'inventaire
@@ -137,6 +196,43 @@ public class Player : Character
         }
 
         return false;
+    }
+    
+    // Vérifie si une bombe est disponible dans l'inventaire
+    private bool Bombavailable()
+    {
+        foreach (var bag in inventory.bags)
+        {
+            foreach (var slot in bag.BagScr.slotscrList)
+            {
+                if (slot.TheItem is Bombes)
+                {
+                    slot.Delete_Item(slot.TheItem);
+                    return true;
+                }
+                    
+            }
+        }
+
+        return false;
+    }
+    
+
+    // Vérifie si du mana est disponible pour lancer un sort
+    private bool Manaavailable()
+    {
+        return !GetComponent<PlayerMana>().manaempty;
+    }
+    
+    public IEnumerator Explosebomb()
+    {
+        GameObject b = Instantiate(bomb, transform.position, transform.rotation);
+        
+        
+        yield return new WaitForSeconds(3f);
+
+        b.transform.GetChild(0).gameObject.SetActive(true);
+        Instantiate(explosioneffect, b.transform.position, b.transform.rotation);
     }
 
 

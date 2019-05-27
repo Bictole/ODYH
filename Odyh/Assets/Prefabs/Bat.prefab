@@ -175,6 +175,7 @@ MonoBehaviour:
   itemsdrop:
   - {fileID: 8765383638510538655, guid: cb748c4b7ddf5df4d9e733b2172d1ffb, type: 3}
   - {fileID: 8019035297955409251, guid: 042b28da1dd6a7d4ea28ad723adcc3c7, type: 3}
+  - {fileID: 9027848771326355049, guid: b8032ea658939e24d8bfffe6328c34cb, type: 3}
   monsterMaxHealth: 50
   monsterHealth: 50
   experience: 50

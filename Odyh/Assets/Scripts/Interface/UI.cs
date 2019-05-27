@@ -10,11 +10,15 @@ public class UI : MonoBehaviour
     
     public Slider xpbar;
 
+    public Slider manabar;
+
     public Text hp;
     
     // reference au script pour retrouver la vie du joueur 
     public PlayerHealth playerH;
 
+    public PlayerMana playerM;
+    
     private static bool UIexists;
 
     //recuperation du playerstats
@@ -63,6 +67,8 @@ public class UI : MonoBehaviour
         xpbar.value = _playerStats.playerexp;
         hp.text = "HP : " + playerH.playerHealth + "/" + playerH.playerMaxHealth;
         Textlevel.text = "Lvl : " + _playerStats.playerLevel;
+        manabar.maxValue = playerM.playerMaxMana;
+        manabar.value = playerM.playerMana;
     }
 
     

@@ -17,8 +17,12 @@ public class Range : MonoBehaviour
 
     private bool canmove = true;
 
+    public float offset;
     [SerializeField]
     protected GameObject startposition;
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +47,8 @@ public class Range : MonoBehaviour
         
             float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
         
-            transform.rotation = Quaternion.AngleAxis(angle,Vector3.forward);
+            //transform.rotation = Quaternion.AngleAxis(angle,Vector3.forward);
+            transform.rotation = Quaternion.Euler(0f, 0f, angle + offset);
         }
         
         

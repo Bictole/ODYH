@@ -174,6 +174,13 @@ public class Inventory : MonoBehaviour
             AddInventoryItem(flèche);
         }
         
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Bombes bombes = (Bombes) Instantiate(items[3]);
+            
+            AddInventoryItem(bombes);
+        }
+        
         if (Input.GetKeyDown(KeyCode.C))
         {
             

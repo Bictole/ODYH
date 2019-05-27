@@ -6,16 +6,16 @@ public class CameraController : MonoBehaviour
 {
 
     // Define which Target to follow
-    public GameObject followTarget;
+    public Character target;
     
-    // Position of the target
-    private Vector3 targetposition;
     
     // Speed of the camera
     public float moveSpeed;
     
     // Test if the cameraExists
-    private static bool cameraExists    ;
+    private static bool cameraExists;
+
+    public Vector3 offset;
     
     // Start is called before the first frame update
     void Start()
@@ -29,17 +29,33 @@ public class CameraController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        transform.position = target.transform.position + offset;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        var target = followTarget.transform.position;
-        var position = transform.position;
-        targetposition = new Vector3(target.x, target.y, position.z);
+        if (transform.position != target.transform.position)
+        {
+            MoveCamera();
+        }
+    }
+
+    public void MoveCamera()
+    {
+        Vector3 targetPosition;
+        if (target.nextdirection != Vector3.zero)
+        {
+            targetPosition = target.transform.position + target.nextdirection + offset;
+        }
+        else
+        {
+            targetPosition = target.transform.position + offset;
+        }
         
-        // Allow to switch between position "a" to position "b" with a delay
-        position = Vector3.Lerp(position, targetposition, moveSpeed * Time.deltaTime);
-        transform.position = position;
+        transform.position = Vector3.Lerp(target.transform.position, targetPosition, moveSpeed);
+        
     }
 }

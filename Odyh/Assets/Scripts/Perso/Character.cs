@@ -12,7 +12,11 @@ public abstract class Character : MonoBehaviour
     /// <summary>
     /// The Player's direction
     /// </summary>
-    protected Vector2 direction;
+    protected Vector3 direction;
+
+    public Vector3 nextdirection;
+
+    private Camera camera;
 
     // Attribute of a character, Rigidbody2D and Animator
     private Rigidbody2D myRigidbody;
@@ -20,7 +24,8 @@ public abstract class Character : MonoBehaviour
 
     // To know if the character is attacking
     public bool IsAttacking;
-    public bool IsAttackingrange;
+    public bool IsAttackingrangewithbow;
+    public bool IsAttackingrangewithstaff;
 
     
     // To know if the player exists
@@ -46,6 +51,7 @@ public abstract class Character : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        camera = FindObjectOfType<Camera>();
 
         stopmove = false;
         IsPush = false;
@@ -93,7 +99,11 @@ public abstract class Character : MonoBehaviour
     public void Move()
     {
         //Makes sure that the player moves
+        
         myRigidbody.velocity = direction.normalized * speed;
+        
+        
+        
     }
 
     // Allow to switch between the different layers, to play the good animation for the correct action.
@@ -109,15 +119,25 @@ public abstract class Character : MonoBehaviour
             ActivateLayer("Attack Layer");
         }
 
-        else if (IsAttackingrange && !InInventory)
+        else if (IsAttackingrangewithbow && !InInventory)
         {
            if (IsMoving)
             {
                 direction.x = 0;
                 direction.y = 0;
-           }
+            }
 
               ActivateLayer("Bow Layer");
+        }
+        else if (IsAttackingrangewithstaff && !InInventory)
+        {
+            if (IsMoving)
+            {
+                direction.x = 0;
+                direction.y = 0;
+            }
+
+            ActivateLayer("Spell Layer");
         }
         //Checks if we are moving or standing still, if we are moving then we need to play the movement
         else if (IsMoving)
@@ -155,9 +175,15 @@ public abstract class Character : MonoBehaviour
         myAnimator.SetBool("attack",IsAttacking);
     }
     
-    public void StopAttackrange()
+    public void StopAttackrangewithbow()
     {
-        IsAttackingrange = false;
-        myAnimator.SetBool("attackrange",IsAttackingrange);
+        IsAttackingrangewithbow = false;
+        myAnimator.SetBool("attackrangebow",IsAttackingrangewithbow);
+    }
+    
+    public void StopAttackrangewithstaff()
+    {
+        IsAttackingrangewithstaff = false;
+        myAnimator.SetBool("attackrangestaff",IsAttackingrangewithstaff);
     }
 }
