@@ -48,7 +48,7 @@ public class MonsterController : MonoBehaviour
 
     //To know if the enemy is push or not and how many time
     public bool Ispush;
-
+    public bool IsTurret;
     public bool IsPatrol;
 
     private float timepush = 0.2f;
@@ -70,6 +70,9 @@ public class MonsterController : MonoBehaviour
     public Vector3 homePos;
     
     public CanvasGroup healthGroup;
+
+    
+    
     
     // Start is called before the first frame update
     protected virtual void Start()
@@ -105,6 +108,36 @@ public class MonsterController : MonoBehaviour
             else
                 Ispush = false;
         }
+        else if (moveSpeed == 0 && Vector2.Distance(transform.position, player.transform.position) < aggrodistance)
+        {
+            if (IsTurret)
+            {
+                healthGroup.alpha = 1;
+                gameObject.GetComponent<TurretEnemy>().Fire();
+                Block();
+            }
+        }
+        //Si le monstre est à la bonne distance et à le joueur en ligne de vue, il se met à le suivre
+        
+        else if (InlineofSight() && Vector2.Distance(transform.position, player.transform.position) < aggrodistance)
+        {
+            if (IsTurret)
+            {
+                gameObject.GetComponent<TurretEnemy>().Fire();
+            }
+            
+            healthGroup.alpha = 1;
+            Vector3 playerdirection = (player.transform.position - transform.position).normalized;
+
+            moveDirection = new Vector3(playerdirection.x * moveSpeed, playerdirection.y * moveSpeed, 0f);
+
+            myAnimator.SetFloat("x", moveDirection.x);
+            myAnimator.SetFloat("y", moveDirection.y);
+
+            myRigidbody2D.velocity = moveDirection;
+            Block();
+            
+        }
 
 
         else if (Isaggro) //Si le joueur aggresse le monstre, alors il se déplace dans sa direction tant que le temps sans prendre de dégâts n'est pas inférieur à 0
@@ -126,28 +159,15 @@ public class MonsterController : MonoBehaviour
             timewithouttakingdmgCounter -= Time.deltaTime;
             if (timewithouttakingdmgCounter < 0)
             {
-                IsPatrol = true;
+                if (gameObject.GetComponent<PatrolEnemy>() != null)
+                {
+                    IsPatrol = true;
+                }
                 Isaggro = false;
             }
         }
 
-        //Si le monstre est à la bonne distance et à le joueur en ligne de vue, il se met à le suivre
         
-        else if (InlineofSight() && Vector2.Distance(transform.position, player.transform.position) < aggrodistance)
-        {
-            healthGroup.alpha = 1;
-
-
-            Vector3 playerdirection = (player.transform.position - transform.position).normalized;
-
-            moveDirection = new Vector3(playerdirection.x * moveSpeed, playerdirection.y * moveSpeed, 0f);
-
-            myAnimator.SetFloat("x", moveDirection.x);
-            myAnimator.SetFloat("y", moveDirection.y);
-
-            myRigidbody2D.velocity = moveDirection;
-            Block();
-        }
         else if(IsPatrol)
         {
             gameObject.GetComponent<PatrolEnemy>().ResetPos();
@@ -170,6 +190,7 @@ public class MonsterController : MonoBehaviour
                     moving = false;
                     timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
                 }
+                Block();
             }
             else
             {

@@ -13,6 +13,7 @@ TagManager:
   - Breakable
   - Sword
   - Pnj
+  - Enemy Projectile
   layers:
   - Default
   - TransparentFX

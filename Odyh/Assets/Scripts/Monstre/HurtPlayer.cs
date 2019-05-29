@@ -53,7 +53,7 @@ public class HurtPlayer : MonoBehaviour
 
 
             other.gameObject.GetComponent<PlayerHealth>().HurtPlayer(damage);
-            Push(other);
+            Push(other.gameObject.GetComponent<Collider2D>());
             Instantiate(damageBurst, other.transform.position, other.transform.rotation);
             var clone = Instantiate(damageNumber, other.transform.position, Quaternion.Euler(Vector3.zero));
             clone.GetComponent<FloatingNumbers>().damageNumber = damage;
@@ -61,12 +61,34 @@ public class HurtPlayer : MonoBehaviour
         
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (gameObject.CompareTag("Enemy Projectile") && other.CompareTag("Player"))
+        {
+            // Réduit les dégats subits en fonctions des stats du joueur
+            damage = ennemy_damage - thestats.playerdefence;
+
+            if (damage <= 0)
+            {
+                damage = 1;
+            }
+
+
+            other.gameObject.GetComponent<PlayerHealth>().HurtPlayer(damage);
+            Push(other);
+            Instantiate(damageBurst, other.transform.position, other.transform.rotation);
+            var clone = Instantiate(damageNumber, other.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<FloatingNumbers>().damageNumber = damage;
+            Destroy(gameObject);
+        }
+    }
+
+
     /// <summary>
     /// Fonction qui permet le recul du joueur lorsqu'il subit des dégâts
     /// </summary>
     /// <param name="other"></param>
-    void Push(Collision2D other)
+    void Push(Collider2D other)
     {
         player.IsPush = true;
         Vector3 otherposition = new Vector3();

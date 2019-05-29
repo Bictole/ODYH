@@ -20,7 +20,9 @@ public class Player : Character
     // l'inventaire du perso
     [SerializeField]
     private Inventory inventory;
-    
+
+    [SerializeField] 
+    private int spellcost;
     [SerializeField]
     private GameObject spellstartpoint;
     [SerializeField]
@@ -111,7 +113,7 @@ public class Player : Character
         {
             if (!IsAttackingrangewithbow && !IsAttackingrangewithstaff)
             {
-                GetComponent<PlayerMana>().Usespell(25);
+                GetComponent<PlayerMana>().Usespell(spellcost);
                 if (Manaavailable())
                 {
                     Vector3 way = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

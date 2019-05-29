@@ -23,6 +23,10 @@ public class EnemyHealth : MonoBehaviour
     // Slider correspond à la barre de vie du monstre
     public Slider healthbar;
     
+    
+    public Signal roomSignal;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +62,7 @@ public class EnemyHealth : MonoBehaviour
             RandomSpawn.reloading = true;
             if (GetComponentInParent<Room>() != null)
             {
+                roomSignal.Raise();
                 gameObject.SetActive(false);
             }
             else

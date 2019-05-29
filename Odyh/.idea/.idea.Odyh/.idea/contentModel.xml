@@ -29,7 +29,6 @@
           <e p="En cours" t="Include">
             <e p="Spell.cs" t="Include" />
           </e>
-          <e p="Enemyprojectile.cs" t="Include" />
           <e p="FloatingNumbers.cs" t="Include" />
           <e p="Interactable.cs" t="Include" />
           <e p="Interface" t="Include">
@@ -44,9 +43,11 @@
           <e p="Monstre" t="Include">
             <e p="Block.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
+            <e p="Enemyprojectile.cs" t="Include" />
             <e p="HurtPlayer.cs" t="Include" />
             <e p="MonsterController.cs" t="Include" />
             <e p="PatrolEnemy.cs" t="Include" />
+            <e p="TurretEnemy.cs" t="Include" />
           </e>
           <e p="Objet" t="Include">
             <e p="BagItem.cs" t="Include" />
