@@ -37,6 +37,9 @@ public class Pnjmovement : MonoBehaviour
     // To stop the PNJ when the player is talking to him
     public bool stopmove;
     private DialogueManager dlgmanager;
+
+    
+    
     
     // Start is called before the first frame update
     void Start()
@@ -72,6 +75,8 @@ public class Pnjmovement : MonoBehaviour
         if (stopmove)
         {
             myRigidbody2D.velocity = Vector2.zero;
+            walkCounter = -1;
+            ResetAnim();
             return;
         }
         
@@ -163,5 +168,10 @@ public class Pnjmovement : MonoBehaviour
         }
         
         myAnimator.SetLayerWeight(myAnimator.GetLayerIndex(layerName),1);
+    }
+
+    public void ResetAnim()
+    {
+        ActivateLayer("Idle Layer");
     }
 }

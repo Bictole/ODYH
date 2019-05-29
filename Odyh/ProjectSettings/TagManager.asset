@@ -10,6 +10,9 @@ TagManager:
   - Player Projectile
   - Arc
   - Environnement
+  - Breakable
+  - Sword
+  - Pnj
   layers:
   - Default
   - TransparentFX

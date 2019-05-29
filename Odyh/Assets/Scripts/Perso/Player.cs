@@ -28,6 +28,7 @@ public class Player : Character
     [SerializeField]
     private GameObject explosioneffect;
 
+    public VectorValue startingPosition;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -36,6 +37,7 @@ public class Player : Character
         sfx = FindObjectOfType<SFXManager>();
 
         inventory = FindObjectOfType<Inventory>();
+        transform.position = startingPosition.initialvalue;
     }
 
     // Update is called once per frame

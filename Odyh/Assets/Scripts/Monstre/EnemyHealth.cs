@@ -30,7 +30,11 @@ public class EnemyHealth : MonoBehaviour
         SetMaxHealth();
         _playerStats = FindObjectOfType<PlayerStats>();
         healthbar.maxValue = monsterMaxHealth;
-        
+    }
+
+    private void OnEnable()
+    {
+        SetMaxHealth();
         
     }
 
@@ -52,7 +56,15 @@ public class EnemyHealth : MonoBehaviour
             // Lance la procédure de réapparition et décrémente le nb d'ennemis vivant sur la carte
             RandomSpawn.nb_enemy -= 1;
             RandomSpawn.reloading = true;
-            Destroy(gameObject);
+            if (GetComponentInParent<Room>() != null)
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 

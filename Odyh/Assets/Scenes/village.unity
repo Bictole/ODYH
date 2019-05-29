@@ -593,6 +593,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5126094128107142537, guid: 46608f683ed18ca49adbf545fbca7deb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126094128107142537, guid: 46608f683ed18ca49adbf545fbca7deb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46608f683ed18ca49adbf545fbca7deb, type: 3}
 --- !u!1001 &708254017
@@ -2257,15 +2267,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1730218908, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730218907, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 1617216349349791725, guid: 759e1dc122021874b930450f4b5348e6,
         type: 3}
-    - target: {fileID: 1730218908, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2042300884119667641, guid: acbbfd1582686834a9c86772b939baa0,
         type: 3}
       propertyPath: m_SortingOrder
@@ -2273,6 +2283,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acbbfd1582686834a9c86772b939baa0, type: 3}
+--- !u!4 &839567114 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1730218909, guid: acbbfd1582686834a9c86772b939baa0,
+    type: 3}
+  m_PrefabInstance: {fileID: 839567113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &842962226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2724,8 +2740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_a_charger: Maison5
-  posX: 54.5
-  posY: -47
+  playerPosition: {x: 0, y: 0}
+  playerStorage: {fileID: 0}
 --- !u!61 &1152362709
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2797,8 +2813,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_a_charger: Maison3
-  posX: 57
-  posY: -22.5
+  playerPosition: {x: 0, y: 0}
+  playerStorage: {fileID: 0}
 --- !u!61 &1219742177
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2870,8 +2886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_a_charger: Maison6
-  posX: 24.65
-  posY: -47
+  playerPosition: {x: 0, y: 0}
+  playerStorage: {fileID: 0}
 --- !u!61 &1285538486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2985,11 +3001,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 612315614, guid: 18a560bb57f60074aa29b6f5c76c4177, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.943
+      value: 60.02
       objectReference: {fileID: 0}
     - target: {fileID: 612315614, guid: 18a560bb57f60074aa29b6f5c76c4177, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.06
+      value: -22.37
       objectReference: {fileID: 0}
     - target: {fileID: 612315614, guid: 18a560bb57f60074aa29b6f5c76c4177, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3031,6 +3047,10 @@ PrefabInstance:
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 276738489}
+    - target: {fileID: 612315611, guid: 18a560bb57f60074aa29b6f5c76c4177, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 839567114}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18a560bb57f60074aa29b6f5c76c4177, type: 3}
 --- !u!1001 &1472113592
@@ -3152,8 +3172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_a_charger: Maison1
-  posX: 1.5
-  posY: -6
+  playerPosition: {x: 0, y: 0}
+  playerStorage: {fileID: 0}
 --- !u!61 &1502210860
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3225,8 +3245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_a_charger: Maison4
-  posX: 65.5
-  posY: -34
+  playerPosition: {x: 0, y: 0}
+  playerStorage: {fileID: 0}
 --- !u!61 &1540264777
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3298,8 +3318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_a_charger: Plage
-  posX: 51
-  posY: -35
+  playerPosition: {x: 51, y: -33}
+  playerStorage: {fileID: 11400000, guid: 165529c7e803f24478da342b298359f0, type: 2}
 --- !u!61 &1562621167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3519,8 +3539,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene_a_charger: Maison2
-  posX: 34
-  posY: -33
+  playerPosition: {x: 0, y: 0}
+  playerStorage: {fileID: 0}
 --- !u!61 &1864599354
 BoxCollider2D:
   m_ObjectHideFlags: 0

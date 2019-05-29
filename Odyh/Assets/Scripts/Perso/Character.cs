@@ -55,6 +55,7 @@ public abstract class Character : MonoBehaviour
 
         stopmove = false;
         IsPush = false;
+        
         // Permet de ne pas détruire le perso quand on charge une scene -> sans duplication
         if (!playerExists)
         {
@@ -85,7 +86,7 @@ public abstract class Character : MonoBehaviour
         }
         if(timepush > 0)
             timepush -= Time.deltaTime;  
-        if(timepush <= 0 && !IsPush)
+        if(timepush <= 0 && !IsPush && !stopmove)
         {
             Move();
         }
@@ -111,49 +112,53 @@ public abstract class Character : MonoBehaviour
     {
         if (stopmove)
         {
+            direction.x = 0;
+            direction.y = 0;
             myRigidbody.velocity = Vector2.zero;
-            return;
-        }
-        if (IsAttacking && !InInventory)
-        {
-            ActivateLayer("Attack Layer");
-        }
-
-        else if (IsAttackingrangewithbow && !InInventory)
-        {
-           if (IsMoving)
-            {
-                direction.x = 0;
-                direction.y = 0;
-            }
-
-              ActivateLayer("Bow Layer");
-        }
-        else if (IsAttackingrangewithstaff && !InInventory)
-        {
-            if (IsMoving)
-            {
-                direction.x = 0;
-                direction.y = 0;
-            }
-
-            ActivateLayer("Spell Layer");
-        }
-        //Checks if we are moving or standing still, if we are moving then we need to play the movement
-        else if (IsMoving)
-        {
-            ActivateLayer("Walk Layer");
-            
-            //Sets the animation parameter so that he faces the correct direction
-            myAnimator.SetFloat("x", direction.x);
-            myAnimator.SetFloat("y", direction.y);
-            
-            StopAttack();
         }
         else
         {
-            //Makes sur that we will go back to idle when we aren't pressing any keys.
-            ActivateLayer("Idle Layer");
+            if (IsAttacking && !InInventory)
+            {
+                ActivateLayer("Attack Layer");
+            }
+
+            else if (IsAttackingrangewithbow && !InInventory)
+            {
+                if (IsMoving)
+                {
+                    direction.x = 0;
+                    direction.y = 0;
+                }
+
+                ActivateLayer("Bow Layer");
+            }
+            else if (IsAttackingrangewithstaff && !InInventory)
+            {
+                if (IsMoving)
+                {
+                    direction.x = 0;
+                    direction.y = 0;
+                }
+
+                ActivateLayer("Spell Layer");
+            }
+            //Checks if we are moving or standing still, if we are moving then we need to play the movement
+            else if (IsMoving)
+            {
+                ActivateLayer("Walk Layer");
+            
+                //Sets the animation parameter so that he faces the correct direction
+                myAnimator.SetFloat("x", direction.x);
+                myAnimator.SetFloat("y", direction.y);
+            
+                StopAttack();
+            }
+            else
+            {
+                //Makes sur that we will go back to idle when we aren't pressing any keys.
+                ActivateLayer("Idle Layer");
+            }
         }
     }
 
@@ -185,5 +190,12 @@ public abstract class Character : MonoBehaviour
     {
         IsAttackingrangewithstaff = false;
         myAnimator.SetBool("attackrangestaff",IsAttackingrangewithstaff);
+    }
+
+
+    public void Resetanim()
+    {
+        myRigidbody.velocity = Vector2.zero;
+        ActivateLayer("Idle Layer");
     }
 }

@@ -57,11 +57,20 @@ public class Range : MonoBehaviour
     // Stop le déplacement de l'objet si il rencontre l'environnement
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Environnement"))
+        if (other.gameObject.CompareTag("Environnement") || other.gameObject.CompareTag("Breakable"))
         {
-            gameObject.GetComponent<Collider2D>().isTrigger = false;
-            MyRigidbody2D.velocity = Vector2.zero;
-            canmove = false;
+            if (gameObject.GetComponent<HurtEnemy>().damageBurst.name is "Explosion")
+            {
+                Instantiate(gameObject.GetComponent<HurtEnemy>().damageBurst, other.transform.position, other.transform.rotation);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+                
+            
         }
     }
+    
 }

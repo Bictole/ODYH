@@ -167,7 +167,7 @@ public class Inventory : MonoBehaviour
             AddInventoryItem(pot);
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             Flèche flèche = (Flèche) Instantiate(items[2]);
             
@@ -186,6 +186,14 @@ public class Inventory : MonoBehaviour
             
             Inventory.InventoryScr.OpenOrClose();
         }
+        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Key key = (Key) Instantiate(items[4]);
+            
+            AddInventoryItem(key);
+        }
+        
 
         // Test si l'inventaire est ouvert ou non
         if (bags.Count != 0)
@@ -201,5 +209,21 @@ public class Inventory : MonoBehaviour
         }
         
         
+    }
+    
+    public bool Keyavailable()
+    {
+        foreach (var bag in inventory.bags)
+        {
+            foreach (var slot in bag.BagScr.slotscrList)
+            {
+                if (slot.TheItem is Key)
+                {
+                    slot.Delete_Item(slot.TheItem);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

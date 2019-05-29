@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
 
     // Define which Target to follow
-    public Character target;
+    public Transform target;
     
     
     // Speed of the camera
@@ -16,20 +16,23 @@ public class CameraController : MonoBehaviour
     private static bool cameraExists;
 
     public Vector3 offset;
+
+    private Vector3 velocity = Vector3.zero;
+
+    public Vector2 maxPosition;
+    public Vector2 minPosition;
+
+    // Position reset
+    public VectorValue camMin;
+    public VectorValue camMax;
     
     // Start is called before the first frame update
     void Start()
     {
-        if (!cameraExists)
-        {
-            cameraExists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        target = FindObjectOfType<Player>().transform;
 
+        //maxPosition = camMax.initialvalue;
+        //minPosition = camMin.initialvalue;
         transform.position = target.transform.position + offset;
 
     }
@@ -37,7 +40,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position != target.transform.position)
+        if (transform.position != target.position)
         {
             MoveCamera();
         }
@@ -45,17 +48,15 @@ public class CameraController : MonoBehaviour
 
     public void MoveCamera()
     {
-        Vector3 targetPosition;
-        if (target.nextdirection != Vector3.zero)
-        {
-            targetPosition = target.transform.position + target.nextdirection + offset;
-        }
-        else
-        {
-            targetPosition = target.transform.position + offset;
-        }
-        
-        transform.position = Vector3.Lerp(target.transform.position, targetPosition, moveSpeed);
-        
+        float targetClampX = Mathf.Clamp(target.position.x, minPosition.x, maxPosition.x);
+        float targetClampY = Mathf.Clamp(target.position.y, minPosition.y, maxPosition.y);
+         
+        Vector3 point = GetComponent<Camera>().WorldToViewportPoint(target.position);
+        Vector3 delta = target.position - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); 
+        Vector3 destination = transform.position + delta;
+         
+        Vector3 currentplace = new Vector3(targetClampX, targetClampY, transform.position.z);
+        Vector3 cameraMove = Vector3.Lerp(transform.position, currentplace,moveSpeed);
+        transform.position = cameraMove;
     }
 }

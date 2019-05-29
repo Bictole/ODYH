@@ -81,5 +81,6 @@ public class DialogueManager : MonoBehaviour
         dialogueActive = true;
         dialogueBox.SetActive(true);
         thePlayer.stopmove = true;
+        thePlayer.Resetanim();
     }
 }

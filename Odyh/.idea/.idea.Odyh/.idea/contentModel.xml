@@ -19,12 +19,19 @@
           <e p="CameraController.cs" t="Include" />
           <e p="Chest.cs" t="Include" />
           <e p="DestroyOvertime.cs" t="Include" />
+          <e p="Donjon" t="Include">
+            <e p="Donjon.cs" t="Include" />
+            <e p="Door.cs" t="Include" />
+            <e p="DungeonEnemyRoom.cs" t="Include" />
+          </e>
           <e p="Dontdestroyonload.cs" t="Include" />
           <e p="Echapmenu.cs" t="Include" />
           <e p="En cours" t="Include">
             <e p="Spell.cs" t="Include" />
           </e>
+          <e p="Enemyprojectile.cs" t="Include" />
           <e p="FloatingNumbers.cs" t="Include" />
+          <e p="Interactable.cs" t="Include" />
           <e p="Interface" t="Include">
             <e p="Bag.cs" t="Include" />
             <e p="BagButton.cs" t="Include" />
@@ -39,6 +46,7 @@
             <e p="EnemyHealth.cs" t="Include" />
             <e p="HurtPlayer.cs" t="Include" />
             <e p="MonsterController.cs" t="Include" />
+            <e p="PatrolEnemy.cs" t="Include" />
           </e>
           <e p="Objet" t="Include">
             <e p="BagItem.cs" t="Include" />
@@ -46,11 +54,16 @@
             <e p="Flèche.cs" t="Include" />
             <e p="HealthPotionItem.cs" t="Include" />
             <e p="Item.cs" t="Include" />
+            <e p="Key.cs" t="Include" />
             <e p="MoveManager.cs" t="Include" />
+            <e p="Pot.cs" t="Include" />
+            <e p="Switch.cs" t="Include" />
             <e p="Utilisable.cs" t="Include" />
           </e>
+          <e p="OverworldRoom.cs" t="Include" />
           <e p="Perso" t="Include">
             <e p="Character.cs" t="Include" />
+            <e p="ContextClue.cs" t="Include" />
             <e p="HurtEnemy.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="PlayerHealth.cs" t="Include" />
@@ -61,6 +74,7 @@
           </e>
           <e p="PickaGold.cs" t="Include" />
           <e p="Pickitems.cs" t="Include" />
+          <e p="PlayerHit.cs" t="Include" />
           <e p="Pnj" t="Include">
             <e p="DialogueHolder.cs" t="Include" />
             <e p="DialogueManager.cs" t="Include" />
@@ -73,11 +87,20 @@
             <e p="QuestScr.cs" t="Include" />
           </e>
           <e p="RandomSpawn.cs" t="Include" />
+          <e p="Room.cs" t="Include" />
+          <e p="RoomMove.cs" t="Include" />
           <e p="Scene" t="Include">
             <e p="MainMenu.cs" t="Include" />
             <e p="Next.cs" t="Include" />
           </e>
           <e p="SceneCh.cs" t="Include" />
+          <e p="Signal.cs" t="Include" />
+          <e p="SignalListener.cs" t="Include" />
+          <e p="Value" t="Include">
+            <e p="Boolvalue.cs" t="Include" />
+            <e p="Floatvalue.cs" t="Include" />
+            <e p="VectorValue.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">

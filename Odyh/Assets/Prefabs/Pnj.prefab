@@ -70,12 +70,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9f9130582406c40831b7f54a145d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: Hey there !
+  dialogue: Bonjour aventurier ! Bienvenue sur Odyh !
   dialogueLines:
-  - Hey there.
-  - Help me.
-  - I'm lost.
-  - Please.
+  - Bonjour aventurier ! Bienvenue sur Odyh !
+  - "Je vous ai trouv\xE9 inconscient \xE9chou\xE9 sur cette plage."
+  - "Nous avons trouv\xE9 un de vos amis rescap\xE9, et il s'est dirig\xE9 vers notre
+    village."
+  - 'Si vous voulez le rejoindre, dirigez vous vers le nord ! '
+  context: {fileID: 11400000, guid: 6801868e1bc23fc4a9a8612a30d364a7, type: 2}
+  playerInrange: 0
 --- !u!1 &3732920466397584852
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +95,7 @@ GameObject:
   - component: {fileID: 3732920466397584846}
   m_Layer: 0
   m_Name: Pnj
-  m_TagString: Untagged
+  m_TagString: Pnj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
