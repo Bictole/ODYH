@@ -39,7 +39,7 @@ public class Player : Character
         sfx = FindObjectOfType<SFXManager>();
 
         inventory = FindObjectOfType<Inventory>();
-        transform.position = startingPosition.initialvalue;
+        transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame

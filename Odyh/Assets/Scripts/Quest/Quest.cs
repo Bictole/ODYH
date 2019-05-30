@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
@@ -15,8 +16,7 @@ public class Quest
         get { return quest_title; }
         set { quest_title = value; }
     }
-    
-    
+        
     
     [SerializeField]
     private string quest_description;
@@ -26,10 +26,9 @@ public class Quest
         get { return quest_description; }
         set { quest_description = value; }
     }
+       
     
-    
-    
-    //array stockant les objectis pour la quête
+    //array stockant les objectis de collecte pour la quête
     [SerializeField]
     private Collect[] collectarray;
 
@@ -38,6 +37,34 @@ public class Quest
         get { return collectarray; }
     }
 
+    //array stockant les objectis de kill pour la quête
+    [SerializeField]
+    private Kill[] killarray;
+
+    public Kill[] Killarray
+    {
+        get => killarray;
+    }
+
+    public QuestPnj QuestPnj { get; set; }
+
+    
+    [SerializeField]
+    private int questLevel;
+    
+    public int QuestLevel
+    {
+        get => questLevel;
+        set => questLevel = value;
+    }
+
+    [SerializeField]
+    private int experiencegiven;
+    
+   public int ExperienceGiven
+    {
+        get => experiencegiven;
+    }
 
     public bool QuestIsFinished
     {
@@ -50,16 +77,19 @@ public class Quest
                     return false;
                 }
             }
+            foreach (var obj in killarray)
+            {
+                if (!obj.Finished)
+                {
+                    return false;
+                }
+            }
 
             return true;
         }
     }
     
-    
     public QuestScr Qscript { get; set; }
-    
-    
-    
     
     
     // Start is called before the first frame update
@@ -71,7 +101,7 @@ public class Quest
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 }
 
@@ -80,8 +110,6 @@ public class Quest
 [System.Serializable]
 public abstract class Objective
 {
-    
-    
     //Nombre d'objets possédés
     private int objnumber;
 
@@ -90,8 +118,14 @@ public abstract class Objective
         get { return objnumber; }
         set { objnumber = value; }
     }
-    
-    
+
+    [SerializeField]
+    private Item itemrequis;
+
+    public Item Itemrequis
+    {
+        get { return itemrequis; }
+    }
     
     //Nombre d'objets requis pour la quete
     [SerializeField]
@@ -106,11 +140,11 @@ public abstract class Objective
     
     //type de l'objet requis 
     [SerializeField]    
-    private string objet;
+    private string object_type;
 
-    public string Objet
+    public string Object_type
     {
-        get { return objet; }
+        get { return object_type; }
     }
 
 
@@ -126,13 +160,46 @@ public abstract class Objective
 [System.Serializable]
 public class Collect : Objective
 {
-    /*public void ItemCount(Item item)
+    public void UpdateItemCount()
     {
-        if (Objet.ToLower() == item.title.ToLower())
+        Objnumber = Inventory.InventoryScr.ItemCount(Itemrequis);
+
+        if (Objnumber <= Totalnumber)
         {
-            Objnumber = InventoryScr.Myinstance.GetItemCount
-            Questlog.Log.UpdateProgress();
-            Questlog.Log.Check_Finished()
+            MessageManager.TheMessageManager.Message(string.Format("{0} : {1}/{2}", Itemrequis.Title, Objnumber, Totalnumber));
         }
-    }*/
+
+        Questlog.Log.UpdateProgress();
+        Questlog.Log.Check_Finished();    
+    }
+   
+
+    public void Complete()
+    {
+        Stack<Item> items = Inventory.InventoryScr.GetItems(Itemrequis, Totalnumber);
+
+        foreach (var item in items)
+        {
+            item.Delete_the_Item();
+        }
+    }
+        
+}
+
+[System.Serializable]
+public class Kill : Objective
+{
+
+    public void UpdateKillCount(EnemyHealth aled)
+    {
+        if (Object_type == aled.Type)
+        { 
+            Objnumber += 1;
+            
+            MessageManager.TheMessageManager.Message(string.Format("{0} : {1}/{2}", Object_type, Objnumber, Totalnumber));
+            
+            Questlog.Log.UpdateProgress();
+            Questlog.Log.Check_Finished(); 
+        }
+    }
 }

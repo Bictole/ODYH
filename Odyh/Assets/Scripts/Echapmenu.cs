@@ -8,13 +8,14 @@ using UnityEngine.UI;
 public class Echapmenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-    private GameObject player;
+    private Player player;
     public GameObject OptionMenu;
     public GameObject pauseMenu;
 
 
     void Start()
     {
+        player = FindObjectOfType<Player>();
     }
 
     void Update()
@@ -34,6 +35,7 @@ public class Echapmenu : MonoBehaviour
 
     public void Resume()
     {
+        player.gameObject.SetActive(true);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -41,6 +43,7 @@ public class Echapmenu : MonoBehaviour
 
     void Pause()
     {
+        player.gameObject.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;

@@ -35,4 +35,9 @@ public class HealthPotionItem : Item, Utilisable
             
         } 
     }
+
+    public override string GetDescription()
+    {
+        return base.GetDescription() + string.Format("\n<color=#d6d6d6>This Is A Fkin HealthPotion You Retard ??</color>");
+    }
 }

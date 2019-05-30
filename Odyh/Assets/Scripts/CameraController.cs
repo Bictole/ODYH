@@ -31,8 +31,8 @@ public class CameraController : MonoBehaviour
     {
         target = FindObjectOfType<Player>().transform;
 
-        //maxPosition = camMax.initialvalue;
-        //minPosition = camMin.initialvalue;
+        maxPosition = camMax.initialValue;
+        minPosition = camMin.initialValue;
         transform.position = target.transform.position + offset;
 
     }

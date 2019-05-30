@@ -26,6 +26,11 @@ public class UI : MonoBehaviour
 
     public Text Textlevel;
 
+    [SerializeField]
+    private GameObject infos;
+
+    private Text infosText;
+
     //UI script et son gettter 
     private static UI ui;
     public static UI UserInterface
@@ -39,7 +44,13 @@ public class UI : MonoBehaviour
             return ui;    
         }
     }
-    
+
+    private void Awake()
+    {
+        infosText = infos.GetComponentInChildren<Text>();
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,9 +65,13 @@ public class UI : MonoBehaviour
             Destroy(gameObject);
         }
 
+        
         //init du playerstats
         _playerStats = playerH.GetComponent<PlayerStats>();
+        playerH = FindObjectOfType<Player>().GetComponent<PlayerHealth>();
+        playerM = FindObjectOfType<Player>().GetComponent<PlayerMana>();
     }
+
 
     // A chaque update, on met à jour la valeur de la barre de vie ainsi que l'affichage du nombre de point de vie et du niveau du joueur.
     void Update()
@@ -71,5 +86,22 @@ public class UI : MonoBehaviour
         manabar.value = playerM.playerMana;
     }
 
-    
+
+    public void ShowInfos(Vector3 pos, IDescribable description)
+    {
+        infos.SetActive(true);
+        infos.transform.position = pos;
+        infosText.text = description.GetDescription();
+    }
+
+    public void HideInfos()
+    {
+        infos.SetActive(false);
+    }
+
+    public void RefreshInfos(IDescribable description)
+    {
+        infosText.text = description.GetDescription();
+    }
+
 }

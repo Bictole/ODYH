@@ -23,7 +23,7 @@ public interface Cliquable
 
 
 //objet qui peuvent être déplacé
-public interface Bougeable
+public interface IBougeable
 {
     Sprite TheSprite { get; set; }
 }
@@ -36,6 +36,10 @@ public interface Interactionnable
 }
 
 
+public interface IDescribable
+{
+    string GetDescription();
+}
 
 
 

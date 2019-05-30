@@ -13,8 +13,7 @@ public class BagItem : Item, Utilisable
     {
         get { return slotnumber; }
     }
-
-   
+    
     [SerializeField] 
     private GameObject bagprefab;
     
@@ -26,7 +25,6 @@ public class BagItem : Item, Utilisable
     {
         this.slotnumber = nbslots;
     }
-
     
     public Sprite Sprite { get; }
     
@@ -40,8 +38,20 @@ public class BagItem : Item, Utilisable
             Delete_the_Item();
             BagScr = Instantiate(bagprefab, Inventory.InventoryScr.transform).GetComponent<Bag>();
             BagScr.Initslots(slotnumber);
-        
-            Inventory.InventoryScr.InitBag(this);
+
+            if (BagButton == null)
+            {
+                Inventory.InventoryScr.InitBag(this);
+            }
+            else
+            {
+                Inventory.InventoryScr.InitBag2(this, BagButton);
+            }
         }
+    }
+
+    public override string GetDescription()
+    {
+        return base.GetDescription() + string.Format("\n<color=#d6d6d6>A Bag is a Bag</color>");
     }
 }

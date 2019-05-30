@@ -117,6 +117,13 @@ public class Bag : MonoBehaviour
 
         return items_list;
     }
-    
+
+    public void Clear()
+    {
+        foreach (var slot in slotscrList)
+        {
+            slot.Clear_slot();   
+        }
+    }
     
 }

@@ -24,8 +24,24 @@ public class EnemyHealth : MonoBehaviour
     public Slider healthbar;
     
     
+    [SerializeField]
+    private string type;
+
+    public string Type
+    {
+        get => type;
+    }
+
+    private Questlog questlog;
+
+    public Questlog Questlog
+    {
+        get => questlog;
+    }
+    
     public Signal roomSignal;
     
+    public LootTable thisLoot;
     
     // Start is called before the first frame update
     void Start()
@@ -48,15 +64,25 @@ public class EnemyHealth : MonoBehaviour
         healthbar.value = monsterHealth;
         if (monsterHealth <= 0)
         {
+			if (Questlog.Log.In_Progress != null)
+            {
+                foreach (var obj in Questlog.Log.In_Progress.Killarray)
+                {
+                    obj.UpdateKillCount(this);
+                }
+            }
+			
             _playerStats.GainExp(experience);
 
-            // Aléatoire qui choisi quel objet drop ou si ne rien drop
-            int rnd = Random.Range(0, itemsdrop.Length + 1);
-            if (rnd < itemsdrop.Length)
-            {
-                Instantiate(itemsdrop[rnd], transform.position, transform.rotation);
-            }
+//            // Aléatoire qui choisi quel objet drop ou si ne rien drop
+//            int rnd = Random.Range(0, itemsdrop.Length + 1);
+//            if (rnd < itemsdrop.Length)
+//            {
+//                Instantiate(itemsdrop[rnd], transform.position, transform.rotation);
+//            }
             
+
+            MakeLoot();
             // Lance la procédure de réapparition et décrémente le nb d'ennemis vivant sur la carte
             RandomSpawn.nb_enemy -= 1;
             RandomSpawn.reloading = true;
@@ -84,6 +110,19 @@ public class EnemyHealth : MonoBehaviour
         monsterHealth = monsterMaxHealth;
     }
     
+    
+    
+    private void MakeLoot()
+    {
+        if(thisLoot != null)
+        {
+            Pickitems current = thisLoot.LootPowerup();
+            if(current != null)
+            {
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
+        }
+    }
     
     
 }

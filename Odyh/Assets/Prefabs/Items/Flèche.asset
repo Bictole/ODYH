@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: "Fl\xE8che"
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300062, guid: 85b54f9c32ee7dd48895bd50f9d42e7a, type: 3}
+  title: "Fl\xE8che"
   stacksize: 10
+  price: 20
+  quality: 0

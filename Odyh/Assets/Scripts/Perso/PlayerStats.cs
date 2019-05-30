@@ -55,7 +55,6 @@ public class PlayerStats : MonoBehaviour
     {
         Instantiate(Xpburst, transform.position, Xpburst.transform.rotation);
         playerLevel += 1;
-        playerexp = 0;
 
         playerhp = lvlhp[playerLevel];        //on prend la valeure associée dans le tableau 
         manager.playerMaxHealth = playerhp;                            // on change les hp max 
@@ -65,5 +64,37 @@ public class PlayerStats : MonoBehaviour
 
         playerdefence = lvldefence[playerLevel];
     }
+
+    public int QuestXP(Quest q)
+    {
+        if (playerLevel <= q.QuestLevel + 5)
+        {
+            return q.ExperienceGiven;
+        }        
+        if (playerLevel == q.QuestLevel + 6)
+        {
+            return (int)(q.ExperienceGiven * 0.8/5)*5;
+        }
+        if (playerLevel == q.QuestLevel + 7)
+        {
+            return (int)(q.ExperienceGiven * 0.6/5)*5;
+        }
+        if (playerLevel == q.QuestLevel + 8)
+        {
+            return (int)(q.ExperienceGiven * 0.4/5)*5;
+        }
+        if (playerLevel == q.QuestLevel + 9)
+        {
+            return (int)(q.ExperienceGiven * 0.2/5)*5;
+        }
+        if (playerLevel >= q.QuestLevel + 10)
+        {
+            return (int)(q.ExperienceGiven * 0.1/5)*5;
+        }
+        else
+        {
+            return 0;
+        }
+    } 
 }
 

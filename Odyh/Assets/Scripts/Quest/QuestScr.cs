@@ -26,6 +26,7 @@ public class QuestScr : MonoBehaviour
     public void Track()    //Change la couleur de la quete select puis appelle Description()
     {
         GetComponent<Text>().color = Color.red;
+        
         Questlog.Log.Description(_quest);
     }
 
@@ -40,16 +41,13 @@ public class QuestScr : MonoBehaviour
         if (_quest.QuestIsFinished && !Text_Finished)
         {
             Text_Finished = true;
-            GetComponent<Text>().text += "(Done)";
+            GetComponent<Text>().text = "[" + _quest .QuestLevel + "] " + _quest.Title + "(Done)";
+            MessageManager.TheMessageManager.Message(string.Format("{0} (Complete)", _quest.Title));
         }
         else if (!_quest.QuestIsFinished)
         {
             Text_Finished = false;
-            GetComponent<Text>().text = _quest.Title;
+            GetComponent<Text>().text = "[" + _quest .QuestLevel + "] " + _quest.Title;
         }
     }
-    
-    
-    
-    
 }

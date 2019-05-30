@@ -1,10 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
+
+public enum Quality
+{
+    Commun, 
+    Rare, 
+    Epique, 
+    Legendaire
+}
 
 //class Mère item
-public class Item : ScriptableObject, Bougeable  // = scripter un objet sans lui attacher de script dans unity
+public class Item : ScriptableObject, IBougeable, IDescribable // = scripter un objet sans lui attacher de script dans unity
 {
     //sprite attaché
     [SerializeField]
@@ -16,7 +26,14 @@ public class Item : ScriptableObject, Bougeable  // = scripter un objet sans lui
         get { return sprite; }
         set { sprite = value; }
     }
-    
+
+    [FormerlySerializedAs("name")] [SerializeField]
+    private string title;
+
+    public string Title
+    {
+        get { return title;  }
+    }
     
     //nombre de fois que l'item est stackable
     [SerializeField] 
@@ -38,6 +55,17 @@ public class Item : ScriptableObject, Bougeable  // = scripter un objet sans lui
         set => slot = value;
     }
 
+    [SerializeField]
+    private int price;
+
+    public int Price
+    {
+        get => price;
+    }
+
+    [SerializeField]
+    private Quality quality;
+
     //fontion de supreesion d'un item
     public void Delete_the_Item()
     {
@@ -47,5 +75,27 @@ public class Item : ScriptableObject, Bougeable  // = scripter un objet sans lui
         }
     }
 
-   
+
+    public virtual string GetDescription()
+    {
+        string color = string.Empty;
+
+        switch (quality)
+        {
+            case Quality.Commun:
+                color = "#d6d6d6";
+                break;
+            case Quality.Rare:
+                color = "#00ff00ff";
+                break;
+            case Quality.Epique:
+                color = "#0000ffff";
+                break;
+            case Quality.Legendaire:
+                color = "#800080ff";
+                break;
+        }
+
+        return string.Format("<color={0}>{1}</color>", color, title);
+    }
 }

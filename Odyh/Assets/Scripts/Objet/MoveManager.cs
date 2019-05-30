@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MoveManager : MonoBehaviour
 {
     //getter du Bougeable
-    public Bougeable Itembougeable{get; set; }
+    public IBougeable Itembougeable{get; set; }
 
     private Image sprite;
 
@@ -28,7 +28,7 @@ public class MoveManager : MonoBehaviour
     }
 
 
-    public void PickBougeable(Bougeable bougeable)
+    public void PickBougeable(IBougeable bougeable)
     {
         this.Itembougeable = bougeable;
         sprite.sprite = bougeable.TheSprite;
@@ -49,25 +49,21 @@ public class MoveManager : MonoBehaviour
     {
         Itembougeable = null;
         sprite.color = new Color(0, 0, 0, 0);
+        Inventory.InventoryScr.TheSlot = null;
     }
 
     //fontion de suppression d'un objet en le jetant hors de l'inventaire
-    private void Delete()
-    {
-        //on check si on clique avec un item dans la main hors de l'inventaire
-        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject() && Itembougeable != null)
+    public void Delete()
+    {      
+        if (Itembougeable is Item && Inventory.InventoryScr.TheSlot != null)
         {
-            if (Itembougeable is Item && Inventory.InventoryScr.TheSlot != null)
-            {
-                (Itembougeable as Item).Slot.Clear_slot();
-            }
-            
-            Drop();
-            Inventory.InventoryScr.TheSlot = null;
+            (Itembougeable as Item).Slot.Clear_slot();
         }
+            
+        Drop();
+        Inventory.InventoryScr.TheSlot = null;
     }
-    
-    
+        
     
     
     // Start is called before the first frame update
@@ -82,6 +78,10 @@ public class MoveManager : MonoBehaviour
         //on suit la position de la souris
         sprite.transform.position = Input.mousePosition;
         
-        Delete();
+        //on check si on clique avec un item dans la main hors de l'inventaire
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject() && Itembougeable != null)
+        {
+            Delete();
+        }      
     }
 }

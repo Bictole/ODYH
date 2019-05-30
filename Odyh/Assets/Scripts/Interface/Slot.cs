@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
+public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable, IPointerEnterHandler, IPointerExitHandler
 {
     //ref du sprite
     [SerializeField]
@@ -94,7 +94,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
     //interface IPointerClickHandler avec le clic droit puis clic gauche pour déplacement 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right)
+        if (eventData.button == PointerEventData.InputButton.Right && MoveManager.TheMoveManager.Itembougeable == null)
         {
             Using_Item();
         }
@@ -104,20 +104,52 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
         {
             
             if (Inventory.InventoryScr.TheSlot == null && !Empty)    //on instancie le slot s'il est null
-            {                
-                MoveManager.TheMoveManager.PickBougeable(TheItem );
-                Inventory.InventoryScr.TheSlot = this;
-            }
-            else if (Inventory.InventoryScr.TheSlot == null && Empty && (MoveManager.TheMoveManager.Itembougeable is BagItem)) //si on a un sac dans la main et qu'on le place dans notre inventaire
             {
-                BagItem bag = (BagItem) MoveManager.TheMoveManager.Itembougeable;
-                
-                if (bag.BagScr != SlotBagScr && Inventory.InventoryScr.EmptySlotNb - bag.Slotnumber > 0) //on check si on ne met pas le bag dans lui-même et qu'il y a assez de slots libre pour les items
+                if (MoveManager.TheMoveManager.Itembougeable != null)
                 {
-                    AddItem(bag);
-                    bag.BagButton.Delete_bag();
+                    if (MoveManager.TheMoveManager.Itembougeable is BagItem)
+                    {
+                        if (TheItem is BagItem)
+                        {
+                            Inventory.InventoryScr.SwapBags(MoveManager.TheMoveManager.Itembougeable as BagItem, TheItem as BagItem);    
+                        }
+                    }
+                    else if (MoveManager.TheMoveManager.Itembougeable is Equipement)
+                    {
+                        if (TheItem is Equipement && (TheItem as Equipement).EquipementType == (MoveManager.TheMoveManager.Itembougeable as Equipement).EquipementType) 
+                        {
+                            (TheItem as Equipement).Equip();
+                            MoveManager.TheMoveManager.Drop();
+                        }
+                    }
+                }
+                else
+                {
+                    MoveManager.TheMoveManager.PickBougeable(TheItem );
+                    Inventory.InventoryScr.TheSlot = this;
+                }                
+            }
+            else if (Inventory.InventoryScr.TheSlot == null && Empty) //si on a un sac dans la main et qu'on le place dans notre inventaire
+            {
+                if (MoveManager.TheMoveManager.Itembougeable is BagItem)
+                {
+                    BagItem bag = (BagItem) MoveManager.TheMoveManager.Itembougeable;
+                
+                    if (bag.BagScr != SlotBagScr && Inventory.InventoryScr.EmptySlotNb - bag.Slotnumber > 0) //on check si on ne met pas le bag dans lui-même et qu'il y a assez de slots libre pour les items
+                    {
+                        AddItem(bag);
+                        bag.BagButton.Delete_bag();
+                        MoveManager.TheMoveManager.Drop();
+                    }
+                }
+                else if (MoveManager.TheMoveManager.Itembougeable is Equipement)
+                {
+                    Equipement e = (Equipement) MoveManager.TheMoveManager.Itembougeable;
+                    AddItem(e);
+                    EquipementUI.EquipementUi.EquipementButton.Desequip(); 
                     MoveManager.TheMoveManager.Drop();
                 }
+               
             }
             else if (Inventory.InventoryScr.TheSlot != null) //si le slot n'est pas null, on check les fonctions qui replace, switch ou bouge les items dans le sac
             {
@@ -210,6 +242,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
             (TheItem as Utilisable).Use();
             
         }
+        else if (TheItem is Equipement)
+        {
+            (TheItem as Equipement).Equip();     
+        }
     }
     
     
@@ -265,5 +301,18 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable
     public Text StackText
     {
         get { return stacktext; }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!Empty)
+        {
+            UI.UserInterface.ShowInfos(transform.position, TheItem);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        UI.UserInterface.HideInfos();
     }
 }

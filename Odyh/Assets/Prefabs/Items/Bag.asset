@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Bag
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300192, guid: 92cb3dbe683019c47ba2e146cdaf27fd, type: 3}
+  title: Bag
   stacksize: 0
+  price: 0
+  quality: 0
   bagprefab: {fileID: 9102638306588210210, guid: becdd6281e739204e96a902549db5519,
     type: 3}

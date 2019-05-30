@@ -21,6 +21,11 @@ public class DialogueManager : MonoBehaviour
     private bool dialogueboxexists;
     
     private Character thePlayer;
+    
+    public float vitesse_écriture;
+
+    private bool stopforeach;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -51,28 +56,59 @@ public class DialogueManager : MonoBehaviour
         
         if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
-            currentLine += 1;
-
-            if (currentLine >= dialogueLines.Length)
+            if (dialogueText.text.Length != dialogueLines[currentLine].Length)
             {
-                dialogueBox.SetActive(false);
-                dialogueActive = false;
-
-                currentLine = 0;
-                thePlayer.stopmove = false;
+                dialogueText.text = dialogueLines[currentLine];
+                stopforeach = true;
             }
+            else
+            {
+                stopforeach = false;
+                currentLine += 1;
 
-            dialogueText.text = dialogueLines[currentLine];
+                if (currentLine >= dialogueLines.Length)
+                {
+                    dialogueBox.SetActive(false);
+                    dialogueActive = false;
 
+                    currentLine = 0;
+                    thePlayer.stopmove = false;
+                }
+                else
+                {
+                    StartCoroutine(Type());
+                }
+            }
         }
     }
 
 
     // Open the dialogue Box and make the player stop moving
-    public void ShowBox(string dialogue)
+    public void ShowBox()
     {
+        currentLine = 0;
         ShowDialogue();
-        dialogueText.text = dialogue;
+//        dialogueText.text = dialogue;
+        StartCoroutine(Type());
+    }
+    
+    
+    IEnumerator Type()
+    {
+        dialogueText.text = "";
+        foreach(char lettre in dialogueLines[currentLine])
+        {
+            if (stopforeach)
+            {
+                yield break;
+            }
+            else
+            {
+                dialogueText.text += lettre;
+                yield return new WaitForSeconds(vitesse_écriture);
+            }
+            
+        }
     }
 
     
@@ -82,5 +118,6 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(true);
         thePlayer.stopmove = true;
         thePlayer.Resetanim();
+        currentLine = 0;
     }
 }

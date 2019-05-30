@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -62,6 +63,26 @@ public class Inventory : MonoBehaviour
             return count;
         }
     }
+
+    public int TotalSlotNb
+    {
+        get
+        {
+            int count = 0;
+
+            foreach (var bag in bags)
+            {
+                count += bag.BagScr.slotscrList.Count;
+            }
+
+            return count;
+        }
+    }
+
+    public int FullSlotNb
+    {
+        get { return TotalSlotNb - EmptySlotNb; }
+    }
     
     //liste d'item
     [SerializeField]
@@ -79,7 +100,7 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         BagItem bag = (BagItem)Instantiate(items[0]);
-        bag.Init(10);
+        bag.Init(20);
         bag.Use();
     }
 
@@ -94,18 +115,51 @@ public class Inventory : MonoBehaviour
                 buttons.Bag = bag;
                 bags.Add(bag);
                 bag.BagButton = buttons;
+                bag.BagScr.transform.SetSiblingIndex(buttons.Index);
                 break;
             }
         }
     }
 
+    public void InitBag2(BagItem bag, BagButton bagButton)
+    {
+        bags.Add(bag);
+        bagButton.Bag = bag;
+        bag.BagScr.transform.SetSiblingIndex(bagButton.Index);
+    }
+
     //fonction qui va delete un sac (appelé dans Bagbutton)
-    public void Delete_bag_inventory(BagItem bag)
+    public void Delete_bag_inventory(BagItem bag)         
     {
         bags.Remove(bag);
         Destroy(bag.BagScr.gameObject);
     }
     
+    
+    public void SwapBags(BagItem oldB, BagItem newB)
+    {
+        int newSlotCount = (TotalSlotNb - oldB.Slotnumber) + newB.Slotnumber;
+
+        if (newSlotCount - FullSlotNb >= 0)
+        {
+            List<Item> oldItems = oldB.BagScr.GetItems();
+            Delete_bag_inventory(oldB);
+
+            newB.BagButton = oldB.BagButton;
+            newB.Use();
+
+            foreach (var item in oldItems)
+            {
+                if (item != newB)
+                {
+                    AddInventoryItem(item);
+                }
+            }
+            AddInventoryItem(oldB);
+            MoveManager.TheMoveManager.Drop();
+            InventoryScr.TheSlot = null;
+        }
+    }
     
     //fonction d'ouverture/fermeture des sacs en groupe
     public void OpenOrClose()
@@ -124,16 +178,72 @@ public class Inventory : MonoBehaviour
     }
 
     //on check le premier sac avec un emplacement pour mettre l'item
-    public void AddInventoryItem(Item item)
+    public bool AddInventoryItem(Item item)
     {
         foreach (var sac in bags)
         {
             if (sac.BagScr.AddBagItem(item))
             {
-                return;
+                if (Questlog.Log.In_Progress != null)
+                {
+                    foreach (var obj in Questlog.Log.In_Progress.Collectarray)
+                    {
+                        obj.UpdateItemCount();
+                    }
+                }
+  
+                return true;
             }
         }
+
+        return false;
     }
+
+
+    public int ItemCount(Item item)
+    {
+        int count = 0;
+
+        foreach (var bag in bags)
+        {
+            foreach (Slot slot in bag.BagScr.slotscrList)
+            {
+                if ((!slot.Empty) && slot.TheItem.Title == item.Title)
+                {
+                    count += slot.itemStack.Count;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    public Stack<Item> GetItems(Item item, int count)
+    {
+        Stack<Item> items = new Stack<Item>();
+        
+        foreach (var bag in bags)
+        {
+            foreach (Slot slot in bag.BagScr.slotscrList)
+            {
+                if ((!slot.Empty) && slot.TheItem.Title == item.Title)
+                {
+                    foreach (var i in slot.itemStack)
+                    {
+                        items.Push(i);
+
+                        if (items.Count == count)
+                        {
+                            return items;
+                        }
+                    }
+                }
+            }
+        }
+
+        return items;
+    }
+    
     
     
     // Start is called before the first frame update
@@ -167,33 +277,43 @@ public class Inventory : MonoBehaviour
             AddInventoryItem(pot);
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             Flèche flèche = (Flèche) Instantiate(items[2]);
             
             AddInventoryItem(flèche);
         }
         
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.H))
         {
-            Bombes bombes = (Bombes) Instantiate(items[3]);
-            
-            AddInventoryItem(bombes);
+            AddInventoryItem((Equipement)Instantiate(items[3]));
+            AddInventoryItem((Equipement)Instantiate(items[4]));
+            AddInventoryItem((Equipement)Instantiate(items[5]));
+            AddInventoryItem((Equipement)Instantiate(items[6]));
+            AddInventoryItem((Equipement)Instantiate(items[7]));
+            AddInventoryItem((Equipement)Instantiate(items[8]));
+            AddInventoryItem((Equipement)Instantiate(items[9]));
+            AddInventoryItem((Equipement)Instantiate(items[10]));
         }
         
         if (Input.GetKeyDown(KeyCode.C))
         {
-            
             Inventory.InventoryScr.OpenOrClose();
         }
         
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            Key key = (Key) Instantiate(items[4]);
+            Key key = (Key) Instantiate(items[12]);
             
             AddInventoryItem(key);
         }
         
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Bombes bombes = (Bombes) Instantiate(items[11]);
+            
+            AddInventoryItem(bombes);
+        }
 
         // Test si l'inventaire est ouvert ou non
         if (bags.Count != 0)

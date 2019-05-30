@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickaGold : MonoBehaviour
+public class PickaGold : Pickitems
 {
     //La valeur a ajouter
     public int goldvalue;
@@ -21,7 +21,7 @@ public class PickaGold : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)    //on utilise ici la fonction associée au Collider sur le coin
+    public override void OnTriggerEnter2D(Collider2D other)    //on utilise ici la fonction associée au Collider sur le coin
     {
         if (other.gameObject.name == "Player")
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public abstract class Character : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public abstract class Character : MonoBehaviour
     
     // To know if the player exists
     private static bool playerExists;
+    
+    private Interactionnable interactable;
 
     // To stop the player when he is talking to a PNJ for example
     public bool stopmove;
@@ -56,16 +59,16 @@ public abstract class Character : MonoBehaviour
         stopmove = false;
         IsPush = false;
         
-        // Permet de ne pas détruire le perso quand on charge une scene -> sans duplication
-        if (!playerExists)
-        {
-            playerExists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+//        // Permet de ne pas détruire le perso quand on charge une scene -> sans duplication
+//        if (!playerExists)
+//        {
+//            playerExists = true;
+//            DontDestroyOnLoad(transform.gameObject);
+//        }
+//        else
+//        {
+//            Destroy(gameObject);
+//        }
         
     }
 
@@ -73,6 +76,7 @@ public abstract class Character : MonoBehaviour
     protected virtual void Update()
     {
         HandleLayers();
+        ClickTarget();
     }
 
     
@@ -197,5 +201,47 @@ public abstract class Character : MonoBehaviour
     {
         myRigidbody.velocity = Vector2.zero;
         ActivateLayer("Idle Layer");
+    }
+	
+	public void Interagir()
+    {
+        if (interactable != null)
+        {
+            interactable.Interagir();
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Interactionnable"))
+        {
+            interactable = other.GetComponent<Interactionnable>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Interactionnable"))
+        {
+            if (interactable != null)
+            {
+                interactable.StopInteraction();
+                interactable = null;
+            }
+        }
+    }
+
+    private void ClickTarget()
+    {
+        if (Input.GetMouseButton(1) && !EventSystem.current.IsPointerOverGameObject())
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,
+                Mathf.Infinity, 2048);
+
+            if (hit.collider != null && hit.collider.CompareTag("Interactionnable") && hit.collider.gameObject.GetComponent<Interactionnable>() == interactable)
+            {
+                Interagir();
+            }
+        }
     }
 }

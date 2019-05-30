@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300016, guid: daad2152a673dce4faf238d99301f4c5, type: 3}
+  title: HealthPotion
   stacksize: 5
+  price: 10
+  quality: 0
   healthgain: 25
   healnb: {fileID: 4619710425485635294, guid: f0e8e50cbb2381641ae211c0963391e9, type: 3}
   healburst: {fileID: 3609613917310648900, guid: 987c56c8600463a4d93a3cb040c32f1e,

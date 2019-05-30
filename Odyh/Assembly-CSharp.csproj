@@ -64,7 +64,7 @@
     <Compile Include="Assets\Scripts\Audio\VolumeController.cs" />
     <Compile Include="Assets\Scripts\Audio\VolumeManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Chest.cs" />
+    <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\DestroyOvertime.cs" />
     <Compile Include="Assets\Scripts\Donjon\Donjon.cs" />
     <Compile Include="Assets\Scripts\Donjon\Door.cs" />
@@ -77,7 +77,11 @@
     <Compile Include="Assets\Scripts\Interface\Bag.cs" />
     <Compile Include="Assets\Scripts\Interface\BagButton.cs" />
     <Compile Include="Assets\Scripts\Interface\Chargement.cs" />
+    <Compile Include="Assets\Scripts\Interface\ChestUIScript.cs" />
+    <Compile Include="Assets\Scripts\Interface\Equipement\EquipementButton.cs" />
+    <Compile Include="Assets\Scripts\Interface\Equipement\EquipementUI.cs" />
     <Compile Include="Assets\Scripts\Interface\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Interface\MessageManager.cs" />
     <Compile Include="Assets\Scripts\Interface\Slot.cs" />
     <Compile Include="Assets\Scripts\Interface\UI.cs" />
     <Compile Include="Assets\Scripts\MoneyManager.cs" />
@@ -90,12 +94,15 @@
     <Compile Include="Assets\Scripts\Monstre\TurretEnemy.cs" />
     <Compile Include="Assets\Scripts\Objet\BagItem.cs" />
     <Compile Include="Assets\Scripts\Objet\Bombes.cs" />
+    <Compile Include="Assets\Scripts\Objet\Equipement.cs" />
     <Compile Include="Assets\Scripts\Objet\Flèche.cs" />
     <Compile Include="Assets\Scripts\Objet\HealthPotionItem.cs" />
     <Compile Include="Assets\Scripts\Objet\Item.cs" />
     <Compile Include="Assets\Scripts\Objet\Key.cs" />
+    <Compile Include="Assets\Scripts\Objet\LootTable.cs" />
     <Compile Include="Assets\Scripts\Objet\MoveManager.cs" />
     <Compile Include="Assets\Scripts\Objet\Pot.cs" />
+    <Compile Include="Assets\Scripts\Objet\PowerUp.cs" />
     <Compile Include="Assets\Scripts\Objet\Switch.cs" />
     <Compile Include="Assets\Scripts\Objet\Utilisable.cs" />
     <Compile Include="Assets\Scripts\OverworldRoom.cs" />
@@ -117,6 +124,8 @@
     <Compile Include="Assets\Scripts\Quest\Quest.cs" />
     <Compile Include="Assets\Scripts\Quest\Questlog.cs" />
     <Compile Include="Assets\Scripts\Quest\QuestPnj.cs" />
+    <Compile Include="Assets\Scripts\Quest\QuestPnjScr.cs" />
+    <Compile Include="Assets\Scripts\Quest\QuestPnjUI.cs" />
     <Compile Include="Assets\Scripts\Quest\QuestScr.cs" />
     <Compile Include="Assets\Scripts\RandomSpawn.cs" />
     <Compile Include="Assets\Scripts\Room.cs" />
@@ -126,9 +135,14 @@
     <Compile Include="Assets\Scripts\SceneCh.cs" />
     <Compile Include="Assets\Scripts\Signal.cs" />
     <Compile Include="Assets\Scripts\SignalListener.cs" />
+    <Compile Include="Assets\Scripts\StockageChest.cs" />
     <Compile Include="Assets\Scripts\Value\Boolvalue.cs" />
     <Compile Include="Assets\Scripts\Value\Floatvalue.cs" />
     <Compile Include="Assets\Scripts\Value\VectorValue.cs" />
+    <Compile Include="Assets\Scripts\Vendor\Vendor.cs" />
+    <Compile Include="Assets\Scripts\Vendor\VendorButton.cs" />
+    <Compile Include="Assets\Scripts\Vendor\VendorItem.cs" />
+    <Compile Include="Assets\Scripts\Vendor\VendorUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -226,19 +240,19 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/fye-1/OneDrive/Bureau/Odyh-master/Odyh_alex/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/fye-1/OneDrive/Bureau/Odyh-master/Odyh_alex/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/fye-1/OneDrive/Bureau/Odyh-master/Odyh_alex/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/fye-1/OneDrive/Bureau/Odyh-master/Odyh_alex/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/fye-1/OneDrive/Bureau/Odyh-master/Odyh_alex/Odyh_3/Odyh/Odyh/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -442,13 +456,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_3/Odyh/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/fye-1/OneDrive/Bureau/Odyh-master/Odyh_alex/Odyh_3/Odyh/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_3/Odyh/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/fye-1/OneDrive/Bureau/Odyh-master/Odyh_alex/Odyh_3/Odyh/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/fye-1/Projet/Odyh_3/Odyh/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/fye-1/OneDrive/Bureau/Odyh-master/Odyh_alex/Odyh_3/Odyh/Odyh/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

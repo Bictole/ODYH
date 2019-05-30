@@ -23,7 +23,7 @@ public class Pickitems : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)    //on utilise ici la fonction associée au Collider sur l'item
+    public virtual void OnTriggerEnter2D(Collider2D other)    //on utilise ici la fonction associée au Collider sur l'item
     {
         if (other.gameObject.name == "Player")
         {

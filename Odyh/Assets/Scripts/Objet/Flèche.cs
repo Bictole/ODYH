@@ -15,6 +15,9 @@ public class Flèche : Item, Utilisable
     {
             Delete_the_Item();
     }
-    
-    
+
+    public override string GetDescription()
+    {
+        return base.GetDescription() + string.Format("\n<color=#d6d6d6>This Should not be inserted in your Ass</color>");
+    }
 }
