@@ -22,6 +22,7 @@ public class TreasureChest : Interactable {
 	void Start () {
         anim = GetComponent<Animator>();
         isOpen = storedOpen.Runtimevalue;
+        playerInventory = FindObjectOfType<Inventory>();
         if(isOpen)
         {
             anim.SetBool("opened", true);
