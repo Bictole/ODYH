@@ -75,7 +75,7 @@ public class HurtEnemy : MonoBehaviour
                 if(other.gameObject.CompareTag("Enemy"))
                 {
 
-                    damage = player_damage + thestats.playerattack;
+                    damage = player_damage + thestats.Playerattack;
                 
                     if (Hitpoint == null)
                     {

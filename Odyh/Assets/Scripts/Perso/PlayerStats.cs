@@ -17,12 +17,42 @@ public class PlayerStats : MonoBehaviour
     public int[] lvlattack;
     public int[] lvldefence;
 
-    public int playerhp;
-    public int playerattack;
-    public int playerdefence;
+    private int playerhp;
 
-    private PlayerHealth manager;
-    
+    public int Playerhp
+    {
+        get => playerhp;
+        set => playerhp = value;
+    }
+
+    private int playerattack;
+
+    public int Playerattack
+    {
+        get => playerattack;
+        set => playerattack = value;
+    }
+
+    private int playerdefence;
+
+    public int Playerdefence
+    {
+        get => playerdefence;
+        set => playerdefence = value;
+    }
+
+
+    private PlayerHealth _playerhealth;
+
+    public PlayerHealth PlayerHealth
+    {
+        get => _playerhealth;
+    }
+
+    private PlayerMana _playerMana;
+
+    public PlayerMana PlayerMana => _playerMana;
+
     public GameObject Xpburst;
 
     // Start is called before the first frame update
@@ -32,7 +62,7 @@ public class PlayerStats : MonoBehaviour
         playerattack = lvlattack[1];
         playerdefence = lvldefence[1];
 
-        manager = FindObjectOfType<PlayerHealth>();
+        _playerhealth = FindObjectOfType<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -56,13 +86,13 @@ public class PlayerStats : MonoBehaviour
         Instantiate(Xpburst, transform.position, Xpburst.transform.rotation);
         playerLevel += 1;
 
-        playerhp = lvlhp[playerLevel];        //on prend la valeure associée dans le tableau 
-        manager.playerMaxHealth = playerhp;                            // on change les hp max 
-        manager.playerHealth += playerhp - lvlhp[playerLevel - 1];     //on augmente la vie actuelle avec la différence de hp entre niveau actuel et précédent
+        playerhp += lvlhp[playerLevel];        //on prend la valeure associée dans le tableau 
+        _playerhealth.playerMaxHealth = playerhp;                            // on change les hp max 
+        _playerhealth.playerHealth += playerhp - lvlhp[playerLevel - 1];     //on augmente la vie actuelle avec la différence de hp entre niveau actuel et précédent
 
-        playerattack = lvlattack[playerLevel];
+        playerattack += lvlattack[playerLevel];
 
-        playerdefence = lvldefence[playerLevel];
+        playerdefence += lvldefence[playerLevel];
     }
 
     public int QuestXP(Quest q)

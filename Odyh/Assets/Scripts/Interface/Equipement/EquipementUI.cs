@@ -54,18 +54,23 @@ public class EquipementUI : MonoBehaviour
         {
             case EquipementType.Casque:
                 head.EquipEquipement(equipement);
+                head.UpdateStats(equipement);
                 break;
             case EquipementType.Torse:
                 chest.EquipEquipement(equipement);
+                chest.UpdateStats(equipement);
                 break;
             case EquipementType.Bottes:
                 feet.EquipEquipement(equipement);
+                feet.UpdateStats(equipement);
                 break;
             case EquipementType.Gants:
                 hand.EquipEquipement(equipement);
+                hand.UpdateStats(equipement);
                 break;
             case EquipementType.Epee:
                 onehand.EquipEquipement(equipement);
+                onehand.UpdateStats(equipement);
                 break;
             case EquipementType.Arc:
                 bow.EquipEquipement(equipement);

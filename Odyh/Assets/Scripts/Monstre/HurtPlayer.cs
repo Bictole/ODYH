@@ -44,7 +44,7 @@ public class HurtPlayer : MonoBehaviour
         if (other.gameObject.name == "Player" && gameObject.GetComponent<CircleCollider2D>().IsTouching(other.collider))
         {
             // Réduit les dégats subits en fonctions des stats du joueur
-            damage = ennemy_damage - thestats.playerdefence;
+            damage = ennemy_damage - thestats.Playerdefence;
 
             if (damage <= 0)
             {
@@ -66,7 +66,7 @@ public class HurtPlayer : MonoBehaviour
         if (gameObject.CompareTag("Enemy Projectile") && other.CompareTag("Player"))
         {
             // Réduit les dégats subits en fonctions des stats du joueur
-            damage = ennemy_damage - thestats.playerdefence;
+            damage = ennemy_damage - thestats.Playerdefence;
 
             if (damage <= 0)
             {

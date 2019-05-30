@@ -14,6 +14,13 @@ public class EquipementButton : MonoBehaviour, IPointerClickHandler, IPointerEnt
     [SerializeField]
     private Image icon;
 
+    private PlayerStats _playerStats;
+
+    private void Start()
+    {
+        _playerStats = FindObjectOfType<PlayerStats>();
+    }
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -88,5 +95,25 @@ public class EquipementButton : MonoBehaviour, IPointerClickHandler, IPointerEnt
         myequipement = null;
     }
 
-    
+    public void UpdateStats(Equipement equipement)
+    {
+        if (equipement.HealthBonus > 0)
+        {
+            _playerStats.PlayerHealth.playerMaxHealth += equipement.HealthBonus;
+            _playerStats.PlayerHealth.playerHealth += equipement.HealthBonus;
+        }
+        if (equipement.AttackBonus > 0)
+        {
+            _playerStats.Playerattack += equipement.AttackBonus;
+        }
+        if (equipement.DefenseBonus > 0)
+        {
+            _playerStats.Playerdefence += equipement.DefenseBonus;
+        }
+        if (equipement.ManaBonus > 0)
+        {
+            _playerStats.PlayerMana.playerMaxMana += equipement.HealthBonus;
+            _playerStats.PlayerMana.playerMana += equipement.HealthBonus;
+        }
+    }
 }

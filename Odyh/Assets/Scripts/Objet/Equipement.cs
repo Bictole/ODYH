@@ -27,14 +27,34 @@ public class Equipement : Item
     [SerializeField]
     private int healthbonus;
 
+    public int HealthBonus
+    {
+        get { return healthbonus; }
+    }
+
     [SerializeField]
     private int manabonus;
+    
+    public int ManaBonus
+    {
+        get { return manabonus; }
+    }
 
     [SerializeField]
     private int attackbonus;
+    
+    public int AttackBonus
+    {
+        get { return attackbonus; }
+    }
 
     [SerializeField]
     private int defensebonus;
+    
+    public int DefenseBonus
+    {
+        get { return defensebonus; }
+    }
 
     
     public override string GetDescription()
