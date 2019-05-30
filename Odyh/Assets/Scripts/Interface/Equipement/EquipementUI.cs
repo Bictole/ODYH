@@ -28,6 +28,8 @@ public class EquipementUI : MonoBehaviour
         }
     }
 
+    private Player _player;
+
     public void OpenClose()
     {
         if (_canvasGroup.alpha == 1)
@@ -74,9 +76,11 @@ public class EquipementUI : MonoBehaviour
                 break;
             case EquipementType.Arc:
                 bow.EquipEquipement(equipement);
+                _player.BowAttackPossible = true;
                 break;
             case EquipementType.Baton:
                 staff.EquipEquipement(equipement);
+                _player.MagicAttackPossible = true;
                 break;
         }
     }
@@ -84,7 +88,7 @@ public class EquipementUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame

@@ -51,7 +51,10 @@ public class PlayerStats : MonoBehaviour
 
     private PlayerMana _playerMana;
 
-    public PlayerMana PlayerMana => _playerMana;
+    public PlayerMana PlayerMana
+    {
+        get => _playerMana;
+    }
 
     public GameObject Xpburst;
 
@@ -63,6 +66,7 @@ public class PlayerStats : MonoBehaviour
         playerdefence = lvldefence[1];
 
         _playerhealth = FindObjectOfType<PlayerHealth>();
+        _playerMana = FindObjectOfType<PlayerMana>();
     }
 
     // Update is called once per frame

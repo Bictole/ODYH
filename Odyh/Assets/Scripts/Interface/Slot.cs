@@ -146,7 +146,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, Cliquable, IPointerEnte
                 {
                     Equipement e = (Equipement) MoveManager.TheMoveManager.Itembougeable;
                     AddItem(e);
-                    EquipementUI.EquipementUi.EquipementButton.Desequip(); 
+                    EquipementUI.EquipementUi.EquipementButton.Desequip(e); 
                     MoveManager.TheMoveManager.Drop();
                 }
                

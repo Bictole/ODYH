@@ -22,6 +22,7 @@ public class Equipement : Item
     public EquipementType EquipementType
     {
         get => _equipementType;
+        set => _equipementType = value;
     }
     
     [SerializeField]

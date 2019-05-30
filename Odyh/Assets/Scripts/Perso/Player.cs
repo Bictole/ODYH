@@ -31,6 +31,24 @@ public class Player : Character
     private GameObject explosioneffect;
 
     public VectorValue startingPosition;
+
+    private bool bowAttackPossible;
+
+    public bool BowAttackPossible
+    {
+        get => bowAttackPossible;
+        set => bowAttackPossible = value;
+    }
+
+    private bool magicAttackPossible;
+
+    public bool MagicAttackPossible
+    {
+        get => magicAttackPossible;
+        set => magicAttackPossible = value;
+    }
+
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -83,7 +101,7 @@ public class Player : Character
         }
 
         // Attaque à distance à l'arc
-        if (Input.GetKeyDown(KeyCode.Mouse1) && !InInventory)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !InInventory && bowAttackPossible)
         {
             if (!IsAttackingrangewithbow && !IsAttackingrangewithstaff)
             {
@@ -109,7 +127,7 @@ public class Player : Character
             }
         }
         // Attaqie à distance avec Magic staff
-        if (Input.GetKeyDown(KeyCode.A) && !InInventory)
+        if (Input.GetKeyDown(KeyCode.A) && !InInventory && magicAttackPossible)
         {
             if (!IsAttackingrangewithbow && !IsAttackingrangewithstaff)
             {

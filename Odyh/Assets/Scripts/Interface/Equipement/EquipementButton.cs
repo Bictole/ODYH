@@ -16,9 +16,12 @@ public class EquipementButton : MonoBehaviour, IPointerClickHandler, IPointerEnt
 
     private PlayerStats _playerStats;
 
+    private Player _player;
+    
     private void Start()
     {
         _playerStats = FindObjectOfType<PlayerStats>();
+        _player = FindObjectOfType<Player>();
     }
 
 
@@ -88,8 +91,9 @@ public class EquipementButton : MonoBehaviour, IPointerClickHandler, IPointerEnt
         UI.UserInterface.HideInfos();
     }
 
-    public void Desequip()
+    public void Desequip(Equipement equipement)
     {
+        UpdateStatsDesequip(equipement);
         icon.color = Color.white;
         icon.enabled = false;
         myequipement = null;
@@ -97,23 +101,60 @@ public class EquipementButton : MonoBehaviour, IPointerClickHandler, IPointerEnt
 
     public void UpdateStats(Equipement equipement)
     {
-        if (equipement.HealthBonus > 0)
+        if (equipement != null)
         {
-            _playerStats.PlayerHealth.playerMaxHealth += equipement.HealthBonus;
-            _playerStats.PlayerHealth.playerHealth += equipement.HealthBonus;
+            if (equipement.HealthBonus > 0)
+            {
+                _playerStats.PlayerHealth.playerMaxHealth += equipement.HealthBonus;
+                _playerStats.PlayerHealth.playerHealth += equipement.HealthBonus;
+            }
+            if (equipement.AttackBonus > 0)
+            {
+                _playerStats.Playerattack += equipement.AttackBonus;
+            }
+            if (equipement.DefenseBonus > 0)
+            {
+                _playerStats.Playerdefence += equipement.DefenseBonus;
+            }
+            if (equipement.ManaBonus > 0)
+            {
+                _playerStats.PlayerMana.playerMaxMana += equipement.ManaBonus;
+                _playerStats.PlayerMana.playerMana += equipement.ManaBonus;
+            }
         }
-        if (equipement.AttackBonus > 0)
+        
+    }
+
+    public void UpdateStatsDesequip(Equipement equipement)
+    {
+        if (equipement.EquipementType == EquipementType.Arc )
         {
-            _playerStats.Playerattack += equipement.AttackBonus;
+            _player.BowAttackPossible = false;
         }
-        if (equipement.DefenseBonus > 0)
+        else if (equipement.EquipementType == EquipementType.Baton)
         {
-            _playerStats.Playerdefence += equipement.DefenseBonus;
+            _player.MagicAttackPossible = false;
         }
-        if (equipement.ManaBonus > 0)
+        else
         {
-            _playerStats.PlayerMana.playerMaxMana += equipement.HealthBonus;
-            _playerStats.PlayerMana.playerMana += equipement.HealthBonus;
+            if (equipement.HealthBonus > 0)
+            {
+                _playerStats.PlayerHealth.playerMaxHealth -= equipement.HealthBonus;
+                _playerStats.PlayerHealth.playerHealth -= equipement.HealthBonus;
+            }
+            if (equipement.AttackBonus > 0)
+            {
+                _playerStats.Playerattack -= equipement.AttackBonus;
+            }
+            if (equipement.DefenseBonus > 0)
+            {
+                _playerStats.Playerdefence -= equipement.DefenseBonus;
+            }
+            if (equipement.ManaBonus > 0)
+            {
+                _playerStats.PlayerMana.playerMaxMana -= equipement.HealthBonus;
+                _playerStats.PlayerMana.playerMana -= equipement.HealthBonus;
+            }
         }
     }
 }
