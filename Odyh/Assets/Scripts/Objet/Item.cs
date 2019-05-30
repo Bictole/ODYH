@@ -20,6 +20,7 @@ public class Item : ScriptableObject, IBougeable, IDescribable // = scripter un 
     [SerializeField]
     private Sprite sprite;
 
+    public string itemDescription;
     //getter
     public Sprite TheSprite
     {

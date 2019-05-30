@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MoneyManager : MonoBehaviour
 {
     //Référence au texte 
-    public Text textmoney;
+    public TextMeshProUGUI textmoney;
 
     //argent actuel du joueur
     public int money;
@@ -25,7 +26,7 @@ public class MoneyManager : MonoBehaviour
             PlayerPrefs.SetInt("Money", 0);
         }
 
-        textmoney.text = money + " Gold";
+        textmoney.text = money.ToString();
     }
 
     // Update is called once per frame
@@ -38,6 +39,6 @@ public class MoneyManager : MonoBehaviour
     {
         money += gaingold;
         PlayerPrefs.SetInt("Money", money);
-        textmoney.text = money + " Gold";
+        textmoney.text = money.ToString();
     }
 }
