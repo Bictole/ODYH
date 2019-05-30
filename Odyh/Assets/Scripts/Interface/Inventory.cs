@@ -172,9 +172,7 @@ public class Inventory : MonoBehaviour
             {
                 sac.BagScr.OpenOrClose();
             }
-        }
-
-        
+        }   
     }
 
     //on check le premier sac avec un emplacement pour mettre l'item

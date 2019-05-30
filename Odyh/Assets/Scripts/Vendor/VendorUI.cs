@@ -91,6 +91,7 @@ public class VendorUI : MonoBehaviour
         this.vendor = vendor;
         canvasgroup.alpha = 1;
         canvasgroup.blocksRaycasts = true;
+        Inventory.InventoryScr.OpenOrClose();
     }
     
     public void CloseUI()
@@ -99,6 +100,7 @@ public class VendorUI : MonoBehaviour
         canvasgroup.alpha = 0;
         canvasgroup.blocksRaycasts = false;
         vendor = null;
+        Inventory.InventoryScr.OpenOrClose();
     }
     
 }
