@@ -61,7 +61,7 @@ public class Range : MonoBehaviour
         {
             if (gameObject.GetComponent<HurtEnemy>().damageBurst.name is "Explosion")
             {
-                Instantiate(gameObject.GetComponent<HurtEnemy>().damageBurst, other.transform.position, other.transform.rotation);
+                Instantiate(gameObject.GetComponent<HurtEnemy>().damageBurst, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
             else

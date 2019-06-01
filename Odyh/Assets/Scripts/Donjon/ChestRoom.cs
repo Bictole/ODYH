@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DungeonEnemyRoom : Room
+public class ChestRoom : Room
 {
     public Door[] doors;
 
+    public TreasureChest chest;
+    
     private void Start()
     {
         OpenDoors();
@@ -28,7 +30,7 @@ public class DungeonEnemyRoom : Room
     {
         if (EnemiesActive() == 1)
         {
-            OpenDoors();
+            chest.Activate();
         }
     }
 
@@ -46,6 +48,8 @@ public class DungeonEnemyRoom : Room
                 ChangeActivation(pots[i], true);
             }
             CloseDoors();
+            if(!chest.isOpen)
+                chest.Desactivate();
             //virtualCamera.SetActive(true);
 
         }
@@ -89,4 +93,3 @@ public class DungeonEnemyRoom : Room
         Debug.Log("Open Doors");
     }
 }
-

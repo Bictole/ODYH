@@ -69,4 +69,14 @@ public class TreasureChest : Interactable {
     {
         dialogBox.SetActive(false);
     }
+
+    public void Activate()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Desactivate()
+    {
+        gameObject.SetActive(false);
+    }
 }

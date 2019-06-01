@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b1a4967c0bee749a88a0b37093714d, type: 3}
-  m_Name: Player Position
+  m_Script: {fileID: 11500000, guid: 649a19433542a6a478298f6c24e6d6f6, type: 3}
+  m_Name: Chest1
   m_EditorClassIdentifier: 
-  initialValue: {x: 40, y: -66}
-  defaultValue: {x: 40, y: -66}
+  initialvalue: 0
+  Runtimevalue: 0

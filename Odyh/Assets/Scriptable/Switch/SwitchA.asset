@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a19433542a6a478298f6c24e6d6f6, type: 3}
   m_Name: SwitchA
   m_EditorClassIdentifier: 
-  initialvalue: 1
-  Runtimevalue: 1
+  initialvalue: 0
+  Runtimevalue: 0
