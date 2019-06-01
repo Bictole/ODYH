@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class QuestPnjUI : MonoBehaviour
@@ -27,7 +28,8 @@ public class QuestPnjUI : MonoBehaviour
         }
     }
 
-    [SerializeField] private GameObject backButton, acceptButton, completeButton, QuestDescritption;
+    [SerializeField] private GameObject backButton, acceptButton, completeButton;
+    [FormerlySerializedAs("QuestDescritption")] [SerializeField] private GameObject QuestDescription;
 
     [SerializeField]
     private GameObject questgiverprefab;
@@ -53,7 +55,7 @@ public class QuestPnjUI : MonoBehaviour
         }
         
         QuestArea.gameObject.SetActive(true);
-        QuestDescritption.SetActive(false);
+        QuestDescription.SetActive(false);
         
         foreach (Quest quest in _questPnj.Quests)
         {
@@ -73,6 +75,10 @@ public class QuestPnjUI : MonoBehaviour
                     Color color = q.GetComponent<Text>().color;
                     color.a = 0.5f;
                     q.GetComponent<Text>().color = color;
+                }
+                else if(quest.QuestLevel > _playerStats.playerLevel)
+                {
+                    q.GetComponent<Text>().text += "(Niveau Trop Elevé)";
                 }
             }
             
@@ -95,7 +101,7 @@ public class QuestPnjUI : MonoBehaviour
  
         backButton.SetActive(true);
         QuestArea.gameObject.SetActive(false);
-        QuestDescritption.SetActive(true);
+        QuestDescription.SetActive(true);
         
         string title = quest.Title;
         string description = quest.Description;
@@ -106,7 +112,7 @@ public class QuestPnjUI : MonoBehaviour
             obj += o.Object_type + " : " + o.Objnumber + " / " + o.Totalnumber + "\n";
         }
 
-        QuestDescritption.GetComponent<Text>().text = string.Format("{0} : \n{1}", title, description);    //on set le format final
+        QuestDescription.GetComponent<Text>().text = string.Format("{0} : \n{1}", title, description);    //on set le format final
     }
 
     public void Back()

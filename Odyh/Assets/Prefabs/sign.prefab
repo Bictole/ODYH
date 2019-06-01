@@ -146,8 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9f9130582406c40831b7f54a145d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerinrange: 0
+  context: {fileID: 11400000, guid: 6801868e1bc23fc4a9a8612a30d364a7, type: 2}
+  canInteract: 1
   dialogue: Aled
   dialogueLines:
   - Aled
-  context: {fileID: 11400000, guid: 6801868e1bc23fc4a9a8612a30d364a7, type: 2}
-  playerInrange: 0

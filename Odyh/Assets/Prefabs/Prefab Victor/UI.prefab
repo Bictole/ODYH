@@ -7409,7 +7409,7 @@ MonoBehaviour:
   backButton: {fileID: 3945745196355433239}
   acceptButton: {fileID: 7327095317796168787}
   completeButton: {fileID: 496209010266621751}
-  QuestDescritption: {fileID: 3093377968655506791}
+  QuestDescription: {fileID: 3093377968655506791}
   questgiverprefab: {fileID: 7015253244831387359, guid: 287d872c381af574aae482b15f273c4e,
     type: 3}
   QuestArea: {fileID: 770112853222531638}
@@ -8188,7 +8188,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4383079068155166873}
   m_HandleRect: {fileID: 6636822524572383873}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13062,6 +13062,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2107833932}
     m_Modifications:
+    - target: {fileID: 9102638306588210210, guid: becdd6281e739204e96a902549db5519,
+        type: 3}
+      propertyPath: m_Name
+      value: ChestUI
+      objectReference: {fileID: 0}
     - target: {fileID: 2517353921090481807, guid: becdd6281e739204e96a902549db5519,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13182,17 +13187,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7942163
       objectReference: {fileID: 0}
-    - target: {fileID: 9102638306588210210, guid: becdd6281e739204e96a902549db5519,
-        type: 3}
-      propertyPath: m_Name
-      value: ChestUI
-      objectReference: {fileID: 0}
     - target: {fileID: 8892600043674167574, guid: becdd6281e739204e96a902549db5519,
         type: 3}
       propertyPath: m_ConstraintCount
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9115201162925770683, guid: becdd6281e739204e96a902549db5519, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: becdd6281e739204e96a902549db5519, type: 3}
 --- !u!224 &90046850614196808 stripped
 RectTransform:
@@ -13218,6 +13219,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin Info
       objectReference: {fileID: 0}
+    - target: {fileID: 2083686694786475400, guid: 17cc8446b386b094e934018eff4aeb1e,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 76c4c636711854891b99f0b07930bd0f,
+        type: 2}
     - target: {fileID: 2083686694029560866, guid: 17cc8446b386b094e934018eff4aeb1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13329,13 +13336,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300294, guid: c3aa4d0c1f674794da53f4ef5bf19816,
         type: 3}
-    - target: {fileID: 2083686694786475400, guid: 17cc8446b386b094e934018eff4aeb1e,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 76c4c636711854891b99f0b07930bd0f,
-        type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2083686694029560865, guid: 17cc8446b386b094e934018eff4aeb1e, type: 3}
+    - {fileID: 2083686694029560864, guid: 17cc8446b386b094e934018eff4aeb1e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17cc8446b386b094e934018eff4aeb1e, type: 3}
 --- !u!224 &2933887673146886759 stripped
 RectTransform:
@@ -13362,6 +13365,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2107833932}
     m_Modifications:
+    - target: {fileID: 5871010067728890090, guid: 96b6dbd3c0673f54fa666b43fe2da1da,
+        type: 3}
+      propertyPath: m_Name
+      value: Slider (mana)
+      objectReference: {fileID: 0}
     - target: {fileID: 8719963256808478485, guid: 96b6dbd3c0673f54fa666b43fe2da1da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13472,11 +13480,6 @@ PrefabInstance:
       propertyPath: m_FillRect
       value: 
       objectReference: {fileID: 6235152048886184772}
-    - target: {fileID: 5871010067728890090, guid: 96b6dbd3c0673f54fa666b43fe2da1da,
-        type: 3}
-      propertyPath: m_Name
-      value: Slider (mana)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96b6dbd3c0673f54fa666b43fe2da1da, type: 3}
 --- !u!224 &1658821922284224983 stripped

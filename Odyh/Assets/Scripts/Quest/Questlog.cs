@@ -33,6 +33,8 @@ public class Questlog : MonoBehaviour
     {
         get { return in_progress; }
     }
+
+    private PlayerStats _playerStats;
     
     //description de la quete
     [SerializeField]
@@ -56,6 +58,7 @@ public class Questlog : MonoBehaviour
     void Start()
     {
         questCount.text = currentQuestCount + "/" + maxQuestCount;
+        _playerStats = FindObjectOfType<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -71,7 +74,7 @@ public class Questlog : MonoBehaviour
 
     public void Take_a_quest(Quest quest)
     {
-        if (currentQuestCount < maxQuestCount)
+        if (currentQuestCount < maxQuestCount && quest.QuestLevel <= _playerStats.playerLevel)
         {
             currentQuestCount += 1;
             questCount.text = currentQuestCount + "/" + maxQuestCount;
