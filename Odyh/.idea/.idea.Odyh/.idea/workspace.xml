@@ -38,6 +38,7 @@
       <change beforePath="$PROJECT_DIR$/Library/metadata/0d/0dae4933f7fbed44684e918f1fec6f9e.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/0d/0dae4933f7fbed44684e918f1fec6f9e.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/14/1409e6d8c338a9d449edd2fa3cc503f2" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/14/1409e6d8c338a9d449edd2fa3cc503f2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/14/1409e6d8c338a9d449edd2fa3cc503f2.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/14/1409e6d8c338a9d449edd2fa3cc503f2.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/33/3314542bffcc66247a9a6d02824beaad" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/33/3314542bffcc66247a9a6d02824beaad" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/69/69be5b1ea4ba8e24a81c58fb0a75ac1b" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/69/69be5b1ea4ba8e24a81c58fb0a75ac1b" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/6f/6f06b48c858e39445a0f8afed906c100" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6f/6f06b48c858e39445a0f8afed906c100" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/6f/6f06b48c858e39445a0f8afed906c100.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6f/6f06b48c858e39445a0f8afed906c100.info" afterDir="false" />
@@ -50,7 +51,6 @@
       <change beforePath="$PROJECT_DIR$/Library/metadata/c3/c3aa4d0c1f674794da53f4ef5bf19816.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c3/c3aa4d0c1f674794da53f4ef5bf19816.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/e3/e39d6b995178b61419554a6f11490825" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e3/e39d6b995178b61419554a6f11490825" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/e3/e39d6b995178b61419554a6f11490825.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e3/e39d6b995178b61419554a6f11490825.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
@@ -112,7 +112,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Quest/Questlog.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="-64">
               <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
               <folding>
                 <marker date="1559357272729" expanded="false" signature="6:100" ph="..." />
@@ -521,7 +521,7 @@
       <workItem from="1559220480950" duration="304000" />
       <workItem from="1559223164233" duration="5375000" />
       <workItem from="1559251751658" duration="121000" />
-      <workItem from="1559352141850" duration="2752000" />
+      <workItem from="1559352141850" duration="2989000" />
     </task>
     <task id="LOCAL-00001" summary="début donjon, pot, attaque, IA, scene, interface,bombes, magie">
       <created>1559144282179</created>
@@ -558,11 +558,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559227869422</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Info vendeur + debug quetes">
+      <created>1559357511488</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559357511488</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259102000" />
+    <option name="totallyTimeSpent" value="259339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -575,7 +582,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.26308724" />
       <window_info id="Structure" order="1" sideWeight="0.50080776" side_tool="true" weight="0.1988273" />
@@ -688,7 +694,8 @@
     <MESSAGE value="Vendor Modification" />
     <MESSAGE value="Equipement stats" />
     <MESSAGE value="Bool for the WIN" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bool for the WIN" />
+    <MESSAGE value="Info vendeur + debug quetes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Info vendeur + debug quetes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1657,7 +1664,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Quest/Questlog.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="-64">
           <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
           <folding>
             <marker date="1559357272729" expanded="false" signature="6:100" ph="..." />
