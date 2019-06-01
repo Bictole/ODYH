@@ -102,6 +102,7 @@ public class Questlog : MonoBehaviour
 
             foreach (var obj in quest.Collectarray)    //on affiche correctement les objectifs
             {
+                obj.UpdateItemCount();
                 goal += obj.Object_type + " : " + obj.Objnumber + " / " + obj.Totalnumber + "\n";
             }
             foreach (var obj in quest.Killarray)   

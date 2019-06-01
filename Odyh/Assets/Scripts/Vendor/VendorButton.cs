@@ -84,11 +84,11 @@ public class VendorButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        UI.UserInterface.ShowInfos(transform.position, vendorItem.Item);
     }
     
     public void OnPointerExit(PointerEventData eventData)
     {
-        
+        UI.UserInterface.HideInfos();
     }
 }

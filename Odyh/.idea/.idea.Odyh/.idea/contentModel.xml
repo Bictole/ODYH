@@ -109,6 +109,7 @@
           <e p="Signal.cs" t="Include" />
           <e p="SignalListener.cs" t="Include" />
           <e p="StockageChest.cs" t="Include" />
+          <e p="TreasureChest.cs" t="Include" />
           <e p="Value" t="Include">
             <e p="Boolvalue.cs" t="Include" />
             <e p="Floatvalue.cs" t="Include" />

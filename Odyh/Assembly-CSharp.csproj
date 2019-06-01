@@ -136,6 +136,7 @@
     <Compile Include="Assets\Scripts\Signal.cs" />
     <Compile Include="Assets\Scripts\SignalListener.cs" />
     <Compile Include="Assets\Scripts\StockageChest.cs" />
+    <Compile Include="Assets\Scripts\TreasureChest.cs" />
     <Compile Include="Assets\Scripts\Value\Boolvalue.cs" />
     <Compile Include="Assets\Scripts\Value\Floatvalue.cs" />
     <Compile Include="Assets\Scripts\Value\VectorValue.cs" />
