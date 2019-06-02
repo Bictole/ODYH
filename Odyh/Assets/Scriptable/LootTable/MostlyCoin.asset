@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6889c877f607c9f4e821c2f6d41b4f2d, type: 3}
+  m_Name: MostlyCoin
+  m_EditorClassIdentifier: 
+  loots:
+  - thisLoot: {fileID: 5533305888769094857, guid: 899d9c18f78bca74e880229f048cce9f,
+      type: 3}
+    lootChance: 50
+  - thisLoot: {fileID: 5159182436143710295, guid: 042b28da1dd6a7d4ea28ad723adcc3c7,
+      type: 3}
+    lootChance: 30
+  - thisLoot: {fileID: 8190094285259842198, guid: cb748c4b7ddf5df4d9e733b2172d1ffb,
+      type: 3}
+    lootChance: 20
+  - thisLoot: {fileID: 5529083200704618356, guid: b8032ea658939e24d8bfffe6328c34cb,
+      type: 3}
+    lootChance: 10
