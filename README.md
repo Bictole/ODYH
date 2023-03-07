@@ -1,5 +1,8 @@
-# Odyh
-Projet EPITA Prog
-Test Commit
+<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=bictole.ODYH&right_color=pink">
 
-LE DOSSIER Odyh_alex n'est a modifié que par Alex pour le moment, et pour le dossier Odyh_1, je n'ai pas ajouter encore le déplacement du personnage et les animations de combat je le ferais quand tout sera bien fini.
+# ODYH [![Profile][title-img]][profile]
+
+[title-img]:https://img.shields.io/badge/-Bictole-pink
+[profile]:https://github.com/bictole
+
+Welcome to the world of ODYH.
