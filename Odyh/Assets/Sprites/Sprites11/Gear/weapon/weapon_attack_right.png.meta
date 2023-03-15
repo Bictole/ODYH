@@ -1,19 +1,39 @@
 fileFormatVersion: 2
 guid: abf93af568b40ad46bb24394c43dbb0f
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: weapon_attack_right_0
-    21300002: weapon_attack_right_1
-    21300004: weapon_attack_right_2
-    21300006: weapon_attack_right_3
-    21300008: weapon_attack_right_4
-    21300010: weapon_attack_right_5
-    21300012: weapon_attack_right_6
-    21300014: weapon_attack_right_7
-    21300016: weapon_attack_right_8
-    21300018: weapon_attack_right_9
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: weapon_attack_right_0
+  - first:
+      213: 21300002
+    second: weapon_attack_right_1
+  - first:
+      213: 21300004
+    second: weapon_attack_right_2
+  - first:
+      213: 21300006
+    second: weapon_attack_right_3
+  - first:
+      213: 21300008
+    second: weapon_attack_right_4
+  - first:
+      213: 21300010
+    second: weapon_attack_right_5
+  - first:
+      213: 21300012
+    second: weapon_attack_right_6
+  - first:
+      213: 21300014
+    second: weapon_attack_right_7
+  - first:
+      213: 21300016
+    second: weapon_attack_right_8
+  - first:
+      213: 21300018
+    second: weapon_attack_right_9
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -31,6 +51,10 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -39,9 +63,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -62,11 +86,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -77,7 +106,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -88,7 +118,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -99,7 +130,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -110,6 +142,19 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -129,6 +174,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 112aeede99c9de54c9d76c1e69cc396d
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -149,6 +195,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3ba9379130a3dbd43aaecaf08ad47314
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -169,6 +216,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c42ecbf518102f44cbdb42b94f02e235
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -189,6 +237,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ebfa4a6e203816b4a8668e52497a715d
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -209,6 +258,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0c8a29d992213074499a03c2920215c1
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -229,6 +279,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bf5ecf8a644bd274a96e8affd9267f3f
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -249,6 +300,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d84b1600c2b65104389fc7272a445812
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -269,6 +321,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: eecc67711e537c340b123eaab97109c4
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -289,6 +342,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bf1756ae41ecafd49b0b80e713a5ddf5
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -309,6 +363,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 819bfd3efb4eab94fa5b6596ba420807
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -317,11 +372,26 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 521a93d1cfd115949af74855b9b7c8f1
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      weapon_attack_right_0: 21300000
+      weapon_attack_right_1: 21300002
+      weapon_attack_right_2: 21300004
+      weapon_attack_right_3: 21300006
+      weapon_attack_right_4: 21300008
+      weapon_attack_right_5: 21300010
+      weapon_attack_right_6: 21300012
+      weapon_attack_right_7: 21300014
+      weapon_attack_right_8: 21300016
+      weapon_attack_right_9: 21300018
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -5,8 +5,8 @@ using System.Threading;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements;
-
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 public class Player : Character
 {
     private SFXManager sfx;

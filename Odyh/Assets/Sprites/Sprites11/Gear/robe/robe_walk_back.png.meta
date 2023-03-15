@@ -1,25 +1,57 @@
 fileFormatVersion: 2
 guid: bbc535b09e835844fb769341c67b2fee
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: robe_walk_back_0
-    21300002: robe_walk_back_1
-    21300004: robe_walk_back_2
-    21300006: robe_walk_back_3
-    21300008: robe_walk_back_4
-    21300010: robe_walk_back_5
-    21300012: robe_walk_back_6
-    21300014: robe_walk_back_7
-    21300016: robe_walk_back_8
-    21300018: robe_walk_back_9
-    21300020: robe_walk_back_10
-    21300022: robe_walk_back_11
-    21300024: robe_walk_back_12
-    21300026: robe_walk_back_13
-    21300028: robe_walk_back_14
-    21300030: robe_walk_back_15
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: robe_walk_back_0
+  - first:
+      213: 21300002
+    second: robe_walk_back_1
+  - first:
+      213: 21300004
+    second: robe_walk_back_2
+  - first:
+      213: 21300006
+    second: robe_walk_back_3
+  - first:
+      213: 21300008
+    second: robe_walk_back_4
+  - first:
+      213: 21300010
+    second: robe_walk_back_5
+  - first:
+      213: 21300012
+    second: robe_walk_back_6
+  - first:
+      213: 21300014
+    second: robe_walk_back_7
+  - first:
+      213: 21300016
+    second: robe_walk_back_8
+  - first:
+      213: 21300018
+    second: robe_walk_back_9
+  - first:
+      213: 21300020
+    second: robe_walk_back_10
+  - first:
+      213: 21300022
+    second: robe_walk_back_11
+  - first:
+      213: 21300024
+    second: robe_walk_back_12
+  - first:
+      213: 21300026
+    second: robe_walk_back_13
+  - first:
+      213: 21300028
+    second: robe_walk_back_14
+  - first:
+      213: 21300030
+    second: robe_walk_back_15
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -37,6 +69,10 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,9 +81,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -68,11 +104,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -83,7 +124,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -94,7 +136,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -105,7 +148,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,6 +160,19 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -135,6 +192,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5af106edf604b314a9872090a3b1c62e
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -155,6 +213,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b4a1b82d03793ef4098b82aaa81526fe
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -175,6 +234,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 99df4822c3d6d9145acce758b77fd9bd
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -195,6 +255,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 14e567df5ebac464aba5f7c00a627bde
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -215,6 +276,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: de653094fe90d3846a2a2b1947706734
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -235,6 +297,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 654802aa67a304d4491c31d08d64e522
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -255,6 +318,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 59eb26003cc12ca48bfdd435a5fa8503
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -275,6 +339,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 18fb374e4e02a0d4dbaed12c146f5076
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -295,6 +360,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f921a4f4c0ce4094bad4d4ec8d8790b5
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -315,6 +381,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c08b2698192f7a242b26b5df02957f58
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -335,6 +402,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bf9b7c2e09d72e541a2b12f55d4b1414
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -355,6 +423,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 99869003593166c4e98d68996838d80a
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -375,6 +444,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7d41c70d2025aab49a568b227fee9b21
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -395,6 +465,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0193ffe8f912a2049b672ed591926048
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -415,6 +486,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 258c51240777145479596d51ee7c9218
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -435,6 +507,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5b10ee5f4156464449b534228c49dcb0
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
@@ -443,11 +516,32 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 2682f045e40efdd49b53f7b4395b8cd6
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      robe_walk_back_0: 21300000
+      robe_walk_back_1: 21300002
+      robe_walk_back_10: 21300020
+      robe_walk_back_11: 21300022
+      robe_walk_back_12: 21300024
+      robe_walk_back_13: 21300026
+      robe_walk_back_14: 21300028
+      robe_walk_back_15: 21300030
+      robe_walk_back_2: 21300004
+      robe_walk_back_3: 21300006
+      robe_walk_back_4: 21300008
+      robe_walk_back_5: 21300010
+      robe_walk_back_6: 21300012
+      robe_walk_back_7: 21300014
+      robe_walk_back_8: 21300016
+      robe_walk_back_9: 21300018
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

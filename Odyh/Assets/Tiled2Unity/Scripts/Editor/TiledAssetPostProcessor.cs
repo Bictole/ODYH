@@ -135,7 +135,9 @@ namespace Tiled2Unity
 
             // We will create and assign our own materials.
             // This gives us more control over their construction.
-            modelImporter.importMaterials = false;
+            // Use materialImportMode instead of importMaterials because importMaterials is deprecated in Unity 5.6
+            modelImporter.materialImportMode = ModelImporterMaterialImportMode.None;
+            
 
 #if UNITY_5_6_OR_NEWER
             modelImporter.keepQuads = true;

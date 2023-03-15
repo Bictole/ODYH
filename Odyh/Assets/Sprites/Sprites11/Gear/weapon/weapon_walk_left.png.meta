@@ -1,25 +1,57 @@
 fileFormatVersion: 2
 guid: a8d6585aff631dc43ad613b5fe0e7c90
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: weapon_walk_left_0
-    21300002: weapon_walk_left_1
-    21300004: weapon_walk_left_2
-    21300006: weapon_walk_left_3
-    21300008: weapon_walk_left_4
-    21300010: weapon_walk_left_5
-    21300012: weapon_walk_left_6
-    21300014: weapon_walk_left_7
-    21300016: weapon_walk_left_8
-    21300018: weapon_walk_left_9
-    21300020: weapon_walk_left_10
-    21300022: weapon_walk_left_11
-    21300024: weapon_walk_left_12
-    21300026: weapon_walk_left_13
-    21300028: weapon_walk_left_14
-    21300030: weapon_walk_left_15
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: weapon_walk_left_0
+  - first:
+      213: 21300002
+    second: weapon_walk_left_1
+  - first:
+      213: 21300004
+    second: weapon_walk_left_2
+  - first:
+      213: 21300006
+    second: weapon_walk_left_3
+  - first:
+      213: 21300008
+    second: weapon_walk_left_4
+  - first:
+      213: 21300010
+    second: weapon_walk_left_5
+  - first:
+      213: 21300012
+    second: weapon_walk_left_6
+  - first:
+      213: 21300014
+    second: weapon_walk_left_7
+  - first:
+      213: 21300016
+    second: weapon_walk_left_8
+  - first:
+      213: 21300018
+    second: weapon_walk_left_9
+  - first:
+      213: 21300020
+    second: weapon_walk_left_10
+  - first:
+      213: 21300022
+    second: weapon_walk_left_11
+  - first:
+      213: 21300024
+    second: weapon_walk_left_12
+  - first:
+      213: 21300026
+    second: weapon_walk_left_13
+  - first:
+      213: 21300028
+    second: weapon_walk_left_14
+  - first:
+      213: 21300030
+    second: weapon_walk_left_15
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -37,6 +69,10 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,9 +81,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -68,11 +104,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -83,7 +124,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -94,7 +136,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -105,7 +148,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,6 +160,19 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -135,6 +192,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 92d7a8312a9050a4ab405d292560e380
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -155,6 +213,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c51327a1774027d4696db82cb2230c61
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -175,6 +234,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3b1700d03da4f94478317c7db744d528
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -195,6 +255,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a206f3ab7d99c4c42921732d9ef0f188
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -215,6 +276,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 061535d933b74434481a49755d0b7c84
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -235,6 +297,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f6ce73c276bfefa41b816e8fa229dd56
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -255,6 +318,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dd2116f21f27a1e45a0b37174f83ac28
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -275,6 +339,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7e3a588f7b9e929488687e737fba9065
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -295,6 +360,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 52ab4b8681a29ff43b6feedcd2980d7b
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -315,6 +381,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 89f9a03edf5830e4495c9a593b064d7c
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -335,6 +402,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0b4d3a713f7a8a548a1af627abde0ad8
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -355,6 +423,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a1c303f97832e394490724fc06577402
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -375,6 +444,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 859637db982f0b445aeaf2ac4b19cb95
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -395,6 +465,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7c39bcc259d974746b400784dd9bffed
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -415,6 +486,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b89de84ebdd260d4988ea4c25388dd24
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -435,6 +507,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 16acd23a7037d11448a8c641bd26b565
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
@@ -443,11 +516,32 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 69c081bad6965ff46b4e1ec19d8f60f7
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      weapon_walk_left_0: 21300000
+      weapon_walk_left_1: 21300002
+      weapon_walk_left_10: 21300020
+      weapon_walk_left_11: 21300022
+      weapon_walk_left_12: 21300024
+      weapon_walk_left_13: 21300026
+      weapon_walk_left_14: 21300028
+      weapon_walk_left_15: 21300030
+      weapon_walk_left_2: 21300004
+      weapon_walk_left_3: 21300006
+      weapon_walk_left_4: 21300008
+      weapon_walk_left_5: 21300010
+      weapon_walk_left_6: 21300012
+      weapon_walk_left_7: 21300014
+      weapon_walk_left_8: 21300016
+      weapon_walk_left_9: 21300018
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,17 +1,33 @@
 fileFormatVersion: 2
 guid: 952ce901ce3f8f34e92aee7a12185f0b
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: pants_attack_front_0
-    21300002: pants_attack_front_1
-    21300004: pants_attack_front_2
-    21300006: pants_attack_front_3
-    21300008: pants_attack_front_4
-    21300010: pants_attack_front_5
-    21300012: pants_attack_front_6
-    21300014: pants_attack_front_7
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: pants_attack_front_0
+  - first:
+      213: 21300002
+    second: pants_attack_front_1
+  - first:
+      213: 21300004
+    second: pants_attack_front_2
+  - first:
+      213: 21300006
+    second: pants_attack_front_3
+  - first:
+      213: 21300008
+    second: pants_attack_front_4
+  - first:
+      213: 21300010
+    second: pants_attack_front_5
+  - first:
+      213: 21300012
+    second: pants_attack_front_6
+  - first:
+      213: 21300014
+    second: pants_attack_front_7
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -29,6 +45,10 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -37,9 +57,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -60,11 +80,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -75,7 +100,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -86,7 +112,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -97,7 +124,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -108,6 +136,19 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -127,6 +168,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e0ba01fb35c396140b01930e3465e61a
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -147,6 +189,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c2565182ebe25634e9651b41910abd64
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -167,6 +210,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 257087c9d94841b4184de5260dc5b0ab
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -187,6 +231,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ca5156eecc6b34d479aee02e9a2bcaba
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -207,6 +252,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 751902d5b6984c54d963cbed2200d326
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -227,6 +273,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 782948b23d0f0bb418ceeb3d72a079c8
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -247,6 +294,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ccf109de6834bc8478c7ba9e2eb0e02b
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -267,6 +315,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f89eed6458ef1d34387d3a88d13cbaa7
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -275,11 +324,24 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 31553de822c6309429356486e545de09
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pants_attack_front_0: 21300000
+      pants_attack_front_1: 21300002
+      pants_attack_front_2: 21300004
+      pants_attack_front_3: 21300006
+      pants_attack_front_4: 21300008
+      pants_attack_front_5: 21300010
+      pants_attack_front_6: 21300012
+      pants_attack_front_7: 21300014
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
