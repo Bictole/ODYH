@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+
 public class Player : Character
 {
     private SFXManager sfx;
@@ -72,6 +73,7 @@ public class Player : Character
          Getinput();
          base.Update();
     }
+
     private void Getinput()
     {
         direction = Vector2.zero;
@@ -91,7 +93,7 @@ public class Player : Character
         {
             direction += Vector3.right;
         }
-        
+
         nextdirection = direction;
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !InInventory)
