@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class RandomSpawn : MonoBehaviour
 {
-
     // Time to Respawn
     public float waitToRespawn;
     public float _waitToRespawnCounter;
@@ -38,7 +37,6 @@ public class RandomSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         _waitToRespawnCounter = waitToRespawn;
         nb_enemy = 0;
 

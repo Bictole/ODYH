@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneCh : MonoBehaviour
 {
     [Header("Variables de la nouvelle scène")] 
-    public string sceneToLoad;
+    public int sceneToLoad;
     public Vector2 playerPosition;
     public VectorValue playerStorage;
     public Vector2 cameraNewMax;
@@ -34,7 +34,6 @@ public class SceneCh : MonoBehaviour
         {
             playerStorage.initialValue = playerPosition;
             StartCoroutine(FadeCo());
-            //SceneManager.LoadScene(sceneToLoad);
         }
     }
 
