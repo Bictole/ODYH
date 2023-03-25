@@ -77,7 +77,7 @@ public class Player : Character
     private void Getinput()
     {
         direction = Vector2.zero;
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.W))
         {
             direction += Vector3.up;
         }
@@ -89,7 +89,7 @@ public class Player : Character
         {
             direction += Vector3.left;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.E))
         {
             direction += Vector3.right;
         }

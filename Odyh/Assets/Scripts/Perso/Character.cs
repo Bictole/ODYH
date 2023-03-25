@@ -94,8 +94,6 @@ public abstract class Character : MonoBehaviour
         {
             Move();
         }
-
-        
     }
 
     /// <summary>
@@ -104,11 +102,7 @@ public abstract class Character : MonoBehaviour
     public void Move()
     {
         //Makes sure that the player moves
-        
         myRigidbody.velocity = direction.normalized * speed;
-        
-        
-        
     }
 
     // Allow to switch between the different layers, to play the good animation for the correct action.
