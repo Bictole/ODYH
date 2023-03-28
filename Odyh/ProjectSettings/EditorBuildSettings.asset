@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Finale/Montagne_Finale.unity
     guid: c7e5a83baf575704083027d1cbc8b464
   - enabled: 1
+    path: Assets/Scenes/Finale/DungeonMontagne_Finale.unity
+    guid: 7210e826e0461d748992c5a6fb72a5d4
+  - enabled: 1
     path: Assets/Scenes/Maison1.unity
     guid: 04b8c0f143b9aa845ab100003ec7fd93
   - enabled: 1
