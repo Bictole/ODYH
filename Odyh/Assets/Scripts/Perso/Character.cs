@@ -79,8 +79,6 @@ public abstract class Character : MonoBehaviour
         ClickTarget();
     }
 
-    
-    
     private void FixedUpdate()
     {
         if (IsPush)
@@ -101,8 +99,18 @@ public abstract class Character : MonoBehaviour
     /// </summary>
     public void Move()
     {
-        //Makes sure that the player moves
-        myRigidbody.velocity = direction.normalized * speed;
+        // If player is pressing mouse button 2, double the speed
+        if (Input.GetMouseButton(4))
+        {
+            myRigidbody.velocity = direction.normalized * speed * 4;
+        }
+        else
+        {
+            myRigidbody.velocity = direction.normalized * speed;
+        }
+
+        // Makes sure that the player moves
+        // myRigidbody.velocity = direction.normalized * speed;
     }
 
     // Allow to switch between the different layers, to play the good animation for the correct action.
