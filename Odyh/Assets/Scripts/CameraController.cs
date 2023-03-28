@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
     // Define which Target to follow
     public Transform target;
-    
-    
+
     // Speed of the camera
     public float moveSpeed;
     
     // Test if the cameraExists
-    private static bool cameraExists;
+    public static bool cameraExists;
 
     public Vector3 offset;
 
-    private Vector3 velocity = Vector3.zero;
+    public Vector3 velocity = Vector3.zero;
 
     public Vector2 maxPosition;
     public Vector2 minPosition;
