@@ -33,6 +33,9 @@ EditorBuildSettings:
     path: "Assets/Scenes/Finale/For\xEAt_Finale.unity"
     guid: ce495faca9a6548429f4705baeb93603
   - enabled: 1
+    path: "Assets/Scenes/Finale/DungeonFor\xEAt_Finale.unity"
+    guid: b1f2e707f688cce4492811d77575423c
+  - enabled: 1
     path: Assets/Scenes/Maison1.unity
     guid: 04b8c0f143b9aa845ab100003ec7fd93
   - enabled: 1
