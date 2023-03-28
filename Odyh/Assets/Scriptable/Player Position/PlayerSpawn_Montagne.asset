@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b1a4967c0bee749a88a0b37093714d, type: 3}
   m_Name: PlayerSpawn_Montagne
   m_EditorClassIdentifier: 
-  initialValue: {x: 8, y: 0}
-  defaultValue: {x: 8, y: 0}
+  initialValue: {x: 8.14, y: 0.97}
+  defaultValue: {x: 8.14, y: 0.97}

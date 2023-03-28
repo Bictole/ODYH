@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Finale/Village_Finale.unity
     guid: c1f3c8f67d996804eab46e5dfb9dbb2b
   - enabled: 1
+    path: Assets/Scenes/Finale/Montagne_Finale.unity
+    guid: c7e5a83baf575704083027d1cbc8b464
+  - enabled: 1
     path: Assets/Scenes/Maison1.unity
     guid: 04b8c0f143b9aa845ab100003ec7fd93
   - enabled: 1
