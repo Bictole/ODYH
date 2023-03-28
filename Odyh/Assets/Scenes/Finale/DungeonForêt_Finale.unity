@@ -9768,7 +9768,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerStorage
       value: 
-      objectReference: {fileID: 11400000, guid: 213815060063656418963aa1c1fd2688,
+      objectReference: {fileID: 11400000, guid: cbadf097b444a7349bc08789853c83ab,
         type: 2}
     - target: {fileID: 5875754671486258325, guid: f04fef05c5a915b4c9c0df3f2c89414c,
         type: 3}
@@ -9793,12 +9793,12 @@ PrefabInstance:
     - target: {fileID: 5875754671486258325, guid: f04fef05c5a915b4c9c0df3f2c89414c,
         type: 3}
       propertyPath: playerPosition.x
-      value: 71
+      value: 63.1
       objectReference: {fileID: 0}
     - target: {fileID: 5875754671486258325, guid: f04fef05c5a915b4c9c0df3f2c89414c,
         type: 3}
       propertyPath: playerPosition.y
-      value: 16
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 5875754671486258327, guid: f04fef05c5a915b4c9c0df3f2c89414c,
         type: 3}
