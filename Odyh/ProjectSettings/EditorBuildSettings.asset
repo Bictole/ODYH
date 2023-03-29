@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Finale/Enfer_Finale.unity
     guid: 06e94865cc2a5994e89c0b7621268029
   - enabled: 1
+    path: Assets/Scenes/Finale/DungeonEnfer_Finale.unity
+    guid: 91aaa178f86401048993bf8c8352d6d3
+  - enabled: 1
     path: Assets/Scenes/Maison1.unity
     guid: 04b8c0f143b9aa845ab100003ec7fd93
   - enabled: 1
